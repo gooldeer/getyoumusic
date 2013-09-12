@@ -4,6 +4,7 @@ from celery.result import AsyncResult
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import RequestContext, loader
 from django.utils import simplejson as json
 
 from youtubetomp3.jobs import download
@@ -29,3 +30,15 @@ def init_work(request):
     	job = download.delay(request.POST['youtubeLink'], request.user)
         
     return HttpResponse(job)
+
+def profile(request):
+    """ A profile view """
+    # if 'profile' in request.GET:
+    #     profile = User.objects.get(id=int(request.GET['profile']))
+    # else:
+    #     return HttpResponse('No profile id given')
+
+    template = loader.get_template('youtubetomp3/profiles/profile_detail.html')
+    context = RequestContext(request)
+
+    return HttpResponse(template.render(context))

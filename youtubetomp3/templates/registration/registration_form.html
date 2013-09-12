@@ -3,7 +3,7 @@
 	<title>Registration</title>
 </head>
 <body>
-	<form method="post" action="/accounts/register/">
+	<form method="post" action="{% url 'youtubetomp3:registration_register' %}">
 		{% csrf_token %}
 		<table>
 		<tr>
@@ -25,7 +25,7 @@
 		</table>
 
 		<input type="submit" value="register" />
-		<input type="hidden" name="next" value="/accounts/activate/" />
+		<input type="hidden" name="next" value="{{ next }}" />
 	</form>
 </body>
 </html>

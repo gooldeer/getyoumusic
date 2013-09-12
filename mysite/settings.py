@@ -27,8 +27,6 @@ ALLOWED_HOSTS = []
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
-AUTH_PROFILE_MODULE = 'youtubetomp3.models.Profile'
-
 BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
 
 CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
@@ -138,7 +136,6 @@ INSTALLED_APPS = (
     'registration',
     "djcelery",
     "djkombu",
-    'profiles',
     'youtubetomp3',
 )
 

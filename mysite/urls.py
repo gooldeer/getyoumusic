@@ -19,6 +19,4 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     
     url(r'^youtubetomp3/', include('youtubetomp3.urls', namespace="youtubetomp3")),
-    url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^profiles/', include('profiles.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

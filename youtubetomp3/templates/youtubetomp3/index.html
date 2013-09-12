@@ -56,8 +56,23 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../accounts/login/">Log in</a></li>
-            <li><a href="../accounts/register/">Sign up</a></li>
+
+            {% if user.is_active %}
+
+              <li>
+                Hello <b>
+                        <a href="{% url 'youtubetomp3:profile_detail' %}?profile={{user.id}}" method="get">
+                          {{ user.username }}
+                        </a>
+                      </b>! <a href="{% url 'youtubetomp3:auth_logout' %}">logout</a>
+              </li>
+            
+            {% else %}
+
+              <li><a href="{% url 'youtubetomp3:auth_login' %}">Log in</a></li>
+              <li><a href="{% url 'youtubetomp3:registration_register' %}">Sign up</a></li>
+
+            {% endif %}
           </ul>
         </div><!--/.nav-collapse -->
       </div>

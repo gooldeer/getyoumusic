@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, include, url
 
 from youtubetomp3 import views
 
@@ -6,5 +6,8 @@ urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
     url(r'^init_work/$', views.init_work, name="init_work"),
     url(r'^poll_state/$', views.poll_state, name="poll_state"),
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'login': 'youtubetomp3/login.html'}),
+    url(r'^accounts/profile/$', views.profile, name="profile_detail"),
+    url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^profiles/', include('profiles.urls')),
+    # url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'login': 'youtubetomp3/login.html'}),
 )

@@ -9,16 +9,6 @@ except ImportError:
 
 # Create your models here.
 
-class Profile(models.Model):
-	user = models.ForeignKey(User)
-
-	@models.permalink
-	def get_absolute_url(self):
-		return ('profiles_profile_detail', (), { 'username': self.user.username })
-
-	def __unicode__(self):
-		return self.user.username
- 
 class Media(models.Model):
     user = models.ForeignKey(User)
     mediafile = models.FileField(upload_to='/media/')
