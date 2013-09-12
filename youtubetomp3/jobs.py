@@ -1,5 +1,3 @@
-from django.core.files import File
-
 from celery import task, current_task
 from celery.result import AsyncResult
 
@@ -19,9 +17,8 @@ def download(url, current_user):
 
 	downloader = Downloader()
 	filename = downloader.download(link=url, call=downloading)
+	print filename
 
-	f = open(filename)
-	# print f.size
-	field = Media(mediafile = File(f), user=current_user)
+	field = Media(mediafile=filename, user=current_user)
 	field.save()
 

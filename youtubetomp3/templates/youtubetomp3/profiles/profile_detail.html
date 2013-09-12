@@ -4,7 +4,7 @@
 </head>
 <body>
 	{% for media in user.media_set.all %}
-		<a href="{{ media.mediafile.url }}">{{ media.mediafile.url }}</a>
+		<a href="{{ media.mediafile }}">{{ media.mediafile }}</a>
 	{% endfor %}
 </body>
 </html>

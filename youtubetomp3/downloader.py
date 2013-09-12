@@ -6,7 +6,7 @@ class Downloader():
 		
 		video = Pafy(link)
 		best = video.getbest()
-		myfilename = 'test.' + best.extension
+		myfilename = '/media/test.' + best.extension
 
 		try:
 			best.download(filepath=myfilename, callback=call)
