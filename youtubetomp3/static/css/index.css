@@ -1,0 +1,21 @@
+body {
+  min-height: 500px;
+  padding-top: 70px;
+}
+
+#floater{
+	float:left; 
+	height:50%; 
+	margin-bottom: -100px;
+}
+
+.form-youtube{
+	clear:both; 
+	height:240px; 
+	margin: 10%;
+	position:relative;
+}
+
+#progress-container{
+	display: none;
+}

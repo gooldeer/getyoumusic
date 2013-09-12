@@ -1,0 +1,31 @@
+<<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<form method="post" action="/accounts/register/">
+		{% csrf_token %}
+		<table>
+		<tr>
+		    <td>{{ form.username.label_tag }}</td>
+		    <td>{{ form.username }}</td>
+		</tr>
+		<tr>
+		    <td>{{ form.email.label_tag }}</td>
+		    <td>{{ form.email }}</td>
+		</tr>
+		<tr>
+		    <td>{{ form.password1.label_tag }}</td>
+		    <td>{{ form.password1 }}</td>
+		</tr>
+		<tr>
+		    <td>{{ form.password2.label_tag }}</td>
+		    <td>{{ form.password2 }}</td>
+		</tr>
+		</table>
+
+		<input type="submit" value="register" />
+		<input type="hidden" name="next" value="/accounts/activate/" />
+	</form>
+</body>
+</html>
