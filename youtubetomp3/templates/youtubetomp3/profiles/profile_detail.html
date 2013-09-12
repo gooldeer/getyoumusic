@@ -1,0 +1,10 @@
+<<html>
+<head>
+	<title>My profile</title>
+</head>
+<body>
+	{% for media in user.media_set.all %}
+		<a href="{{ media.mediafile.url }}">{{ media.mediafile.url }}</a>
+	{% endfor %}
+</body>
+</html>
