@@ -33,11 +33,6 @@ def init_work(request):
 
 def profile(request):
     """ A profile view """
-    # if 'profile' in request.GET:
-    #     profile = User.objects.get(id=int(request.GET['profile']))
-    # else:
-    #     return HttpResponse('No profile id given')
-
     template = loader.get_template('youtubetomp3/profiles/profile_detail.html')
     context = RequestContext(request)
 
