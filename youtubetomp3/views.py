@@ -37,3 +37,20 @@ def profile(request):
     context = RequestContext(request)
 
     return HttpResponse(template.render(context))
+
+def media(request):
+    """ Media playlist """
+    user = request.user
+
+    if 'playlist' in request.GET:
+        playlistName = request.GET['playlist']
+    else:
+        return HttpResponse('No playlist given')
+
+    playlist = user.playlist_set.get(name=playlistName, user=user)
+    media_set = playlist.media_set
+
+    template = loader.get_template('youtubetomp3/profiles/playlist.html')
+    context = RequestContext(request, {'playlist' : playlist, 'media_set' : media_set})
+
+    return HttpResponse(template.render(context))

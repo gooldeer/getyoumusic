@@ -23,6 +23,6 @@ def download(url, current_user):
 	playlist_field = Playlist(name='default', user=current_user, is_audio=False)
 	playlist_field.save()
 
-	mediafield = Media(mediafile=filename, playlist=playlist)
+	mediafield = Media(mediafile=filename, playlist=playlist_field)
 	mediafield.save()
 

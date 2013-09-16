@@ -3,8 +3,11 @@
 	<title>My profile</title>
 </head>
 <body>
-	{% for media in user.media_set.all %}
-		<a href="{{ media.mediafile }}">{{ media.mediafile }}</a>
+
+	{% csrf_token %}
+
+	{% for playlist in user.playlist_set.all %}
+		<a href="{% url 'youtubetomp3:media' %}?playlist={{ playlist.name }}" name="playlist" method="GET">{{ playlist.name }}</a>
 	{% endfor %}
 </body>
 </html>
