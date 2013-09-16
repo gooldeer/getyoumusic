@@ -1,0 +1,6 @@
+command to begin debuggin server
+
+1. cd C:\WebProjects\YouTubeToMp3
+2. python manage.py celeryd -l info
+3. python manage.py runserver
+4. python -m smtpd -n -c DebuggingServer localhost:25
