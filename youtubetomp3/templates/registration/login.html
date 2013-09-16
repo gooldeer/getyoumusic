@@ -27,7 +27,7 @@
 
     <div class="container">
 
-      <form class="form-signin" action="{% url 'youtubetomp3:auth_login' %}" method="post">
+      <form class="form-signin" action="{% url 'auth_login' %}" method="post">
 
       	{% csrf_token %}
         <h2 class="form-signin-heading">Please sign in</h2>
@@ -40,7 +40,7 @@
         </label>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <input type="hidden" name="next" value="{% url 'youtubetomp3:profile_detail' %}">
+        <input type="hidden" name="next" value="{% url 'profile_detail' %}">
 
       </form>
 

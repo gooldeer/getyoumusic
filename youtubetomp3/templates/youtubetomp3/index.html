@@ -61,16 +61,16 @@
 
               <li>
                 Hello <b>
-                        <a href="{% url 'youtubetomp3:profile_detail' %}?profile={{user.id}}" method="get">
+                        <a href="{% url 'profile_detail' %}?profile={{user.id}}" method="get">
                           {{ user.username }}
                         </a>
-                      </b>! <a href="{% url 'youtubetomp3:auth_logout' %}">logout</a>
+                      </b>! <a href="{% url 'auth_logout' %}">logout</a>
               </li>
             
             {% else %}
 
-              <li><a href="{% url 'youtubetomp3:auth_login' %}">Log in</a></li>
-              <li><a href="{% url 'youtubetomp3:registration_register' %}">Sign up</a></li>
+              <li><a href="{% url 'auth_login' %}">Log in</a></li>
+              <li><a href="{% url 'registration_register' %}">Sign up</a></li>
 
             {% endif %}
           </ul>

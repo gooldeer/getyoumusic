@@ -5,6 +5,7 @@ from time import sleep
 
 from youtubetomp3.downloader import Downloader
 from youtubetomp3.models import Media
+from youtubetomp3.models import Playlist
 
 @task(name="jobs.download")
 def download(url, current_user):
@@ -19,6 +20,9 @@ def download(url, current_user):
 	filename = downloader.download(link=url, call=downloading)
 	print filename
 
-	field = Media(mediafile=filename, user=current_user)
-	field.save()
+	playlist_field = Playlist(name='default', user=current_user, is_audio=False)
+	playlist_field.save()
+
+	mediafield = Media(mediafile=filename, playlist=playlist)
+	mediafield.save()
 
