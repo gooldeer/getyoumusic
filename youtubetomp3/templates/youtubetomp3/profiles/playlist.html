@@ -1,0 +1,14 @@
+<<html>
+<head>
+	<title>{{ playlist.name }}</title>
+</head>
+<body>
+	{% csrf_token %}
+	
+	{% for media in media_set.all %}
+
+		<a href="{{ media.mediafile }}">{{ media.mediafile }}</a>
+
+	{% endfor %}
+</body>
+</html>
