@@ -20,8 +20,7 @@ def download(url, current_user):
 	filename = downloader.download(link=url, call=downloading)
 	print filename
 
-	playlist_field = Playlist(name='default', user=current_user, is_audio=False)
-	playlist_field.save()
+	playlist_field = Playlist.objects.create_playlist(name='default', user=current_user, is_audio=False)
 
 	mediafield = Media(mediafile=filename, playlist=playlist_field)
 	mediafield.save()

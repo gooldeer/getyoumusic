@@ -9,16 +9,26 @@ except ImportError:
     from django.contrib.auth.models import User
 
 # Create your models here.
+
+class PlaylistManager(models.Manager):
+    """PlaylistManager with checking on name"""
+    def create_playlist(self, name, user, is_audio):
+        if self.filter(name=name, user=user, is_audio=is_audio).count() == 0:
+            return None
+        else:
+            return self.create(user=user, name=name, is_audio=is_audio)
+
 class Playlist(models.Model):
     """Playlist which contains media objects"""
 
     user = models.ForeignKey(User)
     name = models.CharField(max_length=50)
     is_audio = models.BooleanField(default=True)
+    objects = PlaylistManager()
 
     def __unicode__(self):
         return self.user.username + ": " + self.name
-
+        
 class Media(models.Model):
     """Media files in playlist. Contains link on media file"""
 

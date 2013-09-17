@@ -8,6 +8,7 @@ from django.template import RequestContext, loader
 from django.utils import simplejson as json
 
 from youtubetomp3.jobs import download
+from youtubetomp3.models import Playlist
 
 def index(request):
 	return render(request, 'youtubetomp3/index.html')
@@ -54,3 +55,19 @@ def media(request):
     context = RequestContext(request, {'playlist' : playlist, 'media_set' : media_set})
 
     return HttpResponse(template.render(context))
+
+def new_playlist(request):
+    """ Create new playlist """
+    user = request.user
+
+    if 'playlist' in request.POST:
+        playlistName = request.POST['playlist']
+    else:
+        return HttpResponse('No playlist given')
+
+    playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=False)
+
+    if (playlist != None):
+        print 'created new playlist with name ' + playlist.name
+
+    return HttpResponse(playlist)
