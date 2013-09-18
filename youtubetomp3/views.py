@@ -3,7 +3,8 @@
 from celery.result import AsyncResult
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader
 from django.utils import simplejson as json
 
@@ -39,7 +40,7 @@ def profile(request):
 
     return HttpResponse(template.render(context))
 
-def media(request):
+def playlists(request):
     """ Media playlist """
     user = request.user
 
@@ -67,7 +68,7 @@ def new_playlist(request):
 
     playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=False)
 
-    if (playlist != None):
+    if (playlist != "DUBLICATE"):
         print 'created new playlist with name ' + playlist.name
 
-    return HttpResponse(playlist)
+    return HttpResponseRedirect(reverse('profile_detail'))
