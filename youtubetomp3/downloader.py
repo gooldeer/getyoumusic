@@ -9,7 +9,7 @@ class Downloader():
 		myfilename = '/media/test.' + best.extension
 
 		try:
-			best.download(filepath=myfilename, callback=call)
+			best.download(filepath=myfilename, callback=call, progress=True)
 		finally:
 			return myfilename
 		

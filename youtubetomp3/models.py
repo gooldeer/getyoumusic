@@ -13,8 +13,8 @@ except ImportError:
 class PlaylistManager(models.Manager):
     """PlaylistManager with checking on name"""
     def create_playlist(self, name, user, is_audio):
-        if self.filter(name=name, user=user, is_audio=is_audio).count() == 0:
-            return None
+        if self.filter(name=name, user=user, is_audio=is_audio).count() != 0:
+            return "DUBLICATE"
         else:
             return self.create(user=user, name=name, is_audio=is_audio)
 
@@ -36,7 +36,7 @@ class Media(models.Model):
     mediafile = models.CharField(max_length=50)
 
     def __unicode__(self):
-        return self.user.username + ": " + self.mediafile
+        return self.playlist.user.username + ": " + self.mediafile
 
     def delete(self):
         print self.mediafile

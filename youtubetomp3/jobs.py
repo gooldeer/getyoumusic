@@ -21,6 +21,9 @@ def download(url, current_user):
 	print filename
 
 	playlist_field = Playlist.objects.create_playlist(name='default', user=current_user, is_audio=False)
+	
+	if playlist_field == "DUBLICATE" :
+		playlist_field = Playlist.objects.get(name='default', user=current_user, is_audio=False)
 
 	mediafield = Media(mediafile=filename, playlist=playlist_field)
 	mediafield.save()

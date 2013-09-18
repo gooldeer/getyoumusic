@@ -3,7 +3,8 @@
 from celery.result import AsyncResult
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader
 from django.utils import simplejson as json
 
@@ -32,14 +33,21 @@ def init_work(request):
         
     return HttpResponse(job)
 
-def profile(request):
-    """ A profile view """
-    template = loader.get_template('youtubetomp3/profiles/profile_detail.html')
+def playlists(request):
+    """ Users playlists """
+    template = loader.get_template('youtubetomp3/playlists.html')
     context = RequestContext(request)
 
     return HttpResponse(template.render(context))
 
-def media(request):
+def profile(request):
+    """ A profile view """
+    template = loader.get_template('profiles/profile_detail.html')
+    context = RequestContext(request)
+
+    return HttpResponse(template.render(context))
+
+def playlist(request):
     """ Media playlist """
     user = request.user
 
@@ -51,7 +59,7 @@ def media(request):
     playlist = user.playlist_set.get(name=playlistName, user=user)
     media_set = playlist.media_set
 
-    template = loader.get_template('youtubetomp3/profiles/playlist.html')
+    template = loader.get_template('youtubetomp3/playlist.html')
     context = RequestContext(request, {'playlist' : playlist, 'media_set' : media_set})
 
     return HttpResponse(template.render(context))
@@ -67,7 +75,7 @@ def new_playlist(request):
 
     playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=False)
 
-    if (playlist != None):
+    if (playlist != "DUBLICATE"):
         print 'created new playlist with name ' + playlist.name
 
-    return HttpResponse(playlist)
+    return HttpResponseRedirect(reverse('profile_detail'))
