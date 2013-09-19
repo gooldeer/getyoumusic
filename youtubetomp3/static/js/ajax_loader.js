@@ -3,15 +3,15 @@ function updateProgressInfo() {
     var uuid = $("#progress-id").val();
     var progress_url = "/youtubetomp3/poll_state/?job=" + uuid; // ajax view serving progress info
 
-    $.getJSON(progress_url, 
-        function(data, status){
+    $.get(progress_url, 
+        function(data){
 
             if (data == "PENDING" || data.current) {
                 
                 var progress = parseFloat(data.current);
                 $("#upload-progress-bar").attr('aria-valuenow', progress);
                 $("#upload-progress-bar").attr('style', "width: " + progress + "%");
-                window.setTimeout(updateProgressInfo, 1000);
+                window.setTimeout(updateProgressInfo, 2000);
 
             } else {
                 if (data == "SUCCESS") {
@@ -30,7 +30,7 @@ function updateProgressInfo() {
 
 // pre-submit callback
 function beforeSubmitHandler(formData, jqForm, options) {
-    window.setTimeout(updateProgressInfo, 1000);
+    window.setTimeout(updateProgressInfo, 2000);
     $("#progress-container").show('slow');
     return true;
 };

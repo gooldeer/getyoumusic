@@ -23,6 +23,7 @@ def poll_state(request):
 
     job = AsyncResult(job_id)
     data = job.result or job.state
+    print data
 
     return HttpResponse(json.dumps(data), mimetype='application/json')
 
