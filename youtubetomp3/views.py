@@ -12,7 +12,8 @@ from youtubetomp3.jobs import download
 from youtubetomp3.models import Playlist
 
 def index(request):
-	return render(request, 'youtubetomp3/index.html')
+    """ Index page view """
+    return render(request, 'youtubetomp3/index.html')
 
 def poll_state(request):
     """ A view to report the progress to the user """
@@ -30,7 +31,7 @@ def poll_state(request):
 def init_work(request):
     """ A view to start a background job """
     if 'youtubeLink' in request.POST:
-    	job = download.delay(request.POST['youtubeLink'], request.user)
+        job = download.delay(request.POST['youtubeLink'], request.user)
         
     return HttpResponse(job)
 
@@ -53,15 +54,16 @@ def playlist(request):
     user = request.user
 
     if 'playlist' in request.GET:
-        playlistName = request.GET['playlist']
+        playlist_name = request.GET['playlist']
     else:
         return HttpResponse('No playlist given')
 
-    playlist = user.playlist_set.get(name=playlistName, user=user)
-    media_set = playlist.media_set
+    current_playlist = user.playlist_set.get(name=playlist_name, user=user)
+    media_set = current_playlist.media_set
 
     template = loader.get_template('youtubetomp3/playlist.html')
-    context = RequestContext(request, {'playlist' : playlist, 'media_set' : media_set})
+    context = RequestContext(request, 
+        {'playlist' : current_playlist, 'media_set' : media_set})
 
     return HttpResponse(template.render(context))
 
@@ -70,13 +72,14 @@ def new_playlist(request):
     user = request.user
 
     if 'playlist' in request.POST:
-        playlistName = request.POST['playlist']
+        playlist_name = request.POST['playlist']
     else:
         return HttpResponse('No playlist given')
 
-    playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=False)
+    plst = Playlist.objects.create_playlist(
+        name=playlist_name, user=user, is_audio=False)
 
-    if (playlist != "DUBLICATE"):
-        print 'created new playlist with name ' + playlist.name
+    if (plst != "DUBLICATE"):
+        print 'created new playlist with name ' + plst.name
 
     return HttpResponseRedirect(reverse('profile_detail'))
