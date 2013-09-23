@@ -1,7 +1,4 @@
 from celery import task, current_task
-from celery.result import AsyncResult
-
-from time import sleep
 
 from youtubetomp3.downloader import Downloader
 from youtubetomp3.models import Media

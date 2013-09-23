@@ -52,8 +52,12 @@
 			{% for playlist in user.playlist_set.all %}
 				<tr>
 					<td>
-						<a href="{% url 'youtubetomp3:playlist' %}?playlist={{ playlist.name }}" method="GET">{{ playlist.name }}</a>
+						<a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">{{ playlist.name }}</a>
 					</td>
+
+                    <td>
+                        <a href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" method="POST">Remove</a>
+                    </td>
 				</tr>
 			{% endfor %}
 			<tr>

@@ -47,15 +47,9 @@ def profile(request):
 
     return HttpResponse(template.render(context))
 
-def playlist(request):
+def playlist(request, playlistName):
     """ Media playlist """
     user = request.user
-
-    if 'playlist' in request.GET:
-        playlistName = request.GET['playlist']
-    else:
-        return HttpResponse('No playlist given')
-
     playlist = user.playlist_set.get(name=playlistName, user=user)
     media_set = playlist.media_set
 
@@ -70,12 +64,29 @@ def new_playlist(request):
 
     if 'playlist' in request.POST:
         playlistName = request.POST['playlist']
-    else:
-        return HttpResponse('No playlist given')
 
-    playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=False)
+    if playlistName != None:
+        playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=False)
 
     if (playlist != "DUBLICATE"):
         print 'created new playlist with name ' + playlist.name
 
-    return HttpResponseRedirect(reverse('profile_detail'))
+    return HttpResponseRedirect(reverse('youtubetomp3:playlists'))
+
+def remove_playlist(request, playlistName):
+    """ Remove playlist """
+
+    user = request.user
+    Playlist.objects.get(name=playlistName, user=user, is_audio=False).delete()
+
+    return HttpResponseRedirect(reverse('youtubetomp3:playlists'))
+
+def remove_media(request, playlistName, media):
+    """ Remove media """
+    import pdb; pdb.set_trace()
+    user = request.user
+    playlist = user.playlist_set.get(name=playlistName, user=user)
+
+    playlist.media_set.get(mediafile=media).delete()
+
+    return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlistName,]))

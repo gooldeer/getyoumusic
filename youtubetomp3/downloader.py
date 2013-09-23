@@ -11,7 +11,4 @@ class Downloader():
 		try:
 			best.download(filepath=myfilename, callback=call, progress=True)
 		finally:
-			return myfilename
-		
-
-		
+			return myfilename	
