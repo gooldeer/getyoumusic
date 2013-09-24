@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^youtubetomp3/', include('youtubetomp3.urls', namespace="youtubetomp3")),
+    url(r'^', include('youtubetomp3.urls', namespace="youtubetomp3")),
 
     url(r'^accounts/profile/$', views.profile, name="profile_detail"),
     url(r'^accounts/', include('registration.backends.default.urls')),

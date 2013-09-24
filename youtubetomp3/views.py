@@ -83,7 +83,7 @@ def remove_playlist(request, playlistName):
 
 def remove_media(request, playlistName, media):
     """ Remove media """
-    import pdb; pdb.set_trace()
+    
     user = request.user
     playlist = user.playlist_set.get(name=playlistName, user=user)
 

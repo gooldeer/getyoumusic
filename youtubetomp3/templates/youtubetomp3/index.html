@@ -61,29 +61,80 @@
       </div>
     </div>
 
-    <form class="form-youtube" role="form" method="post" action="{% url 'youtubetomp3:poll_state' %}" id="upload-file-form" enctype="multipart/form-data">
-       {% csrf_token %}
-      <div class="input-group">
-        <input type="hidden" id="progress-id" name="progress-id" value=""/>
-        <input type="text" placeholder="Put YouTube video link here" class="form-control" name="youtubeLink" id="youtubeLink" autofocus>
-        <span class="input-group-btn">
-          <button class="btn btn-primary" type="submit" id="button-submit">Go!</button>
-        </span>
+    {% if user.is_active %}
 
-      </div><!-- /input-group -->
-      <span class="help-block">Example: https://www.youtube.com/watch?v=INmtQXUXez8</span>
+      <form class="form-youtube" role="form" method="post" action="{% url 'youtubetomp3:poll_state' %}" id="upload-file-form" enctype="multipart/form-data">
+         {% csrf_token %}
+        <div class="input-group">
+          <input type="hidden" id="progress-id" name="progress-id" value=""/>
+          <input type="text" placeholder="Put YouTube video link here" class="form-control" name="youtubeLink" id="youtubeLink" autofocus>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit" id="button-submit">Go!</button>
+          </span>
 
-      <div id="progress-container">
+        </div><!-- /input-group -->
+        <span class="help-block">Example: https://www.youtube.com/watch?v=INmtQXUXez8</span>
 
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" id="upload-progress-bar" name="upload-progress-bar" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%">
-            <span class="sr-only">{{ percent }}% Complete (success)</span>
+        <div id="progress-container">
+
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" id="upload-progress-bar" name="upload-progress-bar" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%">
+              <span class="sr-only">{{ percent }}% Complete (success)</span>
+            </div>
           </div>
+
         </div>
 
-      </div>
+      </form>
 
-    </form>
+    {% else %}
+
+      <!-- Carousel
+      ================================================== -->
+      <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="data:image/png;base64," data-src="holder.js/1280x768/auto/#777:#555/text:First slide" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-large btn-primary" href="#">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#666:#444/text:Second slide" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#555:#333/text:Third slide" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      </div><!-- /.carousel -->
+
+    {% endif %}
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -92,6 +143,7 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/jquery.form.min.js' %}"></script>
     <script src="{% static 'js/ajax_loader.js' %}"></script>
+    <script src="{% static 'js/holder.js' %}"></script>
     
   </body>
 </html>
