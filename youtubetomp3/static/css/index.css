@@ -5,6 +5,25 @@
 	margin-right: 10%;
 }
 
+.navbar-inverse {
+  -webkit-box-shadow: 1px 1px 2px #777777;
+  -moz-box-shadow: 1px 1px 2px #777777;
+  box-shadow: 1px 1px 3px #777777;
+}
+
+body {
+  background-color: #eeeeee;
+}
+
+#logo {
+  max-height: 30px;
+}
+
+.navbar-brand {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 #progress-container{
 	display: none;
 }

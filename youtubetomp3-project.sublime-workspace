@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"na",
+				"navbar-inverse"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"box",
+				"box-sizing:   (property)"
+			],
+			[
+				"s",
+				"size"
+			],
+			[
 				"pla",
 				"playlistName	(local, instance)"
 			],
@@ -58,10 +90,6 @@
 			[
 				"margi",
 				"margin-top"
-			],
-			[
-				"mar",
-				"margin-right"
 			],
 			[
 				"profile",
@@ -150,10 +178,6 @@
 			[
 				"j",
 				"jquery"
-			],
-			[
-				"pa",
-				"parseInt"
 			],
 			[
 				"rend",
@@ -268,18 +292,18 @@
 			}
 		},
 		{
-			"file": "youtubetomp3/templates/youtubetomp3/index.html",
+			"file": "youtubetomp3/static/js/ajax_loader.js",
 			"settings":
 			{
-				"buffer_size": 6605,
+				"buffer_size": 1745,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "youtubetomp3/static/css/index.css",
+			"file": "youtubetomp3/static/css/playlists.css",
 			"settings":
 			{
-				"buffer_size": 1152,
+				"buffer_size": 184,
 				"line_ending": "Windows"
 			}
 		}
@@ -312,20 +336,22 @@
 	},
 	"file_history":
 	[
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/index.css",
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlists.css",
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
 		"/C/Users/Sergey/Downloads/bootstrap-3.0.0/bootstrap-3.0.0/examples/carousel/index.html",
 		"/C/Users/Sergey/Downloads/bootstrap-3.0.0/bootstrap-3.0.0/examples/carousel/carousel.css",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/signin (1).css",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/manage.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/mysite/urls.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/downloader.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/pafy.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlist.css",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/jobs.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/admin.py",
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
@@ -437,9 +463,7 @@
 		"/C/server/www/mydjangosite/mysite/youtubetomp3/templates/youtubetomp3/registration/password_reset_subject.txt",
 		"/C/server/www/mydjangosite/mysite/youtubetomp3/static/css/index.css",
 		"/C/Users/Сергей/Downloads/django-registration-1.0/django-registration-1.0/INSTALL",
-		"/C/Users/Сергей/Downloads/django-registration-1.0/django-registration-1.0/README",
-		"/C/AndroidProjects/SmartChat/res/drawable/press_without_background_button.xml",
-		"/C/AndroidProjects/SmartChat/res/drawable/button.xml"
+		"/C/Users/Сергей/Downloads/django-registration-1.0/django-registration-1.0/README"
 	],
 	"find":
 	{
@@ -516,8 +540,8 @@
 						"selection":
 						[
 							[
-								2607,
-								2607
+								864,
+								864
 							]
 						],
 						"settings":
@@ -720,25 +744,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "youtubetomp3/templates/youtubetomp3/index.html",
+					"file": "youtubetomp3/static/js/ajax_loader.js",
 					"settings":
 					{
-						"buffer_size": 6605,
+						"buffer_size": 1745,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6321,
-								6321
+								123,
+								123
 							]
 						],
 						"settings":
@@ -936,30 +960,30 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1095.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "youtubetomp3/static/css/index.css",
+					"file": "youtubetomp3/static/css/playlists.css",
 					"settings":
 					{
-						"buffer_size": 1152,
+						"buffer_size": 184,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								314,
-								314
+								0,
+								0
 							]
 						],
 						"settings":
@@ -970,109 +994,6 @@
 								"README",
 								"FIXME"
 							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -1134,7 +1055,6 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
-							"sublime_auto_complete": true,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2,
 							"sublimelinter_disable":
@@ -1157,9 +1077,7 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1230,6 +1148,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 312.0,
+	"side_bar_width": 270.0,
 	"status_bar_visible": true
 }

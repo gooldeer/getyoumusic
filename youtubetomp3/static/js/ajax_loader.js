@@ -1,7 +1,7 @@
 // to update progress info
 function updateProgressInfo() {
     var uuid = $("#progress-id").val();
-    var progress_url = "/youtubetomp3/poll_state/?job=" + uuid; // ajax view serving progress info
+    var progress_url = "/poll_state/?job=" + uuid; // ajax view serving progress info
 
     $.getJSON(progress_url, 
         function(data, status){
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
         var options = {
 
-            url: "/youtubetomp3/init_work/?youtubeLink="+$("#youtubeLink").val(),
+            url: "/init_work/?youtubeLink="+$("#youtubeLink").val(),
             beforeSubmit: beforeSubmitHandler,
             success: successHandler
         };

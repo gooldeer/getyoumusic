@@ -4,3 +4,12 @@
 	margin-left: 10%;
 	margin-right: 10%;
 }
+
+#logo {
+  max-height: 30px;
+}
+
+.navbar-brand {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
