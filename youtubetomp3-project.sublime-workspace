@@ -279,7 +279,7 @@
 			"file": "youtubetomp3/static/css/index.css",
 			"settings":
 			{
-				"buffer_size": 1117,
+				"buffer_size": 1152,
 				"line_ending": "Windows"
 			}
 		}
@@ -501,6 +501,7 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -940,7 +941,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2025.0,
+						"translation.y": 1095.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -950,15 +951,15 @@
 					"file": "youtubetomp3/static/css/index.css",
 					"settings":
 					{
-						"buffer_size": 1117,
+						"buffer_size": 1152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								303,
-								303
+								314,
+								314
 							]
 						],
 						"settings":

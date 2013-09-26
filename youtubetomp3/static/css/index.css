@@ -1,6 +1,5 @@
 .form-youtube, 
-.navbar-inverse,
-.carousel {
+.navbar-inverse {
 	margin-top: 30px;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -14,8 +13,9 @@
 .carousel {
   margin-bottom: 60px;
 
-  /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-  /*margin-top: -90px;*/
+  /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. and margin-top of nav-bar.
+   12px is some magic */
+  margin-top: -102px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
