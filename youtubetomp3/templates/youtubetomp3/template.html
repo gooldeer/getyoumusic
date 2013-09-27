@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yes">
+    <meta name="author" content="Me">
+    <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}">
+
+    <title>Tutu</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/template.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- wrap for sticky footer -->
+    <div id="wrap"> 
+
+      <div class="container">
+
+        <!-- navigation bar -->
+        <div class="navbar navbar-inverse"> 
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{% url 'youtubetomp3:index' %}"><img src="{% static 'img/logo.png' %}" id="logo"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'youtubetomp3:index' %}">Home</a></li>
+                <li><a href="{% url 'youtubetomp3:playlists' %}">Playlists</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+
+                {% if user.is_active %}
+
+                  <p class="navbar-text pull-right">Signed as <b>
+                            <a href="{% url 'profile_detail' %}" method="get" class="navbar-link">
+                              {{ user.username }}
+                            </a>
+                          </b>. <a href="{% url 'auth_logout' %}" class="navbar-link">Logout</a>
+                  </p>
+                
+                {% else %}
+
+                  <li><a href="{% url 'auth_login' %}">Log in</a></li>
+                  <li><a href="{% url 'registration_register' %}">Sign up</a></li>
+
+                {% endif %}
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+
+        <!-- Put body content here -->
+        <!--_______________________-->
+
+      </div>
+
+    </div><!-- end of wrap -->
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-14 col-sm-9 col-lg-9">
+                <p class="text-muted credit">Copyright by ...</p> 
+            </div>
+            <div class="col-xs-2 col-sm-1 col-lg-1">
+                <a href="#"><p class="text-muted credit">Contacts</p></a>
+            </div>
+            <div class="col-xs-2 col-sm-1 col-lg-1">
+                <a href="#"><p class="text-muted credit">Support</p></a>
+            </div>
+            <div class="col-xs-2 col-sm-1 col-lg-1">
+                <a class="text-muted credit" href="#"><p>About us</p></a>
+            </div>
+        </div>
+      </div>
+    </div> <!-- Footer end -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+  </body>
+</html>
