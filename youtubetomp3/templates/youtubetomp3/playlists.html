@@ -1,105 +1,73 @@
-<html>
-<head>
-	{% load staticfiles %}
-	<title>Playlists</title>
-	<link rel="shortcut icon" href="{% static 'ico/favicon.png' %}">
-	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
-	<link href="{% static 'css/playlists.css' %}" rel="stylesheet" media="screen">
-</head>
-<body>
+{% extends "youtubetomp3/base.html" %}
 
-	<div class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'youtubetomp3:index' %}"><img src="{% static 'img/logo.png' %}" id="logo"></a>
+{% block title %}My playlists{% endblock %}
+
+{% block style %}
+  {% load staticfiles %}
+  <link href="{% static 'css/playlists.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block sidebar %}
+  <ul class="nav navbar-nav">
+    <li><a href="{% url 'youtubetomp3:index' %}">Home</a></li>
+    <li class="active"><a href="{% url 'youtubetomp3:playlists' %}">Playlists</a></li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+
+  {% if user.username != '' %}    
+
+    <table border="0" id="playlist">
+        <th>Playlists</th>
+        {% for playlist in user.playlist_set.all %}
+            <tr>
+                <td>
+                    <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">{{ playlist.name }}</a>
+                </td>
+
+                <td>
+                    <a href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" method="POST">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>
+                <!-- Button trigger modal -->
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Create playlist</a>
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Modal title</h4>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="{% url 'youtubetomp3:index' %}">Home</a></li>
-            <li class="active"><a href="{% url 'youtubetomp3:playlists' %}">Playlists</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
+        <form role="form" method="post" action="{% url 'youtubetomp3:new_playlist' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="modal-body">
+                <div class="input-group">
+                  <input type="text" placeholder="Enter new name here" class="form-control" name="playlist" id="playlist" autofocus>
+                </div><!-- /input-group -->
+            </div>
 
-            {% if user.is_active %}
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-              <p class="navbar-text pull-right">Signed as <b>
-                        <a href="{% url 'profile_detail' %}" method="get" class="navbar-link">
-                          {{ user.username }}
-                        </a>
-                      </b>. <a href="{% url 'auth_logout' %}" class="navbar-link">Logout</a>
-              </p>
-            
-            {% else %}
+    {% else %}
+        <p>Please login or sign up</p>
+    {% endif %}
+    
+{% endblock %}
 
-              <li><a href="{% url 'auth_login' %}">Log in</a></li>
-              <li><a href="{% url 'registration_register' %}">Sign up</a></li>
-
-            {% endif %}
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-	{% if user.username != '' %}	
-
-		<table border="0" id="playlist">
-			<th>Playlists</th>
-			{% for playlist in user.playlist_set.all %}
-				<tr>
-					<td>
-						<a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">{{ playlist.name }}</a>
-					</td>
-
-                    <td>
-                        <a href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" method="POST">Remove</a>
-                    </td>
-				</tr>
-			{% endfor %}
-			<tr>
-				<td>
-					<!-- Button trigger modal -->
-				  	<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Create playlist</a>
-			  	</td>
-			</tr>
-		</table>
-
-
-	  	<!-- Modal -->
-		  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		    <div class="modal-dialog">
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		          <h4 class="modal-title">Modal title</h4>
-		        </div>
-		        <form role="form" method="post" action="{% url 'youtubetomp3:new_playlist' %}" enctype="multipart/form-data">
-		        	{% csrf_token %}
-			        <div class="modal-body">
-					    <div class="input-group">
-					      <input type="text" placeholder="Enter new name here" class="form-control" name="playlist" id="playlist" autofocus>
-					    </div><!-- /input-group -->
-			        </div>
-
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			          <button type="submit" class="btn btn-primary">Create</button>
-			        </div>
-	 			</form>
-		      </div><!-- /.modal-content -->
-		    </div><!-- /.modal-dialog -->
-		  </div><!-- /.modal -->
-
-	{% else %}
-		Please login or sign up
-	{% endif %}
-
-	<script src="{% static 'js/jquery.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
-</body>
-</html>

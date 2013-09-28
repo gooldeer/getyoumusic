@@ -1,57 +1,33 @@
-<!DOCTYPE html>
-{% load staticfiles %}  
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}">
+{% extends "youtubetomp3/base.html" %}
 
-    <title>Signin Template for Bootstrap</title>
+{% block title %}Get music from YouTube{% endblock %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+{% block style %}
+  {% load staticfiles %}
+  <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+{% endblock %}
 
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+{% block sidebar %}
+  <ul class="nav navbar-nav">
+  </ul>
+{% endblock %}
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
+{% block content %}
+  <form class="form-signin" action="{% url 'auth_login' %}" method="post">
 
-  <body>
+    {% csrf_token %}
+    <h2 class="form-signin-heading">Please sign in</h2>
 
-    <div class="container">
+    <input type="text" class="form-control" placeholder="Login" id="id_username" name="username" maxlength="254" autofocus>
+    <input type="password" class="form-control" placeholder="Password" id="id_password" name="password">
 
-      <form class="form-signin" action="{% url 'auth_login' %}" method="post">
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
 
-      	{% csrf_token %}
-        <h2 class="form-signin-heading">Please sign in</h2>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <input type="hidden" name="next" value="{% url 'profile_detail' %}">
 
-        <input type="text" class="form-control" placeholder="Login" id="id_username" name="username" maxlength="254" autofocus>
-        <input type="password" class="form-control" placeholder="Password" id="id_password" name="password">
-
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <input type="hidden" name="next" value="{% url 'profile_detail' %}">
-
-      </form>
-
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  </body>
-
-</html>
-
+  </form>
+{% endblock %}
 
