@@ -16,28 +16,48 @@
 
 {% block content %}
 
-  {% if user.username != '' %}    
+  {% if user.username != '' %}  
+    <div class="card">
+      <div class="container">  
+        <h1>My Playlists</h1>
 
-    <table border="0" id="playlist">
-        <th>Playlists</th>
-        {% for playlist in user.playlist_set.all %}
+        <div class="row">
+          {% for playlist in user.playlist_set.all %}
+
+            <div class="col-xs-6 col-sm-4 col-lg-4">
+              <div class="img-thumbnail">
+                <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">
+                  <img src="{% static 'img/audio-playlist-thumb.png' %}">
+                </a>
+                <h3>{{ playlist.name }}</h3>
+                <a type="button" href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+              </div>
+            </div>
+
+          {% endfor %}
+        </div>
+
+        <!-- <table border="0" id="playlist">
+            <th>Playlists</th>
+            {% for playlist in user.playlist_set.all %}
+                <tr>
+                    <td>
+                        <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">{{ playlist.name }}</a>
+                    </td>
+
+                    <td>
+                        <a href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" method="POST">Remove</a>
+                    </td>
+                </tr>
+            {% endfor %}
             <tr>
                 <td>
-                    <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">{{ playlist.name }}</a>
-                </td>
-
-                <td>
-                    <a href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" method="POST">Remove</a>
+                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Create playlist</a>
                 </td>
             </tr>
-        {% endfor %}
-        <tr>
-            <td>
-                <!-- Button trigger modal -->
-                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Create playlist</a>
-            </td>
-        </tr>
-    </table>
+        </table> -->
+      </div>
+    </div>
 
 
     <!-- Modal -->

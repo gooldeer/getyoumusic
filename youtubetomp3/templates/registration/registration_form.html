@@ -13,17 +13,21 @@
 {% endblock %}
 
 {% block content %}
-  <form class="form-signup" method="post" action="{% url 'registration_register' %}">
-    {% csrf_token %}
+  <div class="card">
+    <div class="content">
+      <form class="form-signup" method="post" action="{% url 'registration_register' %}">
+        {% csrf_token %}
 
-    <h2 class="form-signup-heading">Sign up for free</h2>
+        <h2 class="form-signup-heading">Sign up for free</h2>
 
-    <input type="text" class="form-control" placeholder="Login" id="id_username" name="username" maxlength="254" autofocus>
-    <input type="email" class="form-control" placeholder="E-mail" id="id_email" name="email" maxlength="254">
-        <input type="password" class="form-control" placeholder="Password" id="id_password1" name="password1">
-        <input type="password" class="form-control" placeholder="Password (again)" id="id_password2" name="password2">
+        <input type="text" class="form-control" placeholder="Login" id="id_username" name="username" maxlength="254" autofocus>
+        <input type="email" class="form-control" placeholder="E-mail" id="id_email" name="email" maxlength="254">
+            <input type="password" class="form-control" placeholder="Password" id="id_password1" name="password1">
+            <input type="password" class="form-control" placeholder="Password (again)" id="id_password2" name="password2">
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-    <input type="hidden" name="next" value="{{ next }}" />
-  </form>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Register</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    </div>
+  </div>
 {% endblock %}

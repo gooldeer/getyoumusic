@@ -1,10 +1,17 @@
+.card {
+  max-width: 400px;
+  margin:auto
+}
 .form-signup {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
 .form-signup .form-signup-heading {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+}
+.form-signup .btn {
+  margin-top: 40px;
 }
 .form-signup .form-control {
   position: relative;
@@ -22,6 +29,6 @@
 .form-signup input[type="email"],
 .form-signup input[type="password"] {
   margin-bottom: 5px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  /*border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;*/
 }

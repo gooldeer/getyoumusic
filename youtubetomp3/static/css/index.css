@@ -5,17 +5,21 @@
   display: none;
 }
 
-.form-youtube {
+.card {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.input-group {
+  margin-bottom: 10px;
 }
 
 /* Carousel base class */
 .carousel {
 
   /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. and margin-top of nav-bar.
-   12px is some magic */
-  margin-top: -99px;
+   120px is some magic */
+  margin-top: -120px;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -57,6 +61,19 @@
     margin-bottom: 20px;
     font-size: 21px;
     line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 63px;
+    line-height: 1;
+    color: inherit;
+  }
+
+  .card p {
+    line-height: 1.4;
+    font-size: 21px;
+    font-weight: 200;
+    /*line-height: 2.1428571435;*/
   }
 
 }

@@ -13,21 +13,22 @@
 {% endblock %}
 
 {% block content %}
-  <form class="form-signin" action="{% url 'auth_login' %}" method="post">
 
-    {% csrf_token %}
-    <h2 class="form-signin-heading">Please sign in</h2>
+  <div class="card">
+    <div class="container">
+      <form class="form-signin" action="{% url 'auth_login' %}" method="post">
 
-    <input type="text" class="form-control" placeholder="Login" id="id_username" name="username" maxlength="254" autofocus>
-    <input type="password" class="form-control" placeholder="Password" id="id_password" name="password">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
 
-    <label class="checkbox">
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
+        <input type="text" class="form-control" placeholder="Login" id="id_username" name="username" maxlength="254" autofocus>
+        <input type="password" class="form-control" placeholder="Password" id="id_password" name="password">
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <input type="hidden" name="next" value="{% url 'profile_detail' %}">
+        <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+        <input type="hidden" name="next" value="{% url 'profile_detail' %}">
 
-  </form>
+      </form>
+    </div>
+  </div>
 {% endblock %}
 

@@ -11,29 +11,46 @@
 
   {% if user.is_active %}
 
-    <form class="form-youtube" role="form" method="post" action="{% url 'youtubetomp3:poll_state' %}" id="upload-file-form" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="input-group">
-        <input type="hidden" id="progress-id" name="progress-id" value=""/>
-        <input type="text" placeholder="Put YouTube video link here" class="form-control" name="youtubeLink" id="youtubeLink" autofocus>
-        <span class="input-group-btn">
-          <button class="btn btn-primary" type="submit" id="button-submit">Go!</button>
-        </span>
+    <div class="card">
+      <div class="container">
+        <h1>Welcome on <img src="{% static 'img/logo-index.png' %}" style="margin-bottom:10px"></h1>
+        <p>This is a simple web-site that converts YouTube videos to .mp3 fromat. You can
+            create playlist, download content, synchronyze with your Android-phone. For
+            using all features, go to playlists page.</p>
+        <p><a href="{% url 'youtubetomp3:playlists' %}" class="btn btn-success btn-lg">Playlists &raquo;</a></p>
+      </div>
+    </div>  
 
-      </div><!-- /input-group -->
-      <span class="help-block">Example: https://www.youtube.com/watch?v=INmtQXUXez8</span>
+    <div class="card">
 
-      <div id="progress-container">
+      <div class="container">
 
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" id="upload-progress-bar" name="upload-progress-bar" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%">
-            <span class="sr-only">{{ percent }}% Complete (success)</span>
+        <form class="form-youtube" role="form" method="post" action="{% url 'youtubetomp3:poll_state' %}" id="upload-file-form" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="input-group">
+            <input type="hidden" id="progress-id" name="progress-id" value=""/>
+            <input type="text" placeholder="Put YouTube video link here" class="form-control" name="youtubeLink" id="youtubeLink" autofocus>
+            <span class="input-group-btn">
+              <button class="btn btn-danger" type="submit" id="button-submit">Go!</button>
+            </span>
+
+          </div><!-- /input-group -->
+          
+          <div id="progress-container">
+
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" id="upload-progress-bar" name="upload-progress-bar" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%">
+                <span class="sr-only">{{ percent }}% Complete (success)</span>
+              </div>
+            </div>
+
           </div>
-        </div>
+
+        </form>
 
       </div>
-
-    </form>
+      
+    </div>
 
   {% else %}
 
