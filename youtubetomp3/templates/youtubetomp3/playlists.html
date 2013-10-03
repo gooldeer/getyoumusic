@@ -20,12 +20,16 @@
     <div class="card">
       <div class="container">  
         <h1>My Playlists</h1>
+         <a data-toggle="modal" href="#myModal" type="button">
+          <img class="header-right-button" src="{% static 'img/new-playlist.png' %}">
+         </a>
+        <hr>
 
         <div class="row">
           {% for playlist in user.playlist_set.all %}
 
-            <div class="col-xs-6 col-sm-4 col-lg-4">
-              <div class="img-thumbnail">
+            <div class="col-xs-6 col-sm-3 col-lg-3">
+              <div class="img-thumbnail" style="background-color: {{ playlist.color }}">
                 <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">
                   <img src="{% static 'img/audio-playlist-thumb.png' %}">
                 </a>
@@ -36,26 +40,6 @@
 
           {% endfor %}
         </div>
-
-        <!-- <table border="0" id="playlist">
-            <th>Playlists</th>
-            {% for playlist in user.playlist_set.all %}
-                <tr>
-                    <td>
-                        <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">{{ playlist.name }}</a>
-                    </td>
-
-                    <td>
-                        <a href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" method="POST">Remove</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            <tr>
-                <td>
-                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Create playlist</a>
-                </td>
-            </tr>
-        </table> -->
       </div>
     </div>
 
@@ -66,7 +50,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Modal title</h4>
+          <h4 class="modal-title">Create playlist</h4>
         </div>
         <form role="form" method="post" action="{% url 'youtubetomp3:new_playlist' %}" enctype="multipart/form-data">
             {% csrf_token %}
@@ -78,7 +62,7 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Create</button>
+              <button type="submit" class="btn btn-success">Create</button>
             </div>
         </form>
       </div><!-- /.modal-content -->

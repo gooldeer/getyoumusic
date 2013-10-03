@@ -8,5 +8,18 @@ h3 {
     margin-top: -20px;
 }
 .img-thumbnail {
-    min-width: auto; /*??*/
+    margin-bottom: 20px;
+}
+.header-right-button {
+    margin-top: -50px;
+    max-height: 40px;
+    float: right;
+}
+.modal-dialog {
+    max-width: 400px;
+}
+.input-group {
+    margin: auto;
+    padding-top: 10px;
+    display: block;
 }

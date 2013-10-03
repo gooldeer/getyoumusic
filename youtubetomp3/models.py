@@ -18,6 +18,7 @@ class Playlist(models.Model):
     user = models.ForeignKey(User)
     name = models.CharField(max_length=50)
     is_audio = models.BooleanField(default=True)
+    color = models.CharField(max_length=15, default='#fff')
     objects = PlaylistManager()
 
     def __unicode__(self):

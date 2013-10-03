@@ -1,8 +1,16 @@
-<<html>
-<head>
-	<title>My Profile</title>
-</head>
-<body>
-	Here is info about me.
-</body>
-</html>
+{% extends "youtubetomp3/base.html" %}
+
+{% block title %}My profile{% endblock %}
+
+{% block sidebar %}
+  <ul class="nav navbar-nav">
+  </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="content">
+            <p>Info about me</p>
+        </div>
+    </div>
+{% endblock %}
