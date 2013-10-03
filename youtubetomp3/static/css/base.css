@@ -69,4 +69,10 @@ html, body {
   box-shadow: 1px 1px 3px #777777;
 }
 
+.header-right-button {
+    margin-top: -50px;
+    max-height: 40px;
+    float: right;
+}
+
 /*Custom styles*/

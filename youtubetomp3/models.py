@@ -18,17 +18,26 @@ class Playlist(models.Model):
     user = models.ForeignKey(User)
     name = models.CharField(max_length=50)
     is_audio = models.BooleanField(default=True)
-    color = models.CharField(max_length=15, default='#fff')
+    color = models.CharField(max_length=15, default='fff')
     objects = PlaylistManager()
 
     def __unicode__(self):
         return self.user.username + ": " + self.name
+
+class MediaManager(models.Manager):
+    """MediaManager with checking on name"""
+    def create_media(self, playlist, mediafile):
+        if self.filter(playlist=playlist, mediafile=mediafile).count() != 0:
+            return "DUBLICATE"
+        else:
+            return self.create(playlist=playlist, mediafile=mediafile)    
         
 class Media(models.Model):
     """Media files in playlist. Contains link on media file"""
 
     playlist = models.ForeignKey(Playlist)
     mediafile = models.CharField(max_length=50)
+    objects = MediaManager()
 
     def __unicode__(self):
         return self.playlist.user.username + ": " + self.mediafile

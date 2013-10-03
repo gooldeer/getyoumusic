@@ -16,6 +16,39 @@
 {% block content %}
   {% csrf_token %}
 
+  <div class="card">
+    <div class="container">
+
+      <h1>{{ playlist.name }}</h1>
+      <a data-toggle="modal" href="#myModal" type="button">
+        {% with "img/"|add:playlist.color|add:".png" as image %}
+        <img class="header-right-button" src="{% static image %}">
+        {% endwith %}
+      </a>
+      <hr>
+
+      <table border="0">
+
+        {% for media in media_set.all %}
+
+          <tr>
+              <td>
+                  <a href="{{ media.mediafile }}">{{ media.mediafile }}</a>
+              </td>
+
+              <td>
+                  <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.mediafile %}" method="GET">Remove</a>
+              </td>
+          </tr>
+
+        {% endfor %}
+
+      </table>
+
+
+    </div>
+  </div>
+
     <table border="0">
         <th>{{ playlist.name }}</th>
 

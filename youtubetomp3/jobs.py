@@ -23,6 +23,7 @@ def download(url, current_user):
 		playlist_field = Playlist.objects.get(name='default', user=current_user, is_audio=False)
 
 	if filename != None:
-		mediafield = Media(mediafile=filename, playlist=playlist_field)
-		mediafield.save()
+		# mediafield = Media(mediafile=filename, playlist=playlist_field)
+		# mediafield.save()
+		Media.objects.create_media(playlist=playlist_field, mediafile=filename)
 

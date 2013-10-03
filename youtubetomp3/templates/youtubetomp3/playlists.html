@@ -29,9 +29,9 @@
           {% for playlist in user.playlist_set.all %}
 
             <div class="col-xs-6 col-sm-3 col-lg-3">
-              <div class="img-thumbnail" style="background-color: {{ playlist.color }}">
+              <div class="img-thumbnail" style="background-color: #{{ playlist.color }}">
                 <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">
-                  <img src="{% static 'img/audio-playlist-thumb.png' %}">
+                  <img class="thumb" src="{% static 'img/audio-playlist-thumb.png' %}">
                 </a>
                 <h3>{{ playlist.name }}</h3>
                 <a type="button" href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
