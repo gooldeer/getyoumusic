@@ -70,9 +70,13 @@ html, body {
 }
 
 .header-right-button {
+    line-height:3em;
     margin-top: -50px;
-    max-height: 40px;
     float: right;
+}
+
+.header-right-button img {
+  vertical-align: middle;
 }
 
 /*Custom styles*/

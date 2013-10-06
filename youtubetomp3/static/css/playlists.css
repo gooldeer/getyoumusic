@@ -22,3 +22,12 @@ h3 {
     padding-top: 10px;
     display: block;
 }
+.header-right-button img {
+    max-height: 40px;
+}
+
+/*To fix bug with black non-transparent back fade*/
+.modal-backdrop.fade.in {
+opacity: 0.5;
+filter: alpha(opacity=50);
+}

@@ -90,3 +90,23 @@ def remove_media(request, playlistName, media):
     playlist.media_set.get(mediafile=media).delete()
 
     return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlistName,]))
+
+def change_playlist(request, playlistName, name=None, color=None):
+
+    # user = request.user
+    user = request.user
+    playlist = user.playlist_set.get(name=playlistName, user=user)
+
+    if name == None:
+        name = playlist.name
+    else:
+        if color == None:
+            color = playlist.color
+
+    playlist.name = name
+    playlist.color = color
+    playlist.save()
+
+    # playlist.update(name=name, color=color)
+
+    return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlist.name,]))

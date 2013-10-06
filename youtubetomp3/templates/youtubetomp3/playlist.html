@@ -20,11 +20,12 @@
     <div class="container">
 
       <h1>{{ playlist.name }}</h1>
-      <a data-toggle="modal" href="#myModal" type="button">
+      <a class="header-right-button" rel="popover" data-original-title="Pick color" data-placement="left">
         {% with "img/"|add:playlist.color|add:".png" as image %}
-        <img class="header-right-button" src="{% static image %}">
+        <img src="{% static image %}">
         {% endwith %}
       </a>
+
       <hr>
 
       <table border="0">
@@ -33,6 +34,7 @@
 
           <tr>
               <td>
+                  {% include "youtubetomp3/audio.html" %}
                   <a href="{{ media.mediafile }}">{{ media.mediafile }}</a>
               </td>
 
@@ -49,27 +51,62 @@
     </div>
   </div>
 
-    <table border="0">
-        <th>{{ playlist.name }}</th>
+  <div id="popover_content_wrapper" style="display: none">
+    <table border="0" style="width: 100%">
 
-        {% for media in media_set.all %}
+      <tr>
+          <td>
+              <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'fff' %}">
+                <div class="color-square" style="background-color: #fff"></div>
+              </a>
+          </td>
+          <td>
+            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'ffcccc' %}">
+              <div class="color-square" style="background-color: #ffcccc"></div>
+            </a>
+          </td>
+          <td>
+            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'cfecfa' %}">
+              <div class="color-square" style="background-color: #cfecfa"></div>
+            </a>
+          </td>
+      </tr>
 
-            <tr>
-                <td>
-                    <a href="{{ media.mediafile }}">{{ media.mediafile }}</a>
-                </td>
+      <tr>
+          <td>
+            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'ebfde1' %}">
+              <div class="color-square" style="background-color: #ebfde1"></div>
+            </a>
+          </td>
+          <td>
+            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'f5fec5' %}">
+              <div class="color-square" style="background-color: #f5fec5"></div>
+            </a>
+          </td>
+          <td>
+            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name '7b7b7b' %}">
+              <div class="color-square" style="background-color: #7b7b7b"></div>
+            </a>
+          </td>
+      </tr>
 
-                <td>
-                    <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.mediafile %}" method="GET">Remove</a>
-                </td>
-            </tr> 
-
-        {% endfor %}
     </table>
+  </div>
+{% endblock %}
 
-    <audio controls="controls">
-      {# <source src="track.ogg" type="audio/ogg" /> #}
-      <source src="../../media/track.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-    </audio>
+{% block javascript %}
+
+  <script type='text/javascript'>
+     $(document).ready(function () {
+       if ($("[rel=popover]").length) {
+        $("[rel=popover]").popover({
+         html : true, 
+          content: function() {
+            return $('#popover_content_wrapper').html();
+          }
+        });
+      }
+    });
+  </script>
+
 {% endblock %}
