@@ -28,20 +28,11 @@
 
       <hr>
 
-      <table border="0">
+      <table class="songs" border="0">
 
         {% for media in media_set.all %}
-
-          <tr>
-              <td>
-                  {% include "youtubetomp3/audio.html" %}
-                  <a href="{{ media.mediafile }}">{{ media.mediafile }}</a>
-              </td>
-
-              <td>
-                  <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.mediafile %}" method="GET">Remove</a>
-              </td>
-          </tr>
+        
+          {% include "youtubetomp3/audio.html" %}
 
         {% endfor %}
 

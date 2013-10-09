@@ -21,11 +21,16 @@ function pause(){
 function playPause(id){
     //Sets the active song since one of the functions could be play.
     activeSong = document.getElementById(id);
+    playButton = $("#play-pause");
+    playImageSource = $("#songPlayImage").val();
+    pauseImageSource = $("#songPauseImage").val();
     //Checks to see if the song is paused, if it is, play it from where it left off otherwise pause it.
     if (activeSong.paused){
+        playButton.attr('src', pauseImageSource);
          activeSong.play();
     }else{
          activeSong.pause();
+         playButton.attr('src', playImageSource);
     }
 }
 

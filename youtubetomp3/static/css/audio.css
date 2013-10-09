@@ -12,7 +12,8 @@
 }
 /*Play/Pause button*/
 #songPlayPause{
-
+    min-width: 70px;
+    min-height: 38px;
 }
 /*Song location slider*/
 #songSlider{
@@ -36,7 +37,7 @@
 }
 /*Volume Meter*/
 #volumeMeter{
-    width: 500px;
+    width: 50px;
     height: 10px;
     background-color: black;
 }

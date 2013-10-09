@@ -1,4 +1,6 @@
 from celery import task, current_task
+import os
+from pydub import AudioSegment
 
 from youtubetomp3.downloader import Downloader
 from youtubetomp3.models import Media
@@ -14,16 +16,28 @@ def download(url, current_user):
             	meta={'current': percent, 'total': 100})
 
 	downloader = Downloader()
-	filename = downloader.download(link=url, call=downloading)
-	print filename
+	d = downloader.download(link=url, call=downloading)
+	print d + ' downloaded'
 
-	playlist_field = Playlist.objects.create_playlist(name='default', user=current_user, is_audio=False)
+	filename = convert(d)
+	print filename + 'converted'
+
+	playlist_field = Playlist.objects.create_playlist(name='default', user=current_user, is_audio=True)
 	
 	if playlist_field == "DUBLICATE" :
-		playlist_field = Playlist.objects.get(name='default', user=current_user, is_audio=False)
+		playlist_field = Playlist.objects.get(name='default', user=current_user, is_audio=True)
 
 	if filename != None:
-		# mediafield = Media(mediafile=filename, playlist=playlist_field)
-		# mediafield.save()
 		Media.objects.create_media(playlist=playlist_field, mediafile=filename)
+
+def convert(url):
+	""" Convert video to mp3 """
+	filename = getName(url) + '.mp3'
+	AudioSegment.from_file(url).export(filename, format='mp3')
+	os.remove(url)
+
+	return filename
+
+def getName(url):
+	return os.path.splitext(url)[0]
 
