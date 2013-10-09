@@ -4,12 +4,12 @@
 
 <tr>
 
-    <audio id="song" ontimeupdate="updateTime()">
+    <audio id="{{ media.mediafile }}" ontimeupdate="updateTime()">
         <source src="{{ media.mediafile }}" type="audio/mp3"/>
         Your browser does not support the audio tag.
     </audio>
     <td>
-        <div class="btn btn-danger" type="button" id="songPlayPause" onclick="playPause('song')">
+        <div class="btn btn-danger" type="button" id="songPlayPause" onclick="playPause('{{ media.mediafile }}')">
             <img id="play-pause" src="{% static 'img/play.png' %}">
             <input type="hidden" id="songPlayImage" value="{% static 'img/play.png' %}">
             <input type="hidden" id="songPauseImage" value="{% static 'img/pause.png' %}">
