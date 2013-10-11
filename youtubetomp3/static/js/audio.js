@@ -1,4 +1,6 @@
+var id;
 var activeSong;
+var container;
 //Plays the song. Just pass the id of the audio element.
 function play(id){
     //Sets the active song to the song being played.  All other functions depend on this.
@@ -8,10 +10,10 @@ function play(id){
     
     //Calculates the starting percentage of the song.
     var percentageOfVolume = activeSong.volume / 1;
-    var percentageOfVolumeMeter = document.getElementById('volumeMeter').offsetWidth * percentageOfVolume;
+    var percentageOfVolumeMeter = container.find('#volumeMeter').width * percentageOfVolume;
     
     //Fills out the volume status bar.
-    document.getElementById('volumeStatus').style.width = Math.round(percentageOfVolumeSlider) + "px";
+    container.find('#volumeStatus').width(Math.round(percentageOfVolumeSlider));
 }
 //Pauses the active song.
 function pause(){
@@ -19,35 +21,53 @@ function pause(){
 }
 //Does a switch of the play/pause with one button.
 function playPause(id){
+    //stops playing song if it is
+    var oldActiveSong = activeSong;
+    var oldContainer = container;
+
     //Sets the active song since one of the functions could be play.
-    activeSong = document.getElementById(id);
-    playButton = $("#play-pause");
+    container = $("#" + id);
+    activeSong = document.getElementById("song" + id);
+    playButton = container.find("#play-pause");
     playImageSource = $("#songPlayImage").val();
     pauseImageSource = $("#songPauseImage").val();
+
     //Checks to see if the song is paused, if it is, play it from where it left off otherwise pause it.
-    if (activeSong.paused){
-        playButton.attr('src', pauseImageSource);
+    if (activeSong.paused) {
+
+         playButton.attr('src', pauseImageSource);
          activeSong.play();
-    }else{
+    } else {
+
          activeSong.pause();
          playButton.attr('src', playImageSource);
+    }
+
+    if (oldActiveSong != activeSong && !oldActiveSong.paused) {
+        oldActiveSong.pause();
+        playButton = oldContainer.find("#play-pause");
+        playButton.attr('src', playImageSource);
     }
 }
 
 //Updates the current time function so it reflects where the user is in the song.
 //This function is called whenever the time is updated.  This keeps the visual in sync with the actual time.
 function updateTime(){
-    var currentSeconds = (Math.floor(activeSong.currentTime % 60) < 10 ? '0' : '') + Math.floor(activeSong.currentTime % 60);
+    var currentSeconds = 
+        (Math.floor(activeSong.currentTime % 60) < 10 ? '0' : '') + Math.floor(activeSong.currentTime % 60);
     var currentMinutes = Math.floor(activeSong.currentTime / 60);
     //Sets the current song location compared to the song duration.
-    document.getElementById('songTime').innerHTML = currentMinutes + ":" + currentSeconds + ' / ' + Math.floor(activeSong.duration / 60) + ":" + (Math.floor(activeSong.duration % 60) < 10 ? '0' : '') + Math.floor(activeSong.duration % 60);
+    container.find("#songTime").html(currentMinutes + ":" + currentSeconds + ' / ' + 
+        Math.floor(activeSong.duration / 60) + ":" + 
+        (Math.floor(activeSong.duration % 60) < 10 ? '0' : '') + 
+        Math.floor(activeSong.duration % 60));
 
     //Fills out the slider with the appropriate position.
     var percentageOfSong = (activeSong.currentTime/activeSong.duration);
-    var percentageOfSlider = document.getElementById('songSlider').offsetWidth * percentageOfSong;
+    var percentageOfSlider = container.find("#songSlider").width() * percentageOfSong;
     
     //Updates the track progress div.
-    document.getElementById('trackProgress').style.width = Math.round(percentageOfSlider) + "px";
+    container.find('#trackProgress').width(Math.round(percentageOfSlider));
 }
 function volumeUpdate(number){
     //Updates the volume of the track to a certain number.
@@ -66,9 +86,9 @@ function changeVolume(number, direction){
     
     //Finds the percentage of the volume and sets the volume meter accordingly.
     var percentageOfVolume = activeSong.volume / 1;
-    var percentageOfVolumeSlider = document.getElementById('volumeMeter').offsetWidth * percentageOfVolume;
+    var percentageOfVolumeSlider = container.find('#volumeMeter').width() * percentageOfVolume;
     
-    document.getElementById('volumeStatus').style.width = Math.round(percentageOfVolumeSlider) + "px";
+    document.getElementById('volumeStatus').width(Math.round(percentageOfVolumeSlider));
 }
 //Sets the location of the song based off of the percentage of the slider clicked.
 function setLocation(percentage){
@@ -90,23 +110,24 @@ function setSongPosition(obj,e){
 }
 
 //Set's volume as a percentage of total volume based off of user click.
-function setVolume(percentage){
+function setVolume(percentage,container){
     activeSong.volume =  percentage;
     
     var percentageOfVolume = activeSong.volume / 1;
-    var percentageOfVolumeSlider = document.getElementById('volumeMeter').offsetWidth * percentageOfVolume;
+    var percentageOfVolumeSlider = container.find('#volumeMeter').width() * percentageOfVolume;
     
-    document.getElementById('volumeStatus').style.width = Math.round(percentageOfVolumeSlider) + "px";
+    container.find('#volumeStatus').width(Math.round(percentageOfVolumeSlider));
 }
 
 //Set's new volume id based off of the click on the volume bar.
-function setNewVolume(obj,e){
+function setNewVolume(obj,e,id){
+    var container = $("#" + id);
     var volumeSliderWidth = obj.offsetWidth;
     var evtobj = window.event? event: e;
     clickLocation = evtobj.layerX - $(obj).offset().left;
     
     var percentage = (clickLocation/volumeSliderWidth);
-    setVolume(percentage);
+    setVolume(percentage,container);
 }
 //Stop song by setting the current time to 0 and pausing the song.
 function stopSong(){

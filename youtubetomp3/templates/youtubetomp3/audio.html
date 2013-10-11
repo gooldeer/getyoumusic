@@ -2,14 +2,14 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/audio.css' %}"/>
 
-<tr>
+<tr id="{{ media.id }}">
 
-    <audio id="{{ media.mediafile }}" ontimeupdate="updateTime()">
+    <audio id="song{{ media.id }}" ontimeupdate="updateTime()">
         <source src="{{ media.mediafile }}" type="audio/mp3"/>
         Your browser does not support the audio tag.
     </audio>
     <td>
-        <div class="btn btn-danger" type="button" id="songPlayPause" onclick="playPause('{{ media.mediafile }}')">
+        <div class="btn btn-danger" type="button" id="songPlayPause" onclick="playPause('{{ media.id }}')">
             <img id="play-pause" src="{% static 'img/play.png' %}">
             <input type="hidden" id="songPlayImage" value="{% static 'img/play.png' %}">
             <input type="hidden" id="songPauseImage" value="{% static 'img/pause.png' %}">
@@ -27,7 +27,7 @@
     <!-- Volume Meter sets the new volume on click.  The Volume Status div is embedded inside so it can grow
     within bounds to simulate percentage feel -->
     <td>
-        <div id="volumeMeter" onclick="setNewVolume(this,event)"><div id="volumeStatus"></div></div>
+        <div id="volumeMeter" onclick="setNewVolume(this,event,{{ media.id }})"><div id="volumeStatus"></div></div>
     </td>
 
     <td>
