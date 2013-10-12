@@ -31,8 +31,7 @@ BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
 
 CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
 
-CELERY_IMPORTS=('youtubetomp3.views',
-                'youtubetomp3.jobs',)
+CELERY_IMPORTS=('youtubetomp3.core.jobs')
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

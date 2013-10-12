@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader
 from django.utils import simplejson as json
 
-from youtubetomp3.jobs import download
+from youtubetomp3.core.jobs import convert
 from youtubetomp3.models import Playlist
 
 def index(request):
@@ -29,7 +29,7 @@ def poll_state(request):
 def init_work(request):
     """ A view to start a background job """
     if 'youtubeLink' in request.POST:
-    	job = download.delay(request.POST['youtubeLink'], request.user)
+    	job = convert.delay(request.POST['youtubeLink'], request.user)
         
     return HttpResponse(job)
 

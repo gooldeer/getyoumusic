@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 ''' Python API for YouTube
     Copyright (C)  2013 nagev
 
@@ -16,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.  '''
 
-__version__ = "0.3.05"
+__version__ = "0.3.10"
 __author__ = "nagev"
 __license__ = "GPLv3"
 
@@ -25,122 +23,111 @@ import sys
 import time
 import json
 import logging
-import urllib
-import urllib2
 
-logging.basicConfig(level=logging.INFO)
 
-from urlparse import parse_qs
+def decode_if_py3(data):
+    return data.decode("UTF-8")
 
-def dojsfunc2(f1argname, f2arg1, f2arg2, f2name, f2bod, sig):
-    logging.debug("Doing function 2 (names %s)" % f2name)
-    f2parts = f2bod.split(";")
-    logging.debug("f2parts %s" % f2parts)
-    newvarname = ""
-    newvarval = 0
-    for part in f2parts:
-        logging.debug("sig is currently: %s" % sig)
-        logging.debug("performing part: %s" % part)
-        # newvar is an index of sig
-        if re.match(r'var\s(\w)=(\w)\[(\d+)\]', part):
-            logging.debug("newvar is an index of sig")
-            match = re.match(r'var\s(\w)=(\w)\[(\d+)\]', part)
-            newvarname = match.group(1)
-            if match.group(2) == f1argname:
-                newvarval = sig[int(match.group(3))]
-                logging.debug("new varname: %s" % newvarname)
-                logging.debug("new varval : %s" % newvarval)
-            else:
-                raise RuntimeError("no match in f2 for part: %s" % part)
-        # a[n]=a[b%a.length]
-        elif re.match(r'(\w)\[(\d+)\]=(\w)\[(\w)\%(\w)\.length\]', part):
-            match = re.match(r'(\w)\[(\d+)\]=(\w)\[(\w)\%(\w)\.length\]', part)
-            if match.group(1) == f1argname and match.group(3) == f1argname and\
-                match.group(4) == 'b' and match.group(5) == f1argname:
-                logging.debug("a[n]=a[b%a.length]")
-                index = int(match.group(2))
-                newchar = sig[(int(f2arg2) % len(sig))]
-                sig = sig[:index] + newchar + sig[index + 1:]
-                logging.debug("sig is now: %s" % sig)
-            else:
-                raise RuntimeError("no match in f2 for part: %s" % part)
-        # a[b]=c
-        elif re.match(r'(\w)\[(\w)\]=(\w)', part):
-            match = re.match(r'(\w)\[(\w)\]=(\w)', part)
-            if match.group(1) == f1argname and match.group(2) == 'b' and\
-                match.group(3) == newvarname:
-                logging.debug("a[b]=c")
-                index = int(f2arg2)
-                sig = sig[:index] + str(newvarval) + sig[index + 1:]
-                logging.debug("sig is now: %s" % sig)
-            else:
-                raise RuntimeError("no match in f2 for part: %s" % part)
-        elif re.match(r'return\sa', part):
-            return sig
-        else:
-            raise RuntimeError("no match in f2 for part: %s" % part)
-            
-def dojs(sig, f1arg, f1bod, f2name=None, f2arg=None, f2bod=None):
-    # split js function components
-    f1parts = f1bod.split(";")
-    logging.debug("f1parts %s" % f1parts)
-    for part in f1parts:
-        logging.debug("performing part: %s" % part)
-        # split, do nothing
-        if re.match(r'%s=%s\.split\(""\)' % (f1arg, f1arg), part):
-            logging.debug("split, do nothing")
-        # call secondary function
-        elif re.match(r'%s=%s\((\w+),(\w+)\)' % (f1arg, f2name), part):
-            match = re.match(r'%s=%s\((\w+),(\w+)\)' % (f1arg, f2name), part)
-            f2arg1, f2arg2 = match.group(1), match.group(2)
-            logging.debug("call f2; f2arg1: %s; f2arg2: %s" % (f2arg1, f2arg2))
-            sig = dojsfunc2(f1arg, f2arg1, f2arg2, f2name, f2bod, sig)
-        # reverse        
-        elif re.match(r'%s=%s\.reverse\(\)' % (f1arg, f1arg), part):
-            logging.debug("perform reverse")
-            sig = sig[::-1]
-            #sig = sig.reverse()
-            logging.debug("sig: %s" % sig)
-        # slice
-        elif re.match(r'%s=%s\.slice\((\d+)\)' % (f1arg, f1arg), part):
-            match = re.match(r'%s=%s\.slice\((\d+)\)' % (f1arg, f1arg), part)
-            sliceval = int(match.group(1))
-            logging.debug("slice %s" % sliceval)
-            sig = sig[sliceval:]
-            logging.debug("sig: %s" % sig)
-        # return
-        elif re.match(r'return %s\.join\(""\)' % f1arg, part):
-            logging.debug("returning sig: %s" % sig)
-            return sig
-        else:
-            raise RuntimeError("no match for %s" % part)
+if sys.version_info[:2] >= (3, 0):
+    from urllib.request import build_opener
+    from urllib.parse import parse_qs, unquote_plus
+else:
+    decode_if_py3 = lambda x: x
+    from urllib2 import build_opener
+    from urllib import unquote_plus
+    from urlparse import parse_qs
 
-def _decodesig(s, js):
-    match = re.search(r'g.sig\|\|(\w+)\(g.s\)', js)
-    f1name = match.group(1)
-    match = re.search(r'function %s\((\w+)\)\{([^\{]+)\}' % f1name, js)
-    f1arg = match.group(1)
-    f1bod = match.group(2)
-    logging.debug('function name is: %s' % f1name)
-    logging.debug("function argument is: %s" % f1arg)
-    logging.debug("function body is: %s" % f1bod)
-    match = re.search(r'(\w+)\(\w+,\d+\)', f1bod)
-    if match:
-        f2name = match.group(1)
-        logging.debug('function2 name is: %s' % f2name)
-        match = re.search(r'(function %s\((\w+,\w+)\)\{([^\{]+)\})' % f2name,
-               js)
-        f2 = match.group(1)
-        f2arg = match.group(2)
-        f2bod = match.group(3)
+#logging.basicConfig(level=logging.DEBUG)
 
-        logging.debug('function2 is: %s' % f2)
-        logging.debug('function 2 args: %s' % f2arg)
-        logging.debug('function 2 bod: %s' % f2bod)
-        
-        return dojs(s, f1arg, f1bod, f2name, f2arg, f2bod)
+
+def _extract_function_from_js(name, js):
+    # Find a function called `name` and extract components
+    m = re.search(r'function %s\(((?:\w+,?)+)\)\{([^}]+)\}' % name, js)
+    return {'name': name, 'parameters': m.group(1).split(","),
+            'body': m.group(2)}
+
+
+def _getval(val, argsdict):  # resolves variable values. preserves int literals
+    m = re.match(r'(\d+)', val)
+    if m:
+        return(int(m.group(1)))
+    elif val in argsdict:
+        return argsdict[val]
     else:
-        return dojs(s, f1arg, f1bod)
+        raise RuntimeError("Error val %s from dict %s" % (val, argsdict))
+
+
+def _get_func_from_call(caller_function, name, arguments, js):
+    newfunction = _extract_function_from_js(name, js)
+    newfunction['args'] = {}
+    for n, arg in enumerate(arguments):
+        value = _getval(arg, caller_function['args'])
+        param = newfunction['parameters'][n]
+        newfunction['args'][param] = value
+    return newfunction
+
+
+def _solve(f, js):
+    # solve basic javascript function
+    parts = f['body'].split(";")
+    for part in parts:
+        logging.debug("Working on part: %s" % part)
+        # split or join, do nothing
+        m = re.match(r'(\w+)=(\w+)\.(?:split|join)\(""\)', part)
+        if m and m.group(1) == m.group(2):
+            continue
+        m = re.match(r'(\w+)=(\w+)\(((?:\w+,?)+)\)', part)
+        if m:  # a function call
+            lhs, funcname, args = m.group(*range(1, 4))
+            newfunc = _get_func_from_call(f, funcname, args.split(","), js)
+            f['args'][lhs] = _solve(newfunc, js)  # recursive call
+            continue
+        m = re.match(r'var\s(\w+)=(\w+)\[(\w+)\]', part)
+        if m:  # new var is an index of another var; eg: var a = b[c]
+            b, c = [_getval(x, f['args']) for x in m.group(*range(2, 4))]
+            f['args'][m.group(1)] = b[c]
+            continue
+        m = re.match(r'(\w+)\[(\w+)\]=(\w+)\[(\w+)\%(\w+)\.length\]', part)
+        if m:  # a[b]=c[d%e.length]
+            vals = m.group(*range(1, 6))
+            a, b, c, d, e = [_getval(x, f['args']) for x in vals]
+            f['args'][m.group(1)] = a[:b] + c[d % len(e)] + a[b + 1:]
+            continue
+        m = re.match(r'(\w+)\[(\w+)\]=(\w+)', part)
+        if m:  # a[b]=c
+            a, b, c = [_getval(x, f['args']) for x in m.group(*range(1, 4))]
+            f['args'][m.group(1)] = a[:b] + c + a[b + 1:]  # a[b] = c
+            continue
+        m = re.match(r'return (\w+)(\.join\(""\))?', part)
+        if m:  # return
+            return f['args'][m.group(1)]
+        m = re.match(r'(\w+)=(\w+)\.reverse\(\)', part)
+        if m:  # reverse
+            f['args'][m.group(1)] = _getval(m.group(2), f['args'])[::-1]
+            continue
+        m = re.match(r'(\w+)=(\w+)\.slice\((\w+)\)', part)
+        if m:  # slice a=b.slice(c)
+            a, b, c = [_getval(x, f['args']) for x in m.group(*range(1, 4))]
+            f['args'][m.group(1)] = b[c:]
+            continue
+        raise RuntimeError("no match for %s" % part)
+
+
+def _decodesig(sig, js):
+    # get main function name from a function call
+    m = re.search(r'\w\.sig\|\|(\w+)\(\w+\.\w+\)', js)
+    funcname = m.group(1)
+    function = _extract_function_from_js(funcname, js)
+    if not len(function['parameters']) == 1:
+        raise RuntimeError("Main sig js function has more than one arg: %s" %
+                           function['parameters'])
+    function['args'] = {function['parameters'][0]: sig}
+    return _solve(function, js)
+
+
+def new(url):
+    return Pafy(url)
+
 
 class Stream():
     resolutions = {
@@ -164,10 +151,9 @@ class Stream():
 
     def __init__(self, streammap, opener, title="ytvid", js=None):
         if not streammap.get("sig", ""):
-            decodedsig = [_decodesig(streammap['s'][0], js)]
-            streammap['sig'] = [decodedsig][0]
+            logging.debug("Decrypting sig: %s" % streammap['s'][0])
+            streammap['sig'] = [_decodesig(streammap['s'][0], js)]
             logging.debug("Calculated decrypted sig: %s" % streammap['sig'][0])
-            logging.debug("New decode method gets %s" % decodedsig[0])
         self.url = streammap['url'][0] + '&signature=' + streammap['sig'][0]
         self.vidformat = streammap['type'][0].split(';')[0]
         self.resolution = self.resolutions[streammap['itag'][0]][0]
@@ -175,39 +161,39 @@ class Stream():
         self.itag = streammap['itag'][0]
         self.title = title
         self.filename = self.title + "." + self.extension
+        self.fsize = None
         self._opener = opener
 
     def get_filesize(self):
-        opener = self._opener
-        return int(opener.open(self.url).headers['content-length'])
+        if not self.fsize:
+            opener = self._opener
+            self.fsize = int(opener.open(self.url).headers['content-length'])
+        return self.fsize
 
-    def download(self, progress=True, filepath="", callback=None):
-
-        response = self._opener.open(self.url)
-        total = int(response.info().getheader('Content-Length').strip())
-        print (u"-Downloading '{}' [{:,} Bytes]".format(self.filename, total)).encode('UTF-8')
+    def download(self, filepath="", quiet=False, callback=None):
         status_string = ('  {:,} Bytes [{:.2%}] received. Rate: [{:4.0f} '
                          'kbps].  ETA: [{:.0f} secs]')
-        chunksize, bytesdone, t0 = 1024, 0, time.time()
+        response = self._opener.open(self.url)
+        total = int(response.info()['Content-Length'].strip())
+        chunksize, bytesdone, t0 = 16384, 0, time.time()
         outfh = open(filepath or self.filename, 'wb')
-        while 1:
+        while True:
             chunk = response.read(chunksize)
-            elapsed = time.time() - t0
             outfh.write(chunk)
+            elapsed = time.time() - t0
             bytesdone += len(chunk)
+            rate = (bytesdone / 1024) / elapsed
+            eta = (total - bytesdone) / (rate * 1024)
+            progress_stats = (bytesdone, bytesdone * 1.0 / total, rate, eta)
             if not chunk:
                 outfh.close()
                 break
-            if progress:
-                rate = (bytesdone / 1024) / elapsed
-                eta = (total - bytesdone) / (rate * 1024)
-                percent = bytesdone * 1.0 / total
-                callback(percent)
-                display = (bytesdone, percent, rate, eta)
-                status = status_string.format(*display)
+            if not quiet:
+                status = status_string.format(*progress_stats)
                 sys.stdout.write("\r" + status + ' ' * 4 + "\r")
-                sys.stdout.flush
-        print "\nDone"
+                sys.stdout.flush()
+            if callback:
+                callback(total, *progress_stats)
 
 
 class Pafy():
@@ -216,10 +202,9 @@ class Pafy():
         return self.length
 
     def __repr__(self):
-        out = ""
         keys = "Title Author ID Duration Rating Views Thumbnail Keywords"
         keys = keys.split(" ")
-        keywords = ", ".join(self.keywords).decode("utf8")
+        keywords = ", ".join(self.keywords)
         length = time.strftime('%H:%M:%S', time.gmtime(self.length))
         info = dict(Title=self.title,
                     Author=self.author,
@@ -229,63 +214,63 @@ class Pafy():
                     ID=self.videoid,
                     Thumbnail=self.thumb,
                     Keywords=keywords)
-        for k in keys:
-            try:
-                out += "%s: %s\n" % (k, info[k])
-            except KeyError:
-                pass
-        return out.encode("utf8", "ignore")
+        return "\n".join(["%s: %s" % (k, info.get(k, "")) for k in keys])
+
+    def _setmetadata(self, allinfo):
+        f = lambda x: allinfo[x][0]
+        self.title = f('title')
+        self.author = f('author')
+        self.videoid = f('video_id')
+        self.rating = float(f('avg_rating'))
+        self.length = int(f('length_seconds'))
+        self.viewcount = int(f('view_count'))
+        self.thumb = unquote_plus(f('thumbnail_url'))
+        self.duration = time.strftime('%H:%M:%S', time.gmtime(self.length))
+        self.formats = f('fmt_list').split(",")
+        self.formats = [x.split("/") for x in self.formats]
+        if 'keywords' in allinfo:
+            self.keywords = f('keywords').split(',')
+        if allinfo.get('iurlsd'):
+            self.bigthumb = f('iurlsd')
+        if allinfo.get('iurlmaxres'):
+            self.bigthumbhd = f('iurlmaxres')
+        return
 
     def __init__(self, video_url):
         infoUrl = 'https://www.youtube.com/get_video_info?video_id='
-        try:
-            vidid = re.search(r'v=([a-zA-Z0-9-_]*)', video_url).group(1)
-        except:
-            raise RuntimeError("bad video url")
+        m = re.search(r'\bv=([a-zA-Z0-9-_]{11})', video_url)
+        if not m:
+            m = re.search(r'\b([a-zA-Z0-9-_]{11})', video_url)
+        if not m:
+            err = "Need 11 character video id or the URL of the video. Got %s"
+            raise RuntimeError(err % video_url)
+        vidid = m.group(1)
         infoUrl += vidid + "&asv=3&el=detailpage&hl=en_US"
-        self.urls = []
-        opener = urllib2.build_opener()
+        opener = build_opener()
         ua = ("Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64;"
               "Trident/5.0)")
         opener.addheaders = [('User-Agent', ua)]
         self.keywords = ""
-        self.rawinfo = opener.open(infoUrl).read()
-        logging.debug("requested page: %s" % infoUrl)
-        self.allinfo = parse_qs(self.rawinfo)
-        self.title = self.allinfo['title'][0].decode('utf-8')
-        self.author = self.allinfo['author'][0]
-        self.videoid = self.allinfo['video_id'][0]
-        if 'keywords' in self.allinfo:
-            self.keywords = self.allinfo['keywords'][0].split(',')
-        self.rating = float(self.allinfo['avg_rating'][0])
-        self.length = int(self.allinfo['length_seconds'][0])
-        self.duration = time.strftime('%H:%M:%S', time.gmtime(self.length))
-        self.viewcount = int(self.allinfo['view_count'][0])
-        self.thumb = urllib.unquote_plus(self.allinfo['thumbnail_url'][0])
-        self.formats = self.allinfo['fmt_list'][0].split(",")
-        self.formats = [x.split("/") for x in self.formats]
-        if self.allinfo.get('iurlsd'):
-            self.bigthumb = self.allinfo['iurlsd'][0]
-        if self.allinfo.get('iurlmaxres'):
-            self.bigthumbhd = self.allinfo['iurlmaxres'][0]
-        streamMap = self.allinfo['url_encoded_fmt_stream_map'][0].split(',')
+        allinfo = parse_qs(decode_if_py3(opener.open(infoUrl).read()))
+        if allinfo['status'][0] == "fail":
+            reason = allinfo['reason'][0] or "Bad video argument"
+            raise RuntimeError("Youtube says: %s" % reason)
+        self._setmetadata(allinfo)
+        streamMap = allinfo['url_encoded_fmt_stream_map'][0].split(',')
         smap = [parse_qs(sm) for sm in streamMap]
         js = None
         if not smap[0].get("sig", ""):  # vevo!
             watchurl = "https://www.youtube.com/watch?v=" + vidid
-            logging.debug("requested page: %s" % watchurl)
-            watchinfo = opener.open(watchurl).read()
-            match = re.search(r';ytplayer.config = ({.*?});', watchinfo)
+            watchinfo = opener.open(watchurl).read().decode("UTF-8")
+            m = re.search(r';ytplayer.config = ({.*?});', watchinfo)
             try:
-                myjson = json.loads(match.group(1))
+                myjson = json.loads(m.group(1))
             except:
-                raise NameError('Problem handling this video')
+                raise RuntimeError('Problem handling this video')
             args = myjson['args']
             streamMap = args['url_encoded_fmt_stream_map'].split(",")
             html5player = myjson['assets']['js']
-            logging.debug("got js url: %s" % html5player)
-            js = opener.open(html5player).read()
-            logging.debug("got js from %s" % html5player)
+            js = opener.open(html5player).read().decode("UTF-8")
             smap = [parse_qs(sm) for sm in streamMap]
         self.streams = [Stream(sm, opener, self.title, js) for sm in smap]
 
@@ -300,4 +285,4 @@ class Pafy():
                 return (key3d, keyftype, keyres)
             else:
                 return (key3d, keyres, keyftype)
-        return max(self.streams, key=_sortkey)
+        return min(self.streams, key=_sortkey)
