@@ -1,4 +1,4 @@
-from youtubetomp3.pafy import Pafy
+from youtubetomp3.libs.pafy import Pafy
 import youtubetomp3.core.utils as Utils
 
 class Downloader():

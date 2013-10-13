@@ -11,6 +11,7 @@ def convert(url, current_user):
 	"Download video file from youtube directly on server"
 
 	def downloading(total, *progress_stats):
+		# progress_stats[1] - percentage of download
 			percent = progress_stats[1] * 100
 			current_task.update_state(state='PROGRESS',
             	meta={'current': percent, 'total': 100})

@@ -5,7 +5,7 @@ import itertools as IT
 from django.conf import settings
 
 # Creates track + number name of file. Source: http://stackoverflow.com/questions/13852700/python-create-file-but-if-name-exists-add-number
-def uniquify(path, current_user, sep = ''):
+def uniquify(path, sep = ''):
     """ Uniq filenames """
     print 'path : ' + path
 
@@ -32,7 +32,7 @@ def uniquify(path, current_user, sep = ''):
 
         os.close(fd)
 
-    return createLink(os.path.basename(path), current_user)
+    return os.path.basename(path)
 
 def getName(url):
     return os.path.splitext(url)[0]

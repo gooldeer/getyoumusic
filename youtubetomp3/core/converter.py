@@ -12,9 +12,13 @@ class Converter(object):
         self.user = user
 
     def convert(self, path):
-        filename = Utils.uniquify(Utils.getName(path) + '.mp3', self.user)
-        AudioSegment.from_file(path).export(filename, format='mp3')
+        filename = Utils.uniquify(Utils.getName(path) + '.mp3')
+
+        AudioSegment.from_file(path).export(
+            Utils.createPath(filename, self.user), 
+            format='mp3')
+        
         os.remove(path)
 
-        return filename
+        return Utils.createLink(filename, self.user)
 

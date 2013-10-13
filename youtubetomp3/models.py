@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 import os
+
+import youtubetomp3.core.utils as Utils
 
 # Create your models here.
 
@@ -44,7 +47,11 @@ class Media(models.Model):
 
     def delete(self):
         print self.mediafile
-        os.remove(self.mediafile)
+
+        os.remove(Utils.createPath(
+            os.path.basename(self.mediafile), 
+            self.playlist.user))
+        
         super(Media, self).delete()
 
 
