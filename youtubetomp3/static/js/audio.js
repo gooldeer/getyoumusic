@@ -1,6 +1,8 @@
 var id;
 var activeSong;
 var container;
+
+
 //Plays the song. Just pass the id of the audio element.
 function play(id){
     //Sets the active song to the song being played.  All other functions depend on this.
@@ -134,3 +136,32 @@ function stopSong(){
     activeSong.currentTime = 0;
     activeSong.pause();
 }
+
+$(document).ready(function() {
+
+    var link = $("#songSrc1").val();
+
+    soundManager.setup({
+
+        url: 'C:/media/',
+        preferFlash: true,
+
+        onready: function() {
+
+            var mySound = soundManager.createSound({
+
+                id: 'aSound',
+                stream: true,
+                autoLoad: true,
+                url: link
+
+            });
+
+            mySound.play();
+        },
+
+        ontimeout: function() {
+            alert("Sheet!");
+        }
+    });
+});

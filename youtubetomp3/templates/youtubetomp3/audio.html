@@ -1,13 +1,15 @@
 <!-- Includes the necessary CSS and Javascript libraries for full customization -->
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/audio.css' %}"/>
-
 <tr id="{{ media.id }}">
 
-    <audio id="song{{ media.id }}" ontimeupdate="updateTime()">
+    <audio id="song{{ media.id }}" ontimeupdate="updateTime()" preload="metadata">
         <source src="{{ media.mediafile }}" type="audio/mp3"/>
+        <source src="{{ media.mediafile }}" type="audio/ogg"/>
         Your browser does not support the audio tag.
     </audio>
+
+    <input type="hidden" id="songSrc{{ media.id }}" value="{{ media.mediafile }}">
+
     <td>
         <div class="btn btn-danger" type="button" id="songPlayPause" onclick="playPause('{{ media.id }}')">
             <img id="play-pause" src="{% static 'img/play.png' %}">
@@ -41,5 +43,3 @@
     </td>
 
 </tr>
-
-<script type="text/javascript" src="{% static 'js/audio.js' %}"></script>

@@ -20,7 +20,8 @@ def convert(url, current_user):
 	d = downloader.download(call=downloading)
 	print d + ' downloaded'
 
-	filename = Converter(current_user).convert(d)
+	CONVERT_TO = 'mp3'
+	filename = Converter(current_user).convert(d, CONVERT_TO)
 	print filename + ' converted'
 
 	playlist_field = Playlist.objects.create_playlist(name='default', user=current_user, is_audio=True)

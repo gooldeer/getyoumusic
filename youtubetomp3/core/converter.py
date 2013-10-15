@@ -11,12 +11,12 @@ class Converter(object):
         super(Converter, self).__init__()
         self.user = user
 
-    def convert(self, path):
-        filename = Utils.uniquify(Utils.getName(path) + '.mp3')
+    def convert(self, path, ext):
+        filename = Utils.uniquify(Utils.getName(path) + '.' + ext)
 
         AudioSegment.from_file(path).export(
             Utils.createPath(filename, self.user), 
-            format='mp3')
+            format=ext)
         
         os.remove(path)
 

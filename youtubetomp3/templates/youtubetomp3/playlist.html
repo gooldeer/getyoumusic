@@ -5,6 +5,7 @@
 {% block style %}
   {% load staticfiles %}
   <link href="{% static 'css/playlist.css' %}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/audio.css' %}"/>
 {% endblock %}
 
 {% block sidebar %}
@@ -86,6 +87,9 @@
 {% endblock %}
 
 {% block javascript %}
+
+  <script type="text/javascript" src="{% static 'js/audio.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/soundmanager2.js' %}"></script>
 
   <script type='text/javascript'>
      $(document).ready(function () {
