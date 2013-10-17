@@ -48,17 +48,20 @@
 
       <tr>
           <td>
-              <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'fff' %}">
+              <a onclick="changeColor('{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'fff' %}')"
+                 href="#">
                 <div class="color-square" style="background-color: #fff"></div>
               </a>
           </td>
           <td>
-            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'ffcccc' %}">
+            <a onclick="changeColor('{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'ffcccc' %}')"
+                 href="#">
               <div class="color-square" style="background-color: #ffcccc"></div>
             </a>
           </td>
           <td>
-            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'cfecfa' %}">
+            <a onclick="changeColor('{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'cfecfa' %}')"
+                 href="#">
               <div class="color-square" style="background-color: #cfecfa"></div>
             </a>
           </td>
@@ -66,17 +69,20 @@
 
       <tr>
           <td>
-            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'ebfde1' %}">
+            <a onclick="changeColor('{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'ebfde1' %}')"
+                 href="#">
               <div class="color-square" style="background-color: #ebfde1"></div>
             </a>
           </td>
           <td>
-            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'f5fec5' %}">
+            <a onclick="changeColor('{% url 'youtubetomp3:change_playlist' playlist.name playlist.name 'f5fec5' %}')"
+                 href="#">
               <div class="color-square" style="background-color: #f5fec5"></div>
             </a>
           </td>
           <td>
-            <a href="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name '7b7b7b' %}">
+            <a onclick="changeColor('{% url 'youtubetomp3:change_playlist' playlist.name playlist.name '7b7b7b' %}')"
+                 href="#">
               <div class="color-square" style="background-color: #7b7b7b"></div>
             </a>
           </td>
@@ -88,11 +94,10 @@
 
 {% block javascript %}
 
-  <script type="text/javascript" src="{% static 'js/audio.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/soundmanager2.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/playlist.js' %}"></script>
-
-  <script type='text/javascript'>
+  <script type="text/javascript" src="{% static 'js/audio.js' %}"></script>
+  
+  <!--<script type='text/javascript'>
      $(document).ready(function () {
        if ($("[rel=popover]").length) {
         $("[rel=popover]").popover({
@@ -103,6 +108,7 @@
         });
       }
     });
-  </script>
+  </script>-->
+  
 
 {% endblock %}

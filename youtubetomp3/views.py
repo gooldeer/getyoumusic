@@ -109,4 +109,4 @@ def change_playlist(request, playlistName, name=None, color=None):
 
     # playlist.update(name=name, color=color)
 
-    return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlist.name,]))
+    return HttpResponse(playlist.color)
