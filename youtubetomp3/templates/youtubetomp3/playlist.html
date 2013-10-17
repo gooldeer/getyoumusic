@@ -23,7 +23,7 @@
       <h1>{{ playlist.name }}</h1>
       <a class="header-right-button" rel="popover" data-original-title="Pick color" data-placement="left">
         {% with "img/"|add:playlist.color|add:".png" as image %}
-        <img src="{% static image %}">
+        <img id="color" src="{% static image %}">
         {% endwith %}
       </a>
 
@@ -90,6 +90,7 @@
 
   <script type="text/javascript" src="{% static 'js/audio.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/soundmanager2.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/playlist.js' %}"></script>
 
   <script type='text/javascript'>
      $(document).ready(function () {
