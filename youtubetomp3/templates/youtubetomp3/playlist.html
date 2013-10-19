@@ -21,7 +21,7 @@
     <div class="container">
 
       <h1>{{ playlist.name }}</h1>
-      <a class="header-right-button" rel="popover" data-original-title="Pick color" data-placement="left">
+      <a class="header-right-button" rel="popover" data-original-title="Pick color" data-placement="left" href="#">
         {% with "img/"|add:playlist.color|add:".png" as image %}
         <img id="color" src="{% static image %}">
         {% endwith %}
@@ -96,19 +96,5 @@
 
   <script type="text/javascript" src="{% static 'js/playlist.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/audio.js' %}"></script>
-  
-  <!--<script type='text/javascript'>
-     $(document).ready(function () {
-       if ($("[rel=popover]").length) {
-        $("[rel=popover]").popover({
-         html : true, 
-          content: function() {
-            return $('#popover_content_wrapper').html();
-          }
-        });
-      }
-    });
-  </script>-->
-  
 
 {% endblock %}

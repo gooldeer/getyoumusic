@@ -37,6 +37,7 @@
     </td>
 
     <td>
+        <p>{{ media.mediafile }}</p>
         <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.mediafile %}" method="GET">
             Remove
         </a>

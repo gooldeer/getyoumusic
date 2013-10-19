@@ -29,6 +29,7 @@ function getColorChagesFromServer(url) {
     .done(function(data) {
 
         if (data) {
+            //TODO change url to {% static '...' %}
             $("#color").attr("src", "/static/img/" + data + ".png");
         }
 

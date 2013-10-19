@@ -86,7 +86,6 @@ def remove_media(request, playlistName, media):
     
     user = request.user
     playlist = user.playlist_set.get(name=playlistName, user=user)
-
     playlist.media_set.get(mediafile=media).delete()
 
     return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlistName,]))
