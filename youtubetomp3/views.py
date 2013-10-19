@@ -7,12 +7,17 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader
 from django.utils import simplejson as json
+from django.utils.encoding import smart_str
 
 from youtubetomp3.core.jobs import convert
 from youtubetomp3.models import Playlist
 
+import youtubetomp3.core.utils as Utils
+
+import os
+
 def index(request):
-	return render(request, 'youtubetomp3/index.html')
+    return render(request, 'youtubetomp3/index.html')
 
 def poll_state(request):
     """ A view to report the progress to the user """
@@ -29,7 +34,7 @@ def poll_state(request):
 def init_work(request):
     """ A view to start a background job """
     if 'youtubeLink' in request.POST:
-    	job = convert.delay(request.POST['youtubeLink'], request.user)
+        job = convert.delay(request.POST['youtubeLink'], request.user)
         
     return HttpResponse(job)
 
@@ -57,6 +62,16 @@ def playlist(request, playlistName):
     context = RequestContext(request, {'playlist' : playlist, 'media_set' : media_set})
 
     return HttpResponse(template.render(context))
+
+def audio(request, playlistName, media):
+    
+    response = HttpResponse(mimetype='audio/mpeg')
+    response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(media)
+    response['Accept-Ranges'] = 'bytes'
+    path = Utils.createPath(os.path.basename(media), request.user)
+    response['X-Sendfile'] = smart_str(path)
+
+    return response
 
 def new_playlist(request):
     """ Create new playlist """

@@ -5,7 +5,7 @@ from pydub import AudioSegment
 import youtubetomp3.core.utils as Utils
 
 class Converter(object):
-    """Converter from video to mp3"""
+    """Converter from video to needed extension"""
 
     def __init__(self, user):
         super(Converter, self).__init__()

@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"spli",
+				"split"
+			],
+			[
+				"sp",
+				"split  (function)"
+			],
+			[
+				"spl",
+				"splitext  (function)"
+			],
+			[
+				"ret",
+				"return	(keyword, instance)"
+			],
+			[
+				"core",
+				"core  (module)"
+			],
+			[
+				"play",
+				"playlists"
+			],
+			[
+				"im",
+				"import	(keyword, instance)"
+			],
+			[
+				"media",
+				"mediafile	(local, instance)"
+			],
+			[
+				"HttpR",
+				"HttpResponse	(imported, instance)"
+			],
+			[
 				"pla",
 				"playlist	(local, instance)"
 			],
@@ -25,10 +61,6 @@
 			],
 			[
 				"pa",
-				"playlist	(local, instance)"
-			],
-			[
-				"play",
 				"playlist	(local, instance)"
 			],
 			[
@@ -94,10 +126,6 @@
 			[
 				"cre",
 				"createPath"
-			],
-			[
-				"media",
-				"MEDIA_ROOT"
 			],
 			[
 				"set",
@@ -238,10 +266,6 @@
 			[
 				"col",
 				"color"
-			],
-			[
-				"im",
-				"image"
 			],
 			[
 				"fon",
@@ -490,43 +514,11 @@
 			[
 				"progress",
 				"progress-id"
-			],
-			[
-				"j",
-				"jquery"
-			],
-			[
-				"rend",
-				"render_to_response"
-			],
-			[
-				"TemplateView",
-				"TemplateView"
-			],
-			[
-				"i",
-				"if"
-			],
-			[
-				"down",
-				"download"
-			],
-			[
-				"dow",
-				"download"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "apache/apache_django_wsgi.conf",
-			"settings":
-			{
-				"buffer_size": 655,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -556,25 +548,38 @@
 	},
 	"file_history":
 	[
-		"/C/Development/WebProjects/YouTubeToMp3/apache/django.wsgi",
-		"/C/Development/WebProjects/YouTubeToMp3/apache/apache_django_wsgi.conf",
-		"/C/Apache2/conf/httpd.conf",
-		"/C/Development/WebProjects/YouTubeToMp3/mysite/settings.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
 		"/C/apache/error.log",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
+		"/C/Development/WebProjects/test-audio/test-audio.html",
+		"/C/Development/WebProjects/YouTubeToMp3/apache/apache_django_wsgi.conf",
+		"/C/Development/WebProjects/YouTubeToMp3/apache/.htaccess",
+		"/C/apache/localhost/error.log",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/test-audio.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
+		"/C/Development/WebProjects/YouTubeToMp3/mysite/settings.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
+		"/C/apache/access.log",
+		"/C/Apache2/conf/httpd.conf",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
+		"/C/Apache2/manual/howto/htaccess.html",
+		"/C/apache/localhost/access.log",
+		"/C/Users/Sergey.GOOLDEER-PC/AppData/Local/Temp/Rar$EXa0.901/mod_xsendfile-0.12/docs/Readme.html",
+		"/C/Development/WebProjects/YouTubeToMp3/command to begin debuggin server",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
+		"/C/Development/WebProjects/YouTubeToMp3/apache/django.wsgi",
 		"/C/Development/WebProjects/YouTubeToMp3/apache_django_wsgi.conf",
 		"/C/Users/Sergey.GOOLDEER-PC/Downloads/mod_wsgi-3.4/mod_wsgi-3.4/README",
 		"/C/Users/Sergey.GOOLDEER-PC/Downloads/mod_wsgi-3.4 (1)/mod_wsgi-3.4/configure",
-		"/C/apache/localhost/error.log",
 		"/C/Users/Sergey.GOOLDEER-PC/Downloads/mod_wsgi-3.4 (1)/mod_wsgi-3.4/configure.ac",
 		"/C/Users/Sergey.GOOLDEER-PC/Downloads/mod_wsgi-3.4/mod_wsgi-3.4/configure",
 		"/C/Apache2/conf/extra/httpd-vhosts.conf",
 		"/C/Server/apache/conf/httpd.conf",
 		"/C/Server/apache/conf/extra/httpd-vhosts.conf",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
 		"/C/server/apache/conf/httpd.conf",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/play.js",
@@ -582,17 +587,13 @@
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/audio.css",
 		"/C/Development/WebProjects/YouTubeToMp3/psds/pngs/Playlist.png",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/__init__.py",
 		"/C/Development/WebProjects/YouTubeToMp3/manage.py",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/2nd_page.html",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/navigation.html",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/1st_page.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/registration.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3-project.sublime-project",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3-project.sublime-workspace",
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
@@ -674,16 +675,7 @@
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/template.css",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/template.html",
 		"/C/test/pages/index.html",
-		"/C/Google Диск/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/sticky-footer-navbar/sticky-footer-navbar.css",
-		"/C/Google Диск/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/sticky-footer/sticky-footer.css",
-		"/C/Google Диск/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/sticky-footer/index.html",
-		"/C/Google Диск/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/sticky-footer-navbar/index.html",
-		"/C/Users/Sergey/Downloads/bootstrap-3.0.0/bootstrap-3.0.0/examples/carousel/index.html",
-		"/C/Users/Sergey/Downloads/bootstrap-3.0.0/bootstrap-3.0.0/examples/carousel/carousel.css",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/signin (1).css",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/manage.py",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/mysite/urls.py",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/pafy.py"
+		"/C/Google Диск/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/sticky-footer-navbar/sticky-footer-navbar.css"
 	],
 	"find":
 	{
@@ -756,228 +748,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "apache/apache_django_wsgi.conf",
-					"settings":
-					{
-						"buffer_size": 655,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								320,
-								320
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublime_auto_complete": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1041,6 +813,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 295.0,
+	"side_bar_width": 270.0,
 	"status_bar_visible": true
 }

@@ -3,8 +3,7 @@
 <tr id="{{ media.id }}">
 
     <audio id="song{{ media.id }}" ontimeupdate="updateTime()" preload="metadata">
-        <source src="{{ media.mediafile }}" type="audio/mp3"/>
-        <source src="{{ media.mediafile }}" type="audio/ogg"/>
+        <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.mediafile  %}" type="audio/mpeg"/>
         Your browser does not support the audio tag.
     </audio>
 
