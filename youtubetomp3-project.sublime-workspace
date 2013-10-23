@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"background",
+				"background-color:   (property)"
+			],
+			[
+				"play",
+				"playlists"
+			],
+			[
+				"get",
+				"get_playlists"
+			],
+			[
+				"crea",
+				"create_default_playlist"
+			],
+			[
+				"def",
+				"def	Function"
+			],
+			[
+				"is",
+				"is_audio"
+			],
+			[
+				"media",
+				"mediafile"
+			],
+			[
+				"cla",
+				"class	(keyword, instance)"
+			],
+			[
+				"class",
+				"class	(keyword, instance)"
+			],
+			[
+				"medi",
+				"mediafile"
+			],
+			[
 				"spli",
 				"split"
 			],
@@ -24,16 +64,8 @@
 				"core  (module)"
 			],
 			[
-				"play",
-				"playlists"
-			],
-			[
 				"im",
 				"import	(keyword, instance)"
-			],
-			[
-				"media",
-				"mediafile	(local, instance)"
 			],
 			[
 				"HttpR",
@@ -50,10 +82,6 @@
 			[
 				"stat",
 				"static"
-			],
-			[
-				"get",
-				"getPopoverWrapperHtml"
 			],
 			[
 				"con",
@@ -106,10 +134,6 @@
 			[
 				"Uti",
 				"Utils	(imported, module)"
-			],
-			[
-				"def",
-				"defs	Method"
 			],
 			[
 				"se",
@@ -320,10 +344,6 @@
 				"text-align"
 			],
 			[
-				"class",
-				"class=  (attribute)"
-			],
-			[
 				"form",
 				"form-signin"
 			],
@@ -494,26 +514,6 @@
 			[
 				"cu",
 				"current_user"
-			],
-			[
-				"File",
-				"FileSystemStorage"
-			],
-			[
-				"M",
-				"Model"
-			],
-			[
-				"po",
-				"post_change_redirect"
-			],
-			[
-				"url",
-				"url"
-			],
-			[
-				"progress",
-				"progress-id"
 			]
 		]
 	},
@@ -523,7 +523,23 @@
 			"file": "youtubetomp3/views.py",
 			"settings":
 			{
-				"buffer_size": 3769,
+				"buffer_size": 4148,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "youtubetomp3/core/jobs.py",
+			"settings":
+			{
+				"buffer_size": 1426,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "youtubetomp3/urls.py",
+			"settings":
+			{
+				"buffer_size": 1336,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +547,7 @@
 			"file": "youtubetomp3/templates/youtubetomp3/index.html",
 			"settings":
 			{
-				"buffer_size": 4833,
+				"buffer_size": 5295,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,7 +555,15 @@
 			"file": "youtubetomp3/static/js/index.js",
 			"settings":
 			{
-				"buffer_size": 65,
+				"buffer_size": 303,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "youtubetomp3/templates/youtubetomp3/playlist.html",
+			"settings":
+			{
+				"buffer_size": 3070,
 				"line_ending": "Windows"
 			}
 		},
@@ -580,29 +604,34 @@
 	},
 	"file_history":
 	[
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/index.css",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/1st_page.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
 		"/C/apache/error.log",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
 		"/C/Development/WebProjects/test-audio/test-audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/apache/apache_django_wsgi.conf",
 		"/C/Development/WebProjects/YouTubeToMp3/apache/.htaccess",
 		"/C/apache/localhost/error.log",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/test-audio.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
 		"/C/Development/WebProjects/YouTubeToMp3/mysite/settings.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
 		"/C/apache/access.log",
 		"/C/Apache2/conf/httpd.conf",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
 		"/C/Apache2/manual/howto/htaccess.html",
 		"/C/apache/localhost/access.log",
 		"/C/Users/Sergey.GOOLDEER-PC/AppData/Local/Temp/Rar$EXa0.901/mod_xsendfile-0.12/docs/Readme.html",
 		"/C/Development/WebProjects/YouTubeToMp3/command to begin debuggin server",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
 		"/C/Development/WebProjects/YouTubeToMp3/apache/django.wsgi",
 		"/C/Development/WebProjects/YouTubeToMp3/apache_django_wsgi.conf",
 		"/C/Users/Sergey.GOOLDEER-PC/Downloads/mod_wsgi-3.4/mod_wsgi-3.4/README",
@@ -612,12 +641,10 @@
 		"/C/Apache2/conf/extra/httpd-vhosts.conf",
 		"/C/Server/apache/conf/httpd.conf",
 		"/C/Server/apache/conf/extra/httpd-vhosts.conf",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
 		"/C/server/apache/conf/httpd.conf",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/play.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/audio.css",
 		"/C/Development/WebProjects/YouTubeToMp3/psds/pngs/Playlist.png",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
@@ -626,7 +653,6 @@
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/2nd_page.html",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/navigation.html",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/registration.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3-project.sublime-project",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3-project.sublime-workspace",
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
@@ -705,9 +731,7 @@
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlists.css",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/template.css",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/template.html",
-		"/C/test/pages/index.html"
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/template.css"
 	],
 	"find":
 	{
@@ -725,6 +749,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<div class=\"input-group\">\n                  <input type=\"text\" placeholder=\"Enter new name here\" class=\"form-control\" name=\"playlist\" id=\"playlist\" autofocus>\n                </div><!-- /input-group -->",
 			"\\",
 			"<Directory",
 			"<Directory />\n   Options FollowSymLinks\n   AllowOverride None\n   Order deny,allow\n   Deny from all\n</Directory>",
@@ -780,7 +805,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -788,15 +813,15 @@
 					"file": "youtubetomp3/views.py",
 					"settings":
 					{
-						"buffer_size": 3769,
+						"buffer_size": 4148,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1322,
+								1322
 							]
 						],
 						"settings":
@@ -807,6 +832,109 @@
 								"README",
 								"FIXME"
 							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -868,6 +996,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2,
 							"sublimelinter_disable":
@@ -895,25 +1024,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 574.0,
+						"translation.y": 392.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "youtubetomp3/templates/youtubetomp3/index.html",
+					"file": "youtubetomp3/core/jobs.py",
 					"settings":
 					{
-						"buffer_size": 4833,
+						"buffer_size": 1426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								855,
-								855
+								879,
+								879
 							]
 						],
 						"settings":
@@ -924,6 +1053,109 @@
 								"README",
 								"FIXME"
 							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -985,6 +1217,449 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 56.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "youtubetomp3/urls.py",
+					"settings":
+					{
+						"buffer_size": 1336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								322,
+								322
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "youtubetomp3/templates/youtubetomp3/index.html",
+					"settings":
+					{
+						"buffer_size": 5295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5097,
+								5097
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2,
 							"sublimelinter_disable":
@@ -1012,25 +1687,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 280.0,
+						"translation.y": 1652.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "youtubetomp3/static/js/index.js",
 					"settings":
 					{
-						"buffer_size": 65,
+						"buffer_size": 303,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								65,
-								65
+								215,
+								215
 							]
 						],
 						"settings":
@@ -1237,7 +1912,124 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
+					"file": "youtubetomp3/templates/youtubetomp3/playlist.html",
+					"settings":
+					{
+						"buffer_size": 3070,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								606,
+								674
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "youtubetomp3/static/js/playlist.js",
 					"settings":
 					{
@@ -1249,7 +2041,7 @@
 						[
 							[
 								0,
-								0
+								215
 							]
 						],
 						"settings":

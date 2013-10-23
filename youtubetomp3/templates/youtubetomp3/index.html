@@ -44,12 +44,27 @@
               </div>
             </div>
 
+
           </div>
+          
+          <a href="#" id="get_playlists" rel="popover" data-original-title="Choose playlist" data-placement="right">Choose playlist</a>
 
         </form>
 
       </div>
       
+    </div>
+
+    <div id="popover_content_wrapper" style="display: none">
+
+      {% for playlist in user.playlist_set.all %}
+
+        <div style="background-color: #{{ playlist.color }}">
+          <p>{{ playlist.name }}</p>
+        </div> 
+
+      {% endfor %}
+
     </div>
 
   {% else %}
@@ -105,6 +120,7 @@
 {% endblock %}
 
 {% block javascript %}
+  <script src="{% static 'js/index.js' %}"></script>
   <script src="{% static 'js/jquery.form.min.js' %}"></script>
   <script src="{% static 'js/ajax_loader.js' %}"></script>
   <script src="{% static 'js/holder.js' %}"></script>
