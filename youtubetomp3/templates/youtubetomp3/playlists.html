@@ -34,7 +34,7 @@
                   <img class="thumb" src="{% static 'img/audio-playlist-thumb.png' %}">
                 </a>
                 <h3>{{ playlist.name }}</h3>
-                <a type="button" href="{% url 'youtubetomp3:remove_playlist' playlist.name %}" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+                <a type="button" href="{% url 'youtubetomp3:remove_playlist' playlist.name playlist.is_audio %}" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
               </div>
             </div>
 
@@ -56,6 +56,11 @@
             <div class="modal-body">
                 <div class="input-group">
                   <input type="text" placeholder="Enter new name here" class="form-control" name="playlist" id="playlist" autofocus>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="is_audio" name="is_audio" id="is_audio" checked> Audio playlist
+                    </label>
+                  </div>
                 </div><!-- /input-group -->
             </div>
 

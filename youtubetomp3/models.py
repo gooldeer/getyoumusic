@@ -5,8 +5,6 @@ import os
 
 import youtubetomp3.core.utils as Utils
 
-# Create your models here.
-
 class PlaylistManager(models.Manager):
     """PlaylistManager with checking on name"""
     def create_playlist(self, name, user, is_audio):
@@ -17,6 +15,9 @@ class PlaylistManager(models.Manager):
 
 class Playlist(models.Model):
     """Playlist which contains media objects"""
+
+    class Meta:
+        ordering = ['name']
 
     user = models.ForeignKey(User)
     name = models.CharField(max_length=50)
@@ -37,6 +38,9 @@ class MediaManager(models.Manager):
         
 class Media(models.Model):
     """Media files in playlist. Contains link on media file"""
+
+    class Meta:
+        ordering = ['mediafile']
 
     playlist = models.ForeignKey(Playlist)
     mediafile = models.CharField(max_length=50)

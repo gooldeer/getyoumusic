@@ -56,7 +56,7 @@ def playlist(request, playlistName):
     """ Media playlist """
     user = request.user
     playlist = user.playlist_set.get(name=playlistName, user=user)
-    media_set = playlist.media_set
+    media_set = playlist.media_set.all()
 
     template = loader.get_template('youtubetomp3/playlist.html')
     context = RequestContext(request, {'playlist' : playlist, 'media_set' : media_set})
@@ -80,19 +80,35 @@ def new_playlist(request):
     if 'playlist' in request.POST:
         playlistName = request.POST['playlist']
 
+        if 'is_audio' in request.POST:
+            is_audio = True
+        else:
+            is_audio = False
+
     if playlistName != None:
-        playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=False)
+        playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=is_audio)
 
     if (playlist != "DUBLICATE"):
         print 'created new playlist with name ' + playlist.name
 
     return HttpResponseRedirect(reverse('youtubetomp3:playlists'))
 
-def remove_playlist(request, playlistName):
+def remove_playlist(request, playlistName, is_audio):
     """ Remove playlist """
 
     user = request.user
-    Playlist.objects.get(name=playlistName, user=user, is_audio=False).delete()
+
+    # Fucking sheet! In some way if is_audio==False, it is string 'False' instead of bool
+    if is_audio == 'False':
+        is_audio = False
+
+    playlist = Playlist.objects.get(
+        name=playlistName, user=user, is_audio=is_audio)
+
+    for media in playlist.media_set.all():
+        media.delete()
+
+    playlist.delete()
 
     return HttpResponseRedirect(reverse('youtubetomp3:playlists'))
 
