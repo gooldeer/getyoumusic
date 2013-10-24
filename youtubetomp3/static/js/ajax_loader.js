@@ -13,18 +13,25 @@ function updateProgressInfo() {
                 $("#upload-progress-bar").attr('style', "width: " + progress + "%");
                 window.setTimeout(updateProgressInfo, 1000);
 
+            } else if (data == "SUCCESS") {
+                 
+                // alert(data.url);
+                var progress = 100;
+                $("#upload-progress-bar").attr('aria-valuenow', progress);
+                $("#upload-progress-bar").attr('style', "width: " + progress + "%");
+                window.setTimeout(updateProgressInfo, 1000);
+                
+                // $("#progress-container").hide('slow');
             } else {
-                if (data == "SUCCESS") {
-                    var progress = 100;
-                    $("#upload-progress-bar").attr('aria-valuenow', progress);
-                    $("#upload-progress-bar").attr('style', "width: " + progress + "%");
+                if (data.url) {
+
+                    $("#medialink").val(data.url);
                 }
-                $("#progress-container").hide('slow');
             }
     })
     .fail(
         function () {
-            $("#progress-container").hide('slow');
+            // $("#progress-container").hide('slow');
     });
 };
 

@@ -11,6 +11,7 @@ from django.utils.encoding import smart_str
 
 from youtubetomp3.core.jobs import convert
 from youtubetomp3.models import Playlist
+from youtubetomp3.models import Media
 
 import youtubetomp3.core.utils as Utils
 
@@ -140,3 +141,13 @@ def change_playlist(request, playlistName, name=None, color=None):
     # playlist.update(name=name, color=color)
 
     return HttpResponse(playlist.color)
+
+def add_media_to_playlist(request, playlist_name, media):
+    """ Adds media to given playlist """
+    import pdb; pdb.set_trace()
+    user = request.user
+    playlist_to_add = user.playlist_set.get(name=playlist_name, user=user)
+
+    Media.objects.create_media(playlist=playlist_to_add, mediafile=media)
+    return HttpResponse('Added')
+

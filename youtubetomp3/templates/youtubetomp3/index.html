@@ -56,12 +56,15 @@
     </div>
 
     <div id="popover_content_wrapper" style="display: none">
+      <input type="hidden" id="medialink" value="">
 
       {% for playlist in user.playlist_set.all %}
-
-        <div style="background-color: #{{ playlist.color }}">
-          <p>{{ playlist.name }}</p>
-        </div> 
+        <!-- Add media link to url -->
+        <a id="add_media" href="" method="GET" onclick="add_to_playlist('{{ playlist.name }}')">
+          <div style="background-color: #{{ playlist.color }}">
+            <p>{{ playlist.name }}</p>
+          </div> 
+        </a>
 
       {% endfor %}
 
@@ -120,9 +123,9 @@
 {% endblock %}
 
 {% block javascript %}
-  <script src="{% static 'js/index.js' %}"></script>
   <script src="{% static 'js/jquery.form.min.js' %}"></script>
   <script src="{% static 'js/ajax_loader.js' %}"></script>
+  <script src="{% static 'js/index.js' %}"></script>
   <script src="{% static 'js/holder.js' %}"></script>
 {% endblock %}
 

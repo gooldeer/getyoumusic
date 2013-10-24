@@ -9,6 +9,7 @@ from youtubetomp3.models import Playlist
 @task(name="jobs.convert")
 def convert(url, current_user):
     "Download video file from youtube directly on server"
+    print 'working...'
 
     def downloading(total, *progress_stats):
         percent = progress_stats[1] * 100
@@ -27,6 +28,10 @@ def convert(url, current_user):
 
     if filename != None:
         Media.objects.create_media(playlist=playlist_field, mediafile=filename)
+        
+        current_task.update_state(state='FINISH',
+            meta={'url': filename})
+
 
 def create_default_playlist(user, is_audio):
     """ Creates default playlist if it's not exitst """
