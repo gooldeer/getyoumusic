@@ -23,9 +23,9 @@ function updateProgressInfo() {
                 
                 // $("#progress-container").hide('slow');
             } else {
-                if (data.url) {
+                if (data) {
 
-                    $("#medialink").val(data.url);
+                    $("#medialink").val(data);
                 }
             }
     })

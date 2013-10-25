@@ -144,10 +144,10 @@ def change_playlist(request, playlistName, name=None, color=None):
 
 def add_media_to_playlist(request, playlist_name, media):
     """ Adds media to given playlist """
-    import pdb; pdb.set_trace()
     user = request.user
     playlist_to_add = user.playlist_set.get(name=playlist_name, user=user)
 
     Media.objects.create_media(playlist=playlist_to_add, mediafile=media)
+    # print media.mediafile + ' added to ' + playlist_to_add.name
     return HttpResponse('Added')
 

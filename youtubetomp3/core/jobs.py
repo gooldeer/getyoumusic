@@ -29,8 +29,7 @@ def convert(url, current_user):
     if filename != None:
         Media.objects.create_media(playlist=playlist_field, mediafile=filename)
         
-        current_task.update_state(state='FINISH',
-            meta={'url': filename})
+    return filename
 
 
 def create_default_playlist(user, is_audio):
