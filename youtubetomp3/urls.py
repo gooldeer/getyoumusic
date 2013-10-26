@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     url(r'^playlists/remove/playlist=(?P<playlistName>[\w|\W]+),is_audio=(?P<is_audio>[\w|\W]+)/$', 
         views.remove_playlist, name="remove_playlist"),
 
-    url(r'^playlists/(?P<playlistName>[\w|\W]+)?remove=(?P<media>[\w|\W]+)/$', 
+    url(r'^playlists/(?P<playlistName>[\w|\W]+)/remove=(?P<media>[\w|\W]+)/$', 
         views.remove_media, name="remove_media"),
     url(r'^playlists/(?P<playlistName>[\w|\W]+)/update/name=(?P<name>[\w|\W]+);color=(?P<color>[\w|\W]+)/$', 
         views.change_playlist, name="change_playlist"),

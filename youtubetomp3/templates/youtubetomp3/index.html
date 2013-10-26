@@ -44,7 +44,9 @@
               </div>
             </div>
 
-            <a href="#" id="get_playlists" rel="popover" data-original-title="Choose playlist" data-placement="right">Choose playlist</a>
+            <a name="here"></a>
+            <a href="#here" id="get_audio_playlists" rel="popover_audio" data-original-title="Choose playlist" data-placement="right">Choose audio playlist</a>
+            <a href="#here" id="get_video_playlists" rel="popover_video" data-original-title="Choose playlist" data-placement="right">Choose video playlist</a>
 
           </div>
           
@@ -55,16 +57,39 @@
       
     </div>
 
-    <div id="popover_content_wrapper" style="display: none">
-      <input type="hidden" id="medialink" value="">
+    <input type="hidden" id="medialink" value="">
+
+    <div id="audio_popover_content_wrapper" style="display: none">
 
       {% for playlist in user.playlist_set.all %}
-        <!-- Add media link to url -->
-        <a id="add_media" href="" method="GET" onclick="add_to_playlist('{{ playlist.name }}')">
-          <div style="background-color: #{{ playlist.color }}">
-            <p>{{ playlist.name }}</p>
-          </div> 
-        </a>
+
+        {% if playlist.is_audio %}
+        
+          <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
+            <div style="background-color: #{{ playlist.color }}">
+              <p>{{ playlist.name }}</p>
+            </div> 
+          </a>
+
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+    <div id="video_popover_content_wrapper" style="display: none">
+
+      {% for playlist in user.playlist_set.all %}
+
+        {% if not playlist.is_audio %}
+
+          <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
+            <div style="background-color: #{{ playlist.color }}">
+              <p>{{ playlist.name }}</p>
+            </div> 
+          </a>
+
+        {% endif %}
 
       {% endfor %}
 

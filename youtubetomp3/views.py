@@ -9,13 +9,19 @@ from django.template import RequestContext, loader
 from django.utils import simplejson as json
 from django.utils.encoding import smart_str
 
+import os
+
 from youtubetomp3.core.jobs import convert
+from youtubetomp3.core.jobs import download
+
 from youtubetomp3.models import Playlist
 from youtubetomp3.models import Media
 
+from youtubetomp3.const.constants import _Const
+CONST = _Const()
+
 import youtubetomp3.core.utils as Utils
 
-import os
 
 def index(request):
     return render(request, 'youtubetomp3/index.html')
@@ -89,7 +95,7 @@ def new_playlist(request):
     if playlistName != None:
         playlist = Playlist.objects.create_playlist(name=playlistName, user=user, is_audio=is_audio)
 
-    if (playlist != "DUBLICATE"):
+    if (playlist != CONST.DUBLICATE):
         print 'created new playlist with name ' + playlist.name
 
     return HttpResponseRedirect(reverse('youtubetomp3:playlists'))
@@ -123,8 +129,7 @@ def remove_media(request, playlistName, media):
     return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlistName,]))
 
 def change_playlist(request, playlistName, name=None, color=None):
-
-    # user = request.user
+    
     user = request.user
     playlist = user.playlist_set.get(name=playlistName, user=user)
 
@@ -138,8 +143,6 @@ def change_playlist(request, playlistName, name=None, color=None):
     playlist.color = color
     playlist.save()
 
-    # playlist.update(name=name, color=color)
-
     return HttpResponse(playlist.color)
 
 def add_media_to_playlist(request, playlist_name, media):
@@ -147,7 +150,8 @@ def add_media_to_playlist(request, playlist_name, media):
     user = request.user
     playlist_to_add = user.playlist_set.get(name=playlist_name, user=user)
 
+    
+
     Media.objects.create_media(playlist=playlist_to_add, mediafile=media)
-    # print media.mediafile + ' added to ' + playlist_to_add.name
     return HttpResponse('Added')
 

@@ -1,31 +1,39 @@
-function getPopoverWrapperHtml() {
-    return $('#popover_content_wrapper').html();
+function getPopoverWrapperHtml(is_audio) {
+    if (is_audio) 
+        return $('#audio_popover_content_wrapper').html();
+    else
+        return $('#video_popover_content_wrapper').html();
 }
 
 function add_to_playlist(playlist) {
     var media = $("#medialink").val();
     var link = "/playlists/" + playlist + "/add/media=" + media + "/";
 
-    $.get(link)
+    $.post(link)
     
     .done(function() {
         $("#progress-container").hide('slow');
     })
-    .fail(function() {
-        alert("FUCK!");
-    });
 }
 
 $(document).ready(function() {
 
-    var popover = $("[rel=popover]");
+    var audioPopover = $("[rel=popover_audio]");
+    var videoPopover = $("[rel=popover_video]");
 
-    if (popover.length) {
+    if (audioPopover.length && videoPopover.length) {
 
-        popover.popover({
+        audioPopover.popover({
 
             html: true,
-            content: getPopoverWrapperHtml
+            content: getPopoverWrapperHtml(true)
+
+        });
+
+        videoPopover.popover({
+
+            html: true,
+            content: getPopoverWrapperHtml(false)
 
         });
 

@@ -1,6 +1,9 @@
 from youtubetomp3.libs.pafy import Pafy
 import youtubetomp3.core.utils as Utils
 
+from youtubetomp3.const.constants import _Const
+CONST = _Const()
+
 class Downloader():
     """docstring for Downloader"""
     
@@ -12,9 +15,8 @@ class Downloader():
     def download(self, call=None):
         
         video = Pafy(self.link)
-        best = video.getbest(preftype='mp4', ftypestrict=False)
-        # myfilename = '/media/track.' + best.extension
-        myfilename = self.path + 'track.' + best.extension
+        best = video.getbest(preftype=CONST.VIDEO_EXTENSION, ftypestrict=False)
+        myfilename = self.path + CONST.DEFAULT_MEDIA_NAME + '.' + best.extension
         print myfilename
 
         try:
