@@ -12,6 +12,7 @@ class Converter(object):
         self.user = user
 
     def convert(self, path, ext):
+        path = Utils.createPath(os.path.basename(path), self.user)
         filename = Utils.uniquify(Utils.getName(path) + '.' + ext)
 
         AudioSegment.from_file(path).export(

@@ -29,10 +29,32 @@ function updateProgressInfo() {
     });
 };
 
+function updateConvertInfo() {
+    var uuid = $("#progress-id").val();
+    var progress_url = "/poll_state/?job=" + uuid; // ajax view serving progress info
+
+    $.getJSON(progress_url,
+        function(data, status) {
+            if (data == "PROGRESS" || data == "PENDING") {
+                window.setTimeout(updateConvertInfo, 1000);
+            }
+            else if (data) {
+                $("#medialink").val(data);
+                alert(data);
+            }   
+        });
+}
+
 // pre-submit callback
 function beforeSubmitHandler(formData, jqForm, options) {
     window.setTimeout(updateProgressInfo, 1000);
     $("#progress-container").show('slow');
+    return true;
+};
+
+// pre-convert callback
+function beforeConvertHandler(formData, jqForm, options) {
+    window.setTimeout(updateConvertInfo, 1000);
     return true;
 };
 
@@ -50,8 +72,20 @@ $(document).ready(function() {
 
         var options = {
 
-            url: "/init_work/?youtubeLink="+$("#youtubeLink").val(),
+            url: "/init_work/",
             beforeSubmit: beforeSubmitHandler,
+            success: successHandler
+        };
+
+        $("#upload-file-form").ajaxForm(options);
+    });
+
+    $("#button-convert").click(function() {
+
+        var options = {
+
+            url: "/init_work/",
+            beforeSubmit: beforeConvertHandler,
             success: successHandler
         };
 

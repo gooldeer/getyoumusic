@@ -38,10 +38,12 @@ def poll_state(request):
 
     return HttpResponse(json.dumps(data), mimetype='application/json')
 
-def init_work(request):
+def init_work(request, is_convert=None):
     """ A view to start a background job """
-    if 'youtubeLink' in request.POST:
-        job = convert.delay(request.POST['youtubeLink'], request.user)
+    if request.POST['medialink'] == None or request.POST['medialink'] == "" :
+        job = download.delay(request.POST['youtubeLink'], request.user)
+    else:
+        job = convert.delay(request.POST['medialink'], request.user)
         
     return HttpResponse(job)
 
@@ -149,8 +151,6 @@ def add_media_to_playlist(request, playlist_name, media):
     """ Adds media to given playlist """
     user = request.user
     playlist_to_add = user.playlist_set.get(name=playlist_name, user=user)
-
-    
 
     Media.objects.create_media(playlist=playlist_to_add, mediafile=media)
     return HttpResponse('Added')

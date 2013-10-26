@@ -9,7 +9,7 @@ function add_to_playlist(playlist) {
     var media = $("#medialink").val();
     var link = "/playlists/" + playlist + "/add/media=" + media + "/";
 
-    $.post(link)
+    $.get(link)
     
     .done(function() {
         $("#progress-container").hide('slow');

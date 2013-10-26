@@ -51,9 +51,10 @@ class Media(models.Model):
     def __unicode__(self):
         return self.playlist.user.username + ": " + self.mediafile
 
-    def delete(self):
+    def delete(self, is_convertion=False):
 
-        if self.playlist.name == CONST.DEFAULT_AUDIO_PLAYLIST or self.playlist.name == CONST.DEFAULT_VIDEO_PLAYLIST:
+        if (self.playlist.name == CONST.DEFAULT_AUDIO_PLAYLIST 
+            or self.playlist.name == CONST.DEFAULT_VIDEO_PLAYLIST) and not is_convertion:
 
             os.remove(Utils.createPath(
                 os.path.basename(self.mediafile), 

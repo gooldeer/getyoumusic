@@ -1,6 +1,8 @@
 from youtubetomp3.libs.pafy import Pafy
 import youtubetomp3.core.utils as Utils
 
+import os
+
 from youtubetomp3.const.constants import _Const
 CONST = _Const()
 
@@ -26,5 +28,5 @@ class Downloader():
         else:
             pass
         finally:
-            return myfilename
+            return Utils.createLink(os.path.basename(myfilename), self.user)
 

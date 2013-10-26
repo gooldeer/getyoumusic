@@ -20,28 +20,28 @@ def download(url, current_user):
             meta={'current': percent, 'total': 100})
 
     downloader = Downloader(link=url, user=current_user)
-    dlr = downloader.download(call=downloading)
-    print dlr + ' downloaded'
+    filename = downloader.download(call=downloading)
+    print filename + ' downloaded'
 
-    return dlr
+    playlist_field = create_default_playlist(current_user, False)
+
+    if filename != None:
+        Media.objects.create_media(playlist=playlist_field, mediafile=filename)
+
+    return filename
 
 
 @task(name="jobs.convert")
-def convert(url, current_user):
-    "Download video file from youtube directly on server"
-    print 'working...'
+def convert(path, current_user):
+    "Convert video file to audio"
+    print 'converting...'
 
-    def downloading(total, *progress_stats):
-        percent = progress_stats[1] * 100
-        current_task.update_state(state='PROGRESS',
-            meta={'current': percent, 'total': 100})
+    current_task.update_state(state='PROGRESS')
 
-    downloader = Downloader(link=url, user=current_user)
-    dlr = downloader.download(call=downloading)
-    print dlr + ' downloaded'
-
-    filename = Converter(current_user).convert(dlr, CONST.AUDIO_EXTENSION)
+    filename = Converter(current_user).convert(path, CONST.AUDIO_EXTENSION)
     print filename + ' converted'
+    
+    current_user.playlist_set.get(name=CONST.DEFAULT_VIDEO_PLAYLIST).media_set.get(mediafile=path).delete(is_convertion=True)
 
     playlist_field = create_default_playlist(current_user, True)
 
