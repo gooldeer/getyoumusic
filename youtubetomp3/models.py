@@ -56,10 +56,10 @@ class Media(models.Model):
     def __unicode__(self):
         return self.playlist.user.username + ": " + self.link_to_play
 
-    def delete(self, is_convertion=False):
+    def delete(self):
 
         if (self.playlist.name == CONST.DEFAULT_AUDIO_PLAYLIST 
-            or self.playlist.name == CONST.DEFAULT_VIDEO_PLAYLIST) and not is_convertion:
+            or self.playlist.name == CONST.DEFAULT_VIDEO_PLAYLIST):
 
             os.remove(Utils.createPath(
                 os.path.basename(self.link_to_play), 

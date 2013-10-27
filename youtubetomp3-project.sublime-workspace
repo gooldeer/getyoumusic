@@ -4,6 +4,82 @@
 		"selected_items":
 		[
 			[
+				"path",
+				"path_to_convert	(local, instance)"
+			],
+			[
+				"file",
+				"filename	(local, instance)"
+			],
+			[
+				"conve",
+				"converted"
+			],
+			[
+				"filename_",
+				"filename_to_load"
+			],
+			[
+				"cur",
+				"current_user"
+			],
+			[
+				"file_to",
+				"filename_to_load"
+			],
+			[
+				"di",
+				"div"
+			],
+			[
+				"link",
+				"link_to_load"
+			],
+			[
+				"medi",
+				"mediatype"
+			],
+			[
+				"link_to",
+				"link_to_play"
+			],
+			[
+				"media",
+				"media_field	(local, instance)"
+			],
+			[
+				"play",
+				"playlist_set"
+			],
+			[
+				"fi",
+				"filename	(local, instance)"
+			],
+			[
+				"lin",
+				"link_to_load"
+			],
+			[
+				"link_",
+				"link_to_load"
+			],
+			[
+				"li",
+				"link_to_play"
+			],
+			[
+				"ex",
+				"export"
+			],
+			[
+				"crea",
+				"createPath"
+			],
+			[
+				"from",
+				"from_file"
+			],
+			[
 				"is",
 				"is_convertion"
 			],
@@ -14,10 +90,6 @@
 			[
 				"med",
 				"mediafile"
-			],
-			[
-				"medi",
-				"media_set"
 			],
 			[
 				"playl",
@@ -44,20 +116,8 @@
 				"getJSON  (function)"
 			],
 			[
-				"media",
-				"medialink"
-			],
-			[
 				"DI",
 				"div	Tag"
-			],
-			[
-				"cur",
-				"current_task"
-			],
-			[
-				"crea",
-				"createPath  (function)"
 			],
 			[
 				"vide",
@@ -66,10 +126,6 @@
 			[
 				"do",
 				"download"
-			],
-			[
-				"play",
-				"playlist"
 			],
 			[
 				"DEFA",
@@ -196,10 +252,6 @@
 				"function"
 			],
 			[
-				"path",
-				"path  (module)"
-			],
-			[
 				"Uti",
 				"Utils	(imported, module)"
 			],
@@ -240,10 +292,6 @@
 				"path  (module)"
 			],
 			[
-				"file",
-				"filename	(local, instance)"
-			],
-			[
 				"acti",
 				"activeSong"
 			],
@@ -274,10 +322,6 @@
 			[
 				"for",
 				"format	(builtin, function)"
-			],
-			[
-				"fi",
-				"filename"
 			],
 			[
 				"conv",
@@ -470,68 +514,24 @@
 			[
 				"u",
 				"ul	Tag"
-			],
-			[
-				"na",
-				"navbar-inverse"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"box",
-				"box-sizing:   (property)"
-			],
-			[
-				"s",
-				"size"
-			],
-			[
-				"me",
-				"media	(local, instance)"
-			],
-			[
-				"bor",
-				"border"
-			],
-			[
-				"P",
-				"POST"
-			],
-			[
-				"vi",
-				"views"
-			],
-			[
-				"prog",
-				"progress-container"
-			],
-			[
-				"fo",
-				"form	Tag"
-			],
-			[
-				"yo",
-				"youtubeLink"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "youtubetomp3/views.py",
+			"file": "youtubetomp3/core/converter.py",
 			"settings":
 			{
-				"buffer_size": 4678,
+				"buffer_size": 978,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "youtubetomp3/core/converter.py",
+			"file": "youtubetomp3/templates/youtubetomp3/playlist.html",
 			"settings":
 			{
-				"buffer_size": 637,
+				"buffer_size": 3968,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,15 +539,15 @@
 			"file": "youtubetomp3/core/jobs.py",
 			"settings":
 			{
-				"buffer_size": 2092,
+				"buffer_size": 2535,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "youtubetomp3/static/js/ajax_loader.js",
+			"file": "youtubetomp3/models.py",
 			"settings":
 			{
-				"buffer_size": 2604,
+				"buffer_size": 2382,
 				"line_ending": "Windows"
 			}
 		}
@@ -580,31 +580,34 @@
 	},
 	"file_history":
 	[
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
+		"/C/Development/WebProjects/YouTubeToMp3/manage.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist-colors-popover.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
+		"/C/Development/WebProjects/YouTubeToMp3/media/admin/test.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/pafy.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/constants.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist-colors-popover.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/admin.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/__init__.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/_init_.py",
 		"/C/Development/WebProjects/YouTubeToMp3/mysite/settings.py",
 		"/C/Development/WebProjects/YouTubeToMp3/sqlite3.db",
-		"/C/Development/WebProjects/YouTubeToMp3/manage.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/index.css",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/1st_page.html",
 		"/C/apache/error.log",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/Development/WebProjects/test-audio/test-audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/apache/apache_django_wsgi.conf",
 		"/C/Development/WebProjects/YouTubeToMp3/apache/.htaccess",
@@ -626,7 +629,6 @@
 		"/C/Server/apache/conf/httpd.conf",
 		"/C/Server/apache/conf/extra/httpd-vhosts.conf",
 		"/C/server/apache/conf/httpd.conf",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/play.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/audio.css",
 		"/C/Development/WebProjects/YouTubeToMp3/psds/pngs/Playlist.png",
@@ -705,9 +707,7 @@
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/signup.css",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/base.html",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/login.html",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/signin.css",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html"
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/login.html"
 	],
 	"find":
 	{
@@ -725,6 +725,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mediafile",
 			"<div class=\"input-group\">\n                  <input type=\"text\" placeholder=\"Enter new name here\" class=\"form-control\" name=\"playlist\" id=\"playlist\" autofocus>\n                </div><!-- /input-group -->",
 			"\\",
 			"<Directory",
@@ -781,23 +782,22 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "youtubetomp3/views.py",
+					"file": "youtubetomp3/core/converter.py",
 					"settings":
 					{
-						"buffer_size": 4678,
+						"buffer_size": 978,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4569,
-								4569
+								923,
+								923
 							]
 						],
 						"settings":
@@ -1000,25 +1000,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1980.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "youtubetomp3/core/converter.py",
+					"file": "youtubetomp3/templates/youtubetomp3/playlist.html",
 					"settings":
 					{
-						"buffer_size": 637,
+						"buffer_size": 3968,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1148,
+								1148
 							]
 						],
 						"settings":
@@ -1029,6 +1029,109 @@
 								"README",
 								"FIXME"
 							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -1090,6 +1193,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2,
 							"sublimelinter_disable":
@@ -1112,12 +1216,12 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1127,15 +1231,15 @@
 					"file": "youtubetomp3/core/jobs.py",
 					"settings":
 					{
-						"buffer_size": 2092,
+						"buffer_size": 2535,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1560,
-								1560
+								434,
+								434
 							]
 						],
 						"settings":
@@ -1338,25 +1442,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 532.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "youtubetomp3/static/js/ajax_loader.js",
+					"file": "youtubetomp3/models.py",
 					"settings":
 					{
-						"buffer_size": 2604,
+						"buffer_size": 2382,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1332,
-								1332
+								1984,
+								1984
 							]
 						],
 						"settings":
@@ -1554,12 +1658,12 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

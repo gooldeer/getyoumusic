@@ -17,7 +17,7 @@ class Downloader():
     def download(self, call=None):
         
         video = Pafy(self.link)
-        best = video.getbest(preftype=CONST.VIDEO_EXTENSION, ftypestrict=False)
+        best = video.getbest(preftype=CONST.VIDEO_EXTENSION)
         myfilename = Utils.uniquify(
             self.path + CONST.DEFAULT_MEDIA_NAME + '.' + best.extension)
         myfilename = Utils.createPath(myfilename, self.user)

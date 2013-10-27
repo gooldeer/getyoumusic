@@ -22,12 +22,15 @@ def download(url, current_user):
     downloader = Downloader(link=url, user=current_user)
     filename = downloader.download(call=downloading)
     print filename + ' downloaded'
+    filename_to_load = filename
+    filename_to_load = Converter(current_user).convert(filename, "mp4")
+    print filename_to_load + " converted"
 
     playlist_field = create_default_playlist(current_user, False)
 
     if filename != None:
         Media.objects.create_media(playlist=playlist_field, 
-            link_to_play=filename, link_to_load=filename)
+            link_to_play=filename, link_to_load=filename_to_load)
 
     return filename
 
@@ -40,7 +43,7 @@ def convert(path, current_user):
     current_task.update_state(state='PROGRESS')
 
     filename_to_play = Converter(current_user).convert(path, 
-        CONST.AUDIO_TO_PLAY_EXTENSION, remove=False)
+        CONST.AUDIO_TO_PLAY_EXTENSION)
     print filename_to_play + " converted"
     filename_to_load = Converter(current_user).convert(path, 
         CONST.AUDIO_TO_LOAD_EXTENSION)
@@ -48,7 +51,7 @@ def convert(path, current_user):
     
     current_user.playlist_set.get(
         name=CONST.DEFAULT_VIDEO_PLAYLIST).media_set.get(
-        link_to_play=path).delete(is_convertion=True)
+        link_to_play=path).delete()
 
     playlist_field = create_default_playlist(current_user, True)
 

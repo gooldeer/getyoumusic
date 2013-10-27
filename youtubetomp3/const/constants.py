@@ -13,7 +13,7 @@ class _Const(object):
         return 'DUBLICATE'
     @constant
     def VIDEO_EXTENSION():
-        return 'mp4'
+        return 'webm'
     @constant
     def AUDIO_TO_PLAY_EXTENSION():
         return 'ogg'

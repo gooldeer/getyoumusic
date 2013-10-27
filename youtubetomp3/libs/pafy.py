@@ -280,7 +280,7 @@ class Pafy():
         def _sortkey(x, key3d=0, keyres=0, keyftype=0):
             key3d = "3D" not in x.resolution
             keyres = int(x.resolution.split("x")[0])
-            keyftype = preftype == x.extension
+            keyftype = preftype != x.extension
             if ftypestrict:
                 return (key3d, keyftype, keyres)
             else:

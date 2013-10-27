@@ -1,6 +1,7 @@
 import os
 
 from pydub import AudioSegment
+from subprocess import call
 
 import youtubetomp3.core.utils as Utils
 
@@ -11,7 +12,7 @@ class Converter(object):
         super(Converter, self).__init__()
         self.user = user
 
-    def convert(self, path, ext, remove=True):
+    def convert(self, path, ext):
         path = Utils.createPath(os.path.basename(path), self.user)
         filename = Utils.uniquify(Utils.getName(path) + '.' + ext)
 
@@ -21,19 +22,10 @@ class Converter(object):
         if ext == 'ogg':
             video.export(path_to_convert, format=ext, 
                 codec="libvorbis", parameters=["-aq", "50"])
+        elif ext == 'mp4':
+            call(["ffmpeg", "-i", path, "-vcodec", "libx264", "-preset", "ultrafast", "-b:v", "768k",  path_to_convert])
         else:
             video.export(path_to_convert, format=ext)
-
-        # AudioSegment.from_file(path).export(
-        #     Utils.createPath(filename, self.user), 
-        #     format=ext, codec="libvorbis", parameters=["-aq", "50"])
-
-        # AudioSegment.from_file(path).export(
-        #     Utils.createPath(filename, self.user), 
-        #     format=ext)
-
-        if remove:
-            os.remove(path)
 
         return Utils.createLink(filename, self.user)
 
