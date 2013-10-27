@@ -32,24 +32,29 @@ class Playlist(models.Model):
 
 class MediaManager(models.Manager):
     """MediaManager with checking on name"""
-    def create_media(self, playlist, mediafile):
-        if self.filter(playlist=playlist, mediafile=mediafile).count() != 0:
+    def create_media(self, playlist, link_to_play, link_to_load):
+
+        if self.filter(playlist=playlist, 
+            link_to_play=link_to_play, 
+            link_to_load=link_to_load).count() != 0:
+        
             return CONST.DUBLICATE
         else:
-            return self.create(playlist=playlist, mediafile=mediafile)    
+            return self.create(playlist=playlist, link_to_play=link_to_play, link_to_load=link_to_load)    
         
 class Media(models.Model):
     """Media files in playlist. Contains link on media file"""
 
     class Meta:
-        ordering = ['mediafile']
+        ordering = ['link_to_play']
 
     playlist = models.ForeignKey(Playlist)
-    mediafile = models.CharField(max_length=50)
+    link_to_play = models.CharField(max_length=50)
+    link_to_load = models.CharField(max_length=50)
     objects = MediaManager()
 
     def __unicode__(self):
-        return self.playlist.user.username + ": " + self.mediafile
+        return self.playlist.user.username + ": " + self.link_to_play
 
     def delete(self, is_convertion=False):
 
@@ -57,8 +62,13 @@ class Media(models.Model):
             or self.playlist.name == CONST.DEFAULT_VIDEO_PLAYLIST) and not is_convertion:
 
             os.remove(Utils.createPath(
-                os.path.basename(self.mediafile), 
+                os.path.basename(self.link_to_play), 
                 self.playlist.user))
+
+            if self.link_to_play != self.link_to_load:
+                os.remove(Utils.createPath(
+                    os.path.basename(self.link_to_load), 
+                    self.playlist.user))
         
         super(Media, self).delete()
 

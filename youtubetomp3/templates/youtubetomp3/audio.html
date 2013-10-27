@@ -3,11 +3,12 @@
 <tr id="{{ media.id }}">
 
     <audio id="song{{ media.id }}" ontimeupdate="updateTime()" preload="metadata">
-        <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.mediafile  %}" type="audio/mpeg"/>
+        <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_load mediatype='audio/mpeg'  %}" type="audio/mpeg"/>
+        <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_play mediatype='audio/ogg'  %}" type="audio/ogg"/>
         Your browser does not support the audio tag.
     </audio>
 
-    <input type="hidden" id="songSrc{{ media.id }}" value="{{ media.mediafile }}">
+    <!--<input type="hidden" id="songSrc{{ media.id }}" value="{{ media.mediafile }}">-->
 
     <td>
         <div class="btn btn-danger" type="button" id="songPlayPause" onclick="playPause('{{ media.id }}')">
@@ -32,12 +33,12 @@
     </td>
 
     <td>
-        <a href="{{ media.mediafile }}"><img src="{% static 'img/download.png' %}"></a>
+        <a href="{{ media.link_to_load }}"><img src="{% static 'img/download.png' %}"></a>
     </td>
 
     <td>
-        <p>{{ media.mediafile }}</p>
-        <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.mediafile %}" method="GET">
+        <p>{{ media.link_to_play }}</p>
+        <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.link_to_play %}" method="GET">
             Remove
         </a>
     </td>

@@ -72,9 +72,9 @@ def playlist(request, playlistName):
 
     return HttpResponse(template.render(context))
 
-def audio(request, playlistName, media):
+def audio(request, playlistName, media, mediatype):
     
-    response = HttpResponse(mimetype='audio/mpeg')
+    response = HttpResponse(mimetype=mediatype)
     response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(media)
     response['Accept-Ranges'] = 'bytes'
     path = Utils.createPath(os.path.basename(media), request.user)
@@ -126,7 +126,7 @@ def remove_media(request, playlistName, media):
     
     user = request.user
     playlist = user.playlist_set.get(name=playlistName, user=user)
-    playlist.media_set.get(mediafile=media).delete()
+    playlist.media_set.get(link_to_play=media).delete()
 
     return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlistName,]))
 
@@ -151,7 +151,9 @@ def add_media_to_playlist(request, playlist_name, media):
     """ Adds media to given playlist """
     user = request.user
     playlist_to_add = user.playlist_set.get(name=playlist_name, user=user)
+    media_field = Media.objects.filter(link_to_play=media)[0]
 
-    Media.objects.create_media(playlist=playlist_to_add, mediafile=media)
+    Media.objects.create_media(playlist=playlist_to_add, 
+        link_to_play=media, link_to_load=media_field.link_to_load)
     return HttpResponse('Added')
 

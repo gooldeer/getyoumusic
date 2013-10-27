@@ -15,7 +15,10 @@ class _Const(object):
     def VIDEO_EXTENSION():
         return 'mp4'
     @constant
-    def AUDIO_EXTENSION():
+    def AUDIO_TO_PLAY_EXTENSION():
+        return 'ogg'
+    @constant
+    def AUDIO_TO_LOAD_EXTENSION():
         return 'mp3'
     @constant
     def DEFAULT_MEDIA_NAME():

@@ -26,7 +26,8 @@ def download(url, current_user):
     playlist_field = create_default_playlist(current_user, False)
 
     if filename != None:
-        Media.objects.create_media(playlist=playlist_field, mediafile=filename)
+        Media.objects.create_media(playlist=playlist_field, 
+            link_to_play=filename, link_to_load=filename)
 
     return filename
 
@@ -38,17 +39,24 @@ def convert(path, current_user):
 
     current_task.update_state(state='PROGRESS')
 
-    filename = Converter(current_user).convert(path, CONST.AUDIO_EXTENSION)
-    print filename + ' converted'
+    filename_to_play = Converter(current_user).convert(path, 
+        CONST.AUDIO_TO_PLAY_EXTENSION, remove=False)
+    print filename_to_play + " converted"
+    filename_to_load = Converter(current_user).convert(path, 
+        CONST.AUDIO_TO_LOAD_EXTENSION)
+    print filename_to_load + " converted"
     
-    current_user.playlist_set.get(name=CONST.DEFAULT_VIDEO_PLAYLIST).media_set.get(mediafile=path).delete(is_convertion=True)
+    current_user.playlist_set.get(
+        name=CONST.DEFAULT_VIDEO_PLAYLIST).media_set.get(
+        link_to_play=path).delete(is_convertion=True)
 
     playlist_field = create_default_playlist(current_user, True)
 
-    if filename != None:
-        Media.objects.create_media(playlist=playlist_field, mediafile=filename)
+    if filename_to_play != None:
+        Media.objects.create_media(playlist=playlist_field, 
+            link_to_play=filename_to_play, link_to_load=filename_to_load)
         
-    return filename
+    return filename_to_play
 
 
 def create_default_playlist(user, is_audio):
