@@ -12,8 +12,11 @@ class _Const(object):
     def DUBLICATE():
         return 'DUBLICATE'
     @constant
-    def VIDEO_EXTENSION():
+    def VIDEO_TO_PLAY_EXTENSION():
         return 'webm'
+    @constant
+    def VIDEO_TO_LOAD_EXTENSION():
+        return 'mp4'
     @constant
     def AUDIO_TO_PLAY_EXTENSION():
         return 'ogg'

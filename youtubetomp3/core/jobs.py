@@ -1,7 +1,10 @@
 from celery import task, current_task
 
+import os
+
 from youtubetomp3.core.downloader import Downloader
 from youtubetomp3.core.converter import Converter
+import youtubetomp3.core.utils as Utils
 
 from youtubetomp3.models import Media
 from youtubetomp3.models import Playlist
@@ -22,38 +25,51 @@ def download(url, current_user):
     downloader = Downloader(link=url, user=current_user)
     filename = downloader.download(call=downloading)
     print filename + ' downloaded'
-    filename_to_load = filename
-    filename_to_load = Converter(current_user).convert(filename, "mp4")
-    print filename_to_load + " converted"
+    # filename_to_load = filename
+    # filename_to_load = Converter(current_user).convert(filename, "mp4")
+    # print filename_to_load + " converted"
 
-    playlist_field = create_default_playlist(current_user, False)
+    # playlist_field = create_default_playlist(current_user, False)
 
-    if filename != None:
-        Media.objects.create_media(playlist=playlist_field, 
-            link_to_play=filename, link_to_load=filename_to_load)
+    # if filename != None:
+    #     Media.objects.create_media(playlist=playlist_field, 
+    #         link_to_play=filename, link_to_load=filename_to_load)
 
     return filename
 
 
 @task(name="jobs.convert")
-def convert(path, current_user):
+def convert(path, current_user, extension=None):
     "Convert video file to audio"
     print 'converting...'
 
     current_task.update_state(state='PROGRESS')
+    is_audio = True
 
-    filename_to_play = Converter(current_user).convert(path, 
-        CONST.AUDIO_TO_PLAY_EXTENSION)
-    print filename_to_play + " converted"
-    filename_to_load = Converter(current_user).convert(path, 
-        CONST.AUDIO_TO_LOAD_EXTENSION)
-    print filename_to_load + " converted"
-    
-    current_user.playlist_set.get(
-        name=CONST.DEFAULT_VIDEO_PLAYLIST).media_set.get(
-        link_to_play=path).delete()
+    if extension == None:
 
-    playlist_field = create_default_playlist(current_user, True)
+        filename_to_play = Converter(current_user).convert(path, 
+            CONST.AUDIO_TO_PLAY_EXTENSION)
+        print filename_to_play + " converted"
+        filename_to_load = Converter(current_user).convert(path, 
+            CONST.AUDIO_TO_LOAD_EXTENSION)
+        print filename_to_load + " converted"
+        
+        # current_user.playlist_set.get(
+        #     name=CONST.DEFAULT_VIDEO_PLAYLIST).media_set.get(
+        #     link_to_play=path).delete()
+        os.remove(Utils.createPath(
+                    os.path.basename(path), 
+                    current_user))
+        
+    elif extension == CONST.VIDEO_TO_LOAD_EXTENSION:
+
+        is_audio = False
+        filename_to_play = path
+        filename_to_load = Converter(current_user).convert(path, extension)
+        print filename_to_load + " converted"
+
+    playlist_field = create_default_playlist(current_user, is_audio)
 
     if filename_to_play != None:
         Media.objects.create_media(playlist=playlist_field, 

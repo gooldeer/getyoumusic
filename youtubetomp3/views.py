@@ -11,8 +11,8 @@ from django.utils.encoding import smart_str
 
 import os
 
-from youtubetomp3.core.jobs import convert
-from youtubetomp3.core.jobs import download
+from youtubetomp3.core.jobs import convert as converter
+from youtubetomp3.core.jobs import download as downloader
 
 from youtubetomp3.models import Playlist
 from youtubetomp3.models import Media
@@ -38,12 +38,18 @@ def poll_state(request):
 
     return HttpResponse(json.dumps(data), mimetype='application/json')
 
-def init_work(request, is_convert=None):
+def download(request):
     """ A view to start a background job """
-    if request.POST['medialink'] == None or request.POST['medialink'] == "" :
-        job = download.delay(request.POST['youtubeLink'], request.user)
+    job = downloader.delay(request.POST['youtubeLink'], request.user)    
+    return HttpResponse(job)
+
+def convert(request, stream):
+    """ A view to start a background job """
+    if stream == 'audio':
+        job = converter.delay(request.POST['medialink'], request.user)
     else:
-        job = convert.delay(request.POST['medialink'], request.user)
+        job = converter.delay(request.POST['medialink'], request.user, 
+            CONST.VIDEO_TO_LOAD_EXTENSION)
         
     return HttpResponse(job)
 

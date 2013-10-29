@@ -15,12 +15,12 @@ function updateProgressInfo() {
 
             } else if (data) {
                  
-                // alert(data.url);
                 var progress = 100;
                 $("#upload-progress-bar").attr('aria-valuenow', progress);
                 $("#upload-progress-bar").attr('style', "width: " + progress + "%");
                 
                 $("#medialink").val(data);
+                $("#afterDownloading").show('slow');
             } 
     })
     .fail(
@@ -29,18 +29,27 @@ function updateProgressInfo() {
     });
 };
 
-function updateConvertInfo() {
+function updateConvertInfo(audio) {
     var uuid = $("#progress-id").val();
     var progress_url = "/poll_state/?job=" + uuid; // ajax view serving progress info
 
     $.getJSON(progress_url,
         function(data, status) {
             if (data == "PROGRESS" || data == "PENDING") {
-                window.setTimeout(updateConvertInfo, 1000);
+                window.setTimeout(
+                    function() {
+                        updateConvertInfo(audio);
+                    }, 1000);
             }
             else if (data) {
                 $("#medialink").val(data);
-                alert(data);
+                hideAllChildrens($("#afterDownloading"));
+
+                if (audio) {
+                    $("#audioPlaylistsLabel").show('slow');
+                } else {
+                    $("#videoPlaylistsLabel").show('slow');
+                }
             }   
         });
 }
@@ -54,7 +63,6 @@ function beforeSubmitHandler(formData, jqForm, options) {
 
 // pre-convert callback
 function beforeConvertHandler(formData, jqForm, options) {
-    window.setTimeout(updateConvertInfo, 1000);
     return true;
 };
 
@@ -65,14 +73,43 @@ function successHandler(responseText, statusText, xhr, $form) {
     return true;
 };
 
+// post-submit callback
+function successAudioHandler(responseText, statusText, xhr, $form) {
+    $("#progress-id").val(responseText);
+    window.setTimeout(
+        function() {
+            updateConvertInfo(true);
+        }, 1000);
+    return true;
+};
+
+// post-submit callback
+function successVideoHandler(responseText, statusText, xhr, $form) {
+    $("#progress-id").val(responseText);
+    window.setTimeout(
+        function() {
+            updateConvertInfo(false);
+        }, 1000);
+    return true;
+};
+
+function hideAllChildrens(parent) {
+    parent.children().hide();    
+}
+
 // on page load
 $(document).ready(function() {
 
-    $("#button-submit").click(function () {
+    buttonSubmit = $("#button-submit");
+    buttonConvert = $("#button-convert");
+    saveAsVideo = $("#saveAsVideo");
+    // uploadFileForm = $("#upload-file-form");
+
+    buttonSubmit.click(function () {
 
         var options = {
 
-            url: "/init_work/",
+            url: "/download/",
             beforeSubmit: beforeSubmitHandler,
             success: successHandler
         };
@@ -80,15 +117,39 @@ $(document).ready(function() {
         $("#upload-file-form").ajaxForm(options);
     });
 
-    $("#button-convert").click(function() {
+    buttonConvert.click(function() {
+
+        $("#buttonConvertText").text("Converting...");
+        $("#saveAsVideoContainer").hide('slow');
+        $("#convertSpinner").show('slow');
 
         var options = {
 
-            url: "/init_work/",
+            url: "/convert/audio/",
             beforeSubmit: beforeConvertHandler,
-            success: successHandler
+            success: successAudioHandler
         };
 
         $("#upload-file-form").ajaxForm(options);
+        this.attr('disabled', 'disabled');
+
+    });
+
+    saveAsVideo.click(function() {
+
+        savingLabel = $("#savingLabel");
+        
+
+        var options = {
+
+            url: "/convert/video/",
+            beforeSubmit: beforeConvertHandler,
+            success: successVideoHandler
+        };
+
+        $("#upload-file-form").ajaxForm(options);
+
+        hideAllChildrens($("#afterDownloading"));
+        savingLabel.show('slow');
     });
 });

@@ -5,6 +5,7 @@
 {% block style %}
   {% load staticfiles %}
   <link href="{% static 'css/index.css' %}" rel="stylesheet">
+  <link href="{% static 'css/spinner.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block afterContainer %}
@@ -30,15 +31,15 @@
           {% csrf_token %}
 
           <div class="input-group">
+
             <input type="hidden" id="progress-id" name="progress-id" value=""/>
             <input type="text" placeholder="Put YouTube video link here" class="form-control" name="youtubeLink" id="youtubeLink" autofocus>
             <span class="input-group-btn">
               <button class="btn btn-danger" type="submit" id="button-submit">Go!</button>
             </span>
-            
 
           </div><!-- /input-group -->
-          
+
           <div id="progress-container">
 
             <div class="progress">
@@ -47,16 +48,38 @@
               </div>
             </div>
 
-            <input type="hidden" id="medialink" name="medialink" value="">
-            <button class="btn btn-success" type="submit" id="button-convert">Convert</button>
-            
-            <a name="here"></a>
-            <a href="#here" id="get_audio_playlists" rel="popover_audio" data-original-title="Choose playlist" data-placement="right">Choose audio playlist</a>
-            <a href="#here" id="get_video_playlists" rel="popover_video" data-original-title="Choose playlist" data-placement="right">Choose video playlist</a>
+            <div id="afterDownloading" style="display: none">
+
+              <input type="hidden" id="medialink" name="medialink" value="">
+              <button class="btn btn-default" type="submit" id="button-convert">
+                <div id="buttonConvertText" style="display: inline-table">Convert</div> <div class="spinner" id="convertSpinner" style="display: none"></div>
+              </button>
+
+              <div id="saveAsVideoContainer" class="in-one-line">
+                or save to
+                <button class="btn btn-primary" type="submit" id="saveAsVideo"> video playlists</button>
+              </div>
+
+              <div id="savingLabel" style="display: none">
+                Saving... <div class="spinner"></div>
+              </div>
+
+              <div id="audioPlaylistsLabel" style="display: none">
+                Complete! Now
+                <a href="#here" rel="popover_audio" data-original-title="Choose playlist" data-placement="right"> choose audio playlist &raquo;</a>
+              </div>
+
+              <div id="videoPlaylistsLabel" style="display: none">
+                Complete! Now
+                <a href="#here" rel="popover_video" data-original-title="Choose playlist" data-placement="right"> choose video playlist &raquo;</a>  
+              </div>
+
+              <a name="here"></a>
+              
+            </div>
 
           </div>
           
-
         </form>
 
       </div>

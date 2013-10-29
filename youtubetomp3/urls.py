@@ -4,7 +4,8 @@ from youtubetomp3 import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
-    url(r'^init_work/$', views.init_work, name="init_work"),
+    url(r'^download/$', views.download, name="download"),
+    url(r'^convert/(?P<stream>[\w|\W]+)/$', views.convert, name="convert"),
     url(r'^poll_state/$', views.poll_state, name="poll_state"),
     url(r'^playlists/$', views.playlists, name="playlists"),
     url(r'^new-playlist/$', views.new_playlist, name="new_playlist"),
