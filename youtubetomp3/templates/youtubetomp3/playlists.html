@@ -31,7 +31,17 @@
             <div class="col-xs-6 col-sm-3 col-lg-3">
               <div class="img-thumbnail" style="background-color: #{{ playlist.color }}">
                 <a href="{% url 'youtubetomp3:playlist' playlist.name %}" method="GET">
-                  <img class="thumb" src="{% static 'img/audio-playlist-thumb.png' %}">
+
+                  {% if playlist.is_audio %}
+
+                    <img class="thumb" src="{% static 'img/audio-playlist-thumb.png' %}">
+
+                  {% else %}
+                    
+                    <img class="thumb" src="{% static 'img/video-playlist-thumb.png' %}">
+
+                  {% endif %}
+                  
                 </a>
                 <h3>{{ playlist.name }}</h3>
                 <a type="button" href="{% url 'youtubetomp3:remove_playlist' playlist.name playlist.is_audio %}" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
