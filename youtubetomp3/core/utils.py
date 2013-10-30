@@ -7,8 +7,6 @@ from django.conf import settings
 # Creates track + number name of file. Source: http://stackoverflow.com/questions/13852700/python-create-file-but-if-name-exists-add-number
 def uniquify(path, sep = ''):
     """ Uniq filenames """
-    print 'path : ' + path
-
     def name_sequence():
         count = IT.count()
         yield ''
@@ -24,14 +22,14 @@ def uniquify(path, sep = ''):
             path = os.path.normpath(path)
             dirname, basename = os.path.split(path)
             filename, ext = os.path.splitext(basename)
-            print dirname
-            print basename
-            print filename
             fd, path = tempfile.mkstemp(dir = dirname, prefix = filename, suffix = ext)
             tempfile._name_sequence = orig
 
         os.close(fd)
 
+        if os.path.exists(path):
+            os.remove(path)
+            
     return os.path.basename(path)
 
 def getName(url):

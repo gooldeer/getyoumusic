@@ -6,6 +6,7 @@ function getPopoverWrapperHtml(is_audio) {
 }
 
 function add_to_playlist(playlist) {
+    event.preventDefault();
     var media = $("#medialink").val();
     var link = "/playlists/" + playlist + "/add/media=" + media + "/";
 

@@ -17,23 +17,15 @@ def download(url, current_user):
     "Download video file from youtube directly on server"
     print 'downloading...'
 
-    def downloading(total, *progress_stats):
-        percent = progress_stats[1] * 100
+    def downloading(progress_stats):
+        percent = progress_stats
         current_task.update_state(state='PROGRESS',
             meta={'current': percent, 'total': 100})
 
     downloader = Downloader(link=url, user=current_user)
     filename = downloader.download(call=downloading)
+    # filename = downloader.download()
     print filename + ' downloaded'
-    # filename_to_load = filename
-    # filename_to_load = Converter(current_user).convert(filename, "mp4")
-    # print filename_to_load + " converted"
-
-    # playlist_field = create_default_playlist(current_user, False)
-
-    # if filename != None:
-    #     Media.objects.create_media(playlist=playlist_field, 
-    #         link_to_play=filename, link_to_load=filename_to_load)
 
     return filename
 
