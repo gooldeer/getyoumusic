@@ -19,13 +19,19 @@
 }
 
 .carousel {
-  position: static;
-  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 /* Carousel base class */
 .carousel-inner {
-  position: static;
+  position: absolute;
+  /*top: 0;
+  left: 0;*/
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -45,9 +51,7 @@
   z-index: 0;
 }
 .carousel-inner > .item > img {
-  position: static;
-  top: 0;
-  left: 0;
+  position: absolute;
   min-width: 100%;
   height: 100%;
   z-index: 0;

@@ -42,6 +42,11 @@ html, body {
   z-index: 999;
 }
 
+.navbar-wrapper > .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 #wrap > .container,
 #footer {
     /*padding-top: 1em;*/

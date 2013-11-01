@@ -12,115 +12,118 @@
 
   {% if user.is_active %}
 
-    <div class="card">
-      <div class="container">
-        <h1>Welcome on <img src="{% static 'img/logo-index.png' %}" style="margin-bottom:10px"></h1>
-        <p>This is a simple web-site that converts YouTube videos to .mp3 fromat. You can
-            create playlist, download content, synchronyze with your Android-phone. For
-            using all features, go to playlists page.</p>
-        <p><a href="{% url 'youtubetomp3:playlists' %}" class="btn btn-success btn-lg">Playlists &raquo;</a></p>
-      </div>
-    </div>  
+    <div id="active">
 
-    <div class="card">
+      <div class="card">
+        <div class="container">
+          <h1>Welcome on <img src="{% static 'img/logo-index.png' %}" style="margin-bottom:10px"></h1>
+          <p>This is a simple web-site that converts YouTube videos to .mp3 fromat. You can
+              create playlist, download content, synchronyze with your Android-phone. For
+              using all features, go to playlists page.</p>
+          <p><a href="{% url 'youtubetomp3:playlists' %}" class="btn btn-success btn-lg">Playlists &raquo;</a></p>
+        </div>
+      </div>  
 
-      <div class="container">
+      <div class="card">
 
-        <form class="form-youtube" role="form" method="post" action="{% url 'youtubetomp3:poll_state' %}" id="upload-file-form" enctype="multipart/form-data">
+        <div class="container">
 
-          {% csrf_token %}
+          <form class="form-youtube" role="form" method="post" action="{% url 'youtubetomp3:poll_state' %}" id="upload-file-form" enctype="multipart/form-data">
 
-          <div class="input-group">
+            {% csrf_token %}
 
-            <input type="hidden" id="progress-id" name="progress-id" value=""/>
-            <input type="text" placeholder="Put YouTube video link here" class="form-control" name="youtubeLink" id="youtubeLink" autofocus>
-            <span class="input-group-btn">
-              <button class="btn btn-danger" type="submit" id="button-submit">Go!</button>
-            </span>
+            <div class="input-group">
 
-          </div><!-- /input-group -->
+              <input type="hidden" id="progress-id" name="progress-id" value=""/>
+              <input type="text" placeholder="Put YouTube video link here" class="form-control" name="youtubeLink" id="youtubeLink" autofocus>
+              <span class="input-group-btn">
+                <button class="btn btn-danger" type="submit" id="button-submit">Go!</button>
+              </span>
 
-          <div id="progress-container">
+            </div><!-- /input-group -->
 
-            <div class="progress">
-              <div class="progress-bar progress-bar-success" id="upload-progress-bar" name="upload-progress-bar" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%">
-                <span class="sr-only">{{ percent }}% Complete (success)</span>
+            <div id="progress-container">
+
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" id="upload-progress-bar" name="upload-progress-bar" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%">
+                  <span class="sr-only">{{ percent }}% Complete (success)</span>
+                </div>
               </div>
+
+              <div id="afterDownloading" style="display: none">
+
+                <input type="hidden" id="medialink" name="medialink" value="">
+                <button class="btn btn-default" type="submit" id="button-convert">
+                  <div id="buttonConvertText" style="display: inline-table">Convert</div> <div class="spinner" id="convertSpinner" style="display: none"></div>
+                </button>
+
+                <div id="saveAsVideoContainer" class="in-one-line">
+                  or save to
+                  <button class="btn btn-primary" type="submit" id="saveAsVideo"> video playlists</button>
+                </div>
+
+                <div id="savingLabel" style="display: none">
+                  Saving... <div class="spinner"></div>
+                </div>
+
+                <div id="audioPlaylistsLabel" style="display: none">
+                  Complete! Now
+                  <a href="#here" rel="popover_audio" data-original-title="Choose playlist" data-placement="right"> choose audio playlist &raquo;</a>
+                </div>
+
+                <div id="videoPlaylistsLabel" style="display: none">
+                  Complete! Now
+                  <a href="#here" rel="popover_video" data-original-title="Choose playlist" data-placement="right"> choose video playlist &raquo;</a>  
+                </div>
+
+                <a name="here"></a>
+                
+              </div>
+
             </div>
+            
+          </form>
 
-            <div id="afterDownloading" style="display: none">
-
-              <input type="hidden" id="medialink" name="medialink" value="">
-              <button class="btn btn-default" type="submit" id="button-convert">
-                <div id="buttonConvertText" style="display: inline-table">Convert</div> <div class="spinner" id="convertSpinner" style="display: none"></div>
-              </button>
-
-              <div id="saveAsVideoContainer" class="in-one-line">
-                or save to
-                <button class="btn btn-primary" type="submit" id="saveAsVideo"> video playlists</button>
-              </div>
-
-              <div id="savingLabel" style="display: none">
-                Saving... <div class="spinner"></div>
-              </div>
-
-              <div id="audioPlaylistsLabel" style="display: none">
-                Complete! Now
-                <a href="#here" rel="popover_audio" data-original-title="Choose playlist" data-placement="right"> choose audio playlist &raquo;</a>
-              </div>
-
-              <div id="videoPlaylistsLabel" style="display: none">
-                Complete! Now
-                <a href="#here" rel="popover_video" data-original-title="Choose playlist" data-placement="right"> choose video playlist &raquo;</a>  
-              </div>
-
-              <a name="here"></a>
-              
-            </div>
-
-          </div>
-          
-        </form>
-
-      </div>
-      
-    </div>
-
-
-    <div id="audio_popover_content_wrapper" style="display: none">
-
-      {% for playlist in user.playlist_set.all %}
-
-        {% if playlist.is_audio %}
+        </div>
         
-          <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
-            <div style="background-color: #{{ playlist.color }}">
-              <p>{{ playlist.name }}</p>
-            </div> 
-          </a>
+      </div>
 
-        {% endif %}
 
-      {% endfor %}
+      <div id="audio_popover_content_wrapper" style="display: none">
 
-    </div>
+        {% for playlist in user.playlist_set.all %}
 
-    <div id="video_popover_content_wrapper" style="display: none">
+          {% if playlist.is_audio %}
+          
+            <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
+              <div style="background-color: #{{ playlist.color }}">
+                <p>{{ playlist.name }}</p>
+              </div> 
+            </a>
 
-      {% for playlist in user.playlist_set.all %}
+          {% endif %}
 
-        {% if not playlist.is_audio %}
+        {% endfor %}
 
-          <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
-            <div style="background-color: #{{ playlist.color }}">
-              <p>{{ playlist.name }}</p>
-            </div> 
-          </a>
+      </div>
 
-        {% endif %}
+      <div id="video_popover_content_wrapper" style="display: none">
 
-      {% endfor %}
+        {% for playlist in user.playlist_set.all %}
 
+          {% if not playlist.is_audio %}
+
+            <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
+              <div style="background-color: #{{ playlist.color }}">
+                <p>{{ playlist.name }}</p>
+              </div> 
+            </a>
+
+          {% endif %}
+
+        {% endfor %}
+
+      </div>
     </div>
 
   {% else %}
