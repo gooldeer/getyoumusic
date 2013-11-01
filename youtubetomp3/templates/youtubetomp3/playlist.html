@@ -20,11 +20,16 @@
   <div class="card">
     <div class="container">
 
-      <h1>{{ playlist.name }}</h1>
+      <h1 id="playlistName">{{ playlist.name }}</h1>
+
+      <a data-toggle="modal" href="#changeNameModal" type="button">Change name</a>
+
       <a class="header-right-button" rel="popover" data-original-title="Pick color" data-placement="left" href="#">
+
         {% with "img/"|add:playlist.color|add:".png" as image %}
         <img id="color" src="{% static image %}">
         {% endwith %}
+
       </a>
 
       <hr>
@@ -117,6 +122,36 @@
 
     </table>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="changeNameModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Change playlist</h4>
+        </div>
+        
+        <form role="form" method="post" 
+              action="{% url 'youtubetomp3:change_playlist' playlist.name playlist.name playlist.color %}" 
+              enctype="multipart/form-data">
+
+            {% csrf_token %}
+            <div class="modal-body">
+                <div class="input-group">
+                  <input type="text" placeholder="Enter new name here" class="form-control" name="playlist" id="playlist" autofocus>
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success">Change</button>
+            </div>
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 {% endblock %}
 
 {% block javascript %}

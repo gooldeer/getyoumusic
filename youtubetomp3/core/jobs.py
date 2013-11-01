@@ -18,6 +18,7 @@ def download(url, current_user):
     print 'downloading...'
 
     def downloading(progress_stats):
+        """ Callback for downloading progress """
         percent = progress_stats
         current_task.update_state(state='PROGRESS',
             meta={'current': percent, 'total': 100})
@@ -47,9 +48,6 @@ def convert(path, current_user, extension=None):
             CONST.AUDIO_TO_LOAD_EXTENSION)
         print filename_to_load + " converted"
         
-        # current_user.playlist_set.get(
-        #     name=CONST.DEFAULT_VIDEO_PLAYLIST).media_set.get(
-        #     link_to_play=path).delete()
         os.remove(Utils.createPath(
                     os.path.basename(path), 
                     current_user))

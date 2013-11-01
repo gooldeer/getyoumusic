@@ -134,7 +134,8 @@ def remove_media(request, playlistName, media):
     playlist = user.playlist_set.get(name=playlistName, user=user)
     playlist.media_set.get(link_to_play=media).delete()
 
-    return HttpResponseRedirect(reverse('youtubetomp3:playlist', args=[playlistName,]))
+    return HttpResponseRedirect(
+        reverse('youtubetomp3:playlist', args=[playlistName,]))
 
 def change_playlist(request, playlistName, name=None, color=None):
     
@@ -143,15 +144,23 @@ def change_playlist(request, playlistName, name=None, color=None):
 
     if name == None:
         name = playlist.name
-    else:
-        if color == None:
-            color = playlist.color
+    elif color == None:
+        color = playlist.color
+    elif 'playlist' in request.POST:
+        redirect = True
+        name = request.POST['playlist']
 
     playlist.name = name
     playlist.color = color
     playlist.save()
 
-    return HttpResponse(playlist.color)
+    pair = {'name': name, 'color': color}
+
+    if redirect:
+        return HttpResponseRedirect(
+            reverse('youtubetomp3:playlist', args=[name,]))
+    else:
+        return HttpResponse(json.dumps(pair), mimetype='application/json')
 
 def add_media_to_playlist(request, playlist_name, media):
     """ Adds media to given playlist """

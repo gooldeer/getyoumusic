@@ -28,57 +28,65 @@
 
     <!-- wrap for sticky footer -->
     <div id="wrap"> 
+      
+      <!-- For using without margins (10% 10%) -->
+      {% block afterContainer %}{% endblock %}
 
       <div class="container">
 
         <!-- navigation bar -->
-        <div class="navbar navbar-inverse"> 
+        <div class="navbar-wrapper">
           <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="{% url 'youtubetomp3:index' %}"><img src="{% static 'img/logo.png' %}" id="logo"></a>
+
+            <div class="navbar navbar-inverse"> 
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="{% url 'youtubetomp3:index' %}"><img src="{% static 'img/logo.png' %}" id="logo"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                  {% block sidebar %}
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="{% url 'youtubetomp3:index' %}">Home</a></li>
+                    <li><a href="{% url 'youtubetomp3:playlists' %}">Playlists</a></li>
+                  </ul>
+                  {% endblock %}
+                  <ul class="nav navbar-nav navbar-right">
+
+                    {% if user.is_active %}
+
+                      <p class="navbar-text pull-right">Signed as <b>
+                                <a href="{% url 'profile_detail' %}" method="get" class="navbar-link">
+                                  {{ user.username }}
+                                </a>
+                              </b>. <a href="{% url 'auth_logout' %}" class="navbar-link">Logout</a>
+                      </p>
+                    
+                    {% else %}
+
+                      <li><a href="{% url 'auth_login' %}">Log in</a></li>
+                      <li><a href="{% url 'registration_register' %}">Sign up</a></li>
+
+                    {% endif %}
+                  </ul>
+                </div><!--/.nav-collapse -->
+              </div>
             </div>
-            <div class="navbar-collapse collapse">
-              {% block sidebar %}
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url 'youtubetomp3:index' %}">Home</a></li>
-                <li><a href="{% url 'youtubetomp3:playlists' %}">Playlists</a></li>
-              </ul>
-              {% endblock %}
-              <ul class="nav navbar-nav navbar-right">
-
-                {% if user.is_active %}
-
-                  <p class="navbar-text pull-right">Signed as <b>
-                            <a href="{% url 'profile_detail' %}" method="get" class="navbar-link">
-                              {{ user.username }}
-                            </a>
-                          </b>. <a href="{% url 'auth_logout' %}" class="navbar-link">Logout</a>
-                  </p>
-                
-                {% else %}
-
-                  <li><a href="{% url 'auth_login' %}">Log in</a></li>
-                  <li><a href="{% url 'registration_register' %}">Sign up</a></li>
-
-                {% endif %}
-              </ul>
-            </div><!--/.nav-collapse -->
           </div>
         </div>
 
         <!-- Put body content here -->
         <!--_______________________-->
-        {% block content %}{% endblock %}
+        <div class="content">
+          {% block content %}{% endblock %}
+        </div>
 
       </div><!-- end of container -->
 
-      <!-- For using without margins (10% 10%) -->
-      {% block afterContainer %}{% endblock %}
 
     </div><!-- end of wrap -->
 

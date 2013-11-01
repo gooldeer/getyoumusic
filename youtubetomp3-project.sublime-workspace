@@ -4,6 +4,110 @@
 		"selected_items":
 		[
 			[
+				"mari",
+				"margin"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"inh",
+				"inherit  (value)"
+			],
+			[
+				"in",
+				"inherit  (value)"
+			],
+			[
+				"is",
+				"is_active"
+			],
+			[
+				"if",
+				"ife	if... else..."
+			],
+			[
+				"cont",
+				"content"
+			],
+			[
+				"en",
+				"endif"
+			],
+			[
+				"el",
+				"else	else"
+			],
+			[
+				"posi",
+				"position"
+			],
+			[
+				"HT",
+				"HttpResponseRedirect"
+			],
+			[
+				"chan",
+				"changeNameModal"
+			],
+			[
+				"playli",
+				"playlist"
+			],
+			[
+				"change",
+				"change_playlist"
+			],
+			[
+				"can",
+				"change_playlist"
+			],
+			[
+				"call",
+				"callback=call"
+			],
+			[
+				"ca",
+				"callback=	(parameter_keyword, instance)"
+			],
+			[
+				"perce",
+				"percent"
+			],
+			[
+				"enco",
+				"encodeFilename"
+			],
+			[
+				"remov",
+				"remove"
+			],
+			[
+				"Unice",
+				"UnicodeDecodeError	(builtin, class)"
+			],
+			[
+				"old",
+				"old_filename"
+			],
+			[
+				"new",
+				"new_filename"
+			],
+			[
+				"VIDE",
+				"VIDEO_TO_PLAY_EXTENSION  (function)"
+			],
+			[
 				"fro",
 				"from	(keyword, instance)"
 			],
@@ -60,10 +164,6 @@
 				"child"
 			],
 			[
-				"in",
-				"inline-table  (value)"
-			],
-			[
 				"dis",
 				"display:   (property)"
 			],
@@ -114,10 +214,6 @@
 			[
 				"inli",
 				"inline-table"
-			],
-			[
-				"is",
-				"is_audio	(local, instance)"
 			],
 			[
 				"path",
@@ -418,136 +514,40 @@
 			[
 				"Con",
 				"Converter	(imported, instance)"
-			],
-			[
-				"marg",
-				"margin-right"
-			],
-			[
-				"margin-",
-				"margin-left"
-			],
-			[
-				"max",
-				"max-height"
-			],
-			[
-				"min",
-				"min-width"
-			],
-			[
-				"son",
-				"songPlay"
-			],
-			[
-				"mi",
-				"middle"
-			],
-			[
-				"playli",
-				"playlistName"
-			],
-			[
-				"el",
-				"else"
-			],
-			[
-				"mar",
-				"margin"
-			],
-			[
-				"border",
-				"border-color"
-			],
-			[
-				"back",
-				"background-color:   (property)"
-			],
-			[
-				"heade",
-				"header-right-button"
-			],
-			[
-				"head",
-				"header-right-button"
-			],
-			[
-				"col",
-				"color"
-			],
-			[
-				"fon",
-				"font-weight"
-			],
-			[
-				"Med",
-				"MediaManager	(global, class)"
-			],
-			[
-				"bak",
-				"background-color:   (property)"
-			],
-			[
-				"foa",
-				"float"
-			],
-			[
-				"padd",
-				"padding"
-			],
-			[
-				"pad",
-				"padding-top"
-			],
-			[
-				"max-he",
-				"max-height:   (property)"
-			],
-			[
-				"text",
-				"text-align"
-			],
-			[
-				"type",
-				"type=  (attribute)"
-			],
-			[
-				"margi",
-				"margin-top"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "youtubetomp3/core/downloader.py",
+			"file": "youtubetomp3/templates/youtubetomp3/base.html",
 			"settings":
 			{
-				"buffer_size": 1435,
+				"buffer_size": 4390,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "youtubetomp3/core/converter.py",
+			"file": "youtubetomp3/templates/youtubetomp3/index.html",
 			"settings":
 			{
-				"buffer_size": 978,
+				"buffer_size": 7204,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "youtubetomp3/core/jobs.py",
+			"file": "youtubetomp3/static/css/index.css",
 			"settings":
 			{
-				"buffer_size": 2730,
+				"buffer_size": 1133,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "youtubetomp3/static/js/index.js",
+			"file": "youtubetomp3/static/css/base.css",
 			"settings":
 			{
-				"buffer_size": 904,
+				"buffer_size": 1963,
 				"line_ending": "Windows"
 			}
 		}
@@ -580,11 +580,26 @@
 	},
 	"file_history":
 	[
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
 		"/C/Development/WebProjects/YouTubeToMp3/manage.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlists.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlist.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/FileDownloader.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/YoutubeDL.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/utils.py",
+		"/C/Users/Sergey.GOOLDEER-PC/AppData/Roaming/Sublime Text 2/Packages/WordHighlight/Word Highlight.sublime-settings",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/constants.py",
 		"/C/Development/WebProjects/YouTubeToMp3/mysite/settings.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/pafy.py",
@@ -593,21 +608,13 @@
 		"/C/apache/localhost/access.log",
 		"/C/apache/localhost/error.log",
 		"/C/Apache2/conf/httpd.conf",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/index.css",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader1.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/spinner.css",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
 		"/C/Development/WebProjects/YouTubeToMp3/media/admin/test.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist-colors-popover.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/admin.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/__init__.py",
@@ -634,7 +641,6 @@
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/play.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/audio.css",
 		"/C/Development/WebProjects/YouTubeToMp3/psds/pngs/Playlist.png",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/__init__.py",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/2nd_page.html",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/navigation.html",
@@ -701,13 +707,7 @@
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/index.css",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
 		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/downloader.py",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
-		"/C/Google Диск/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/jumbotron/index.html",
-		"/C/Google Диск/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/jumbotron-narrow/index.html",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/static/css/signup.css",
-		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/base.html"
+		"/C/Google Диск/WebProjects/YouTubeToMp3/youtubetomp3/downloader.py"
 	],
 	"find":
 	{
@@ -725,6 +725,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"height",
+			"extract_info",
+			"process_ie_result",
+			"process_video_result",
+			"process_info",
+			"_do_download",
+			"report_progress",
+			"progress",
+			"progress_info",
+			"process_info",
+			"process_ie_result",
+			"process_video_result",
+			"process_info",
+			"_do_download",
+			"report_progress",
+			"report_porgress",
 			"    \n",
 			"def download(request):\n    \"\"\" A view to start a background job \"\"\"\n    job = downloader.delay(request.POST['youtubeLink'], request.user)\n    job = convert.delay(request.POST['medialink'], request.user)\n        \n    return HttpResponse(job)\n",
 			"65,221,67",
@@ -788,22 +804,23 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "youtubetomp3/core/downloader.py",
+					"file": "youtubetomp3/templates/youtubetomp3/base.html",
 					"settings":
 					{
-						"buffer_size": 1435,
+						"buffer_size": 4390,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								707,
-								707
+								3120,
+								3120
 							]
 						],
 						"settings":
@@ -1001,30 +1018,30 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 780.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "youtubetomp3/core/converter.py",
+					"file": "youtubetomp3/templates/youtubetomp3/index.html",
 					"settings":
 					{
-						"buffer_size": 978,
+						"buffer_size": 7204,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								746,
-								746
+								306,
+								306
 							]
 						],
 						"settings":
@@ -1222,8 +1239,8 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1234,18 +1251,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "youtubetomp3/core/jobs.py",
+					"file": "youtubetomp3/static/css/index.css",
 					"settings":
 					{
-						"buffer_size": 2730,
+						"buffer_size": 1133,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								795,
-								795
+								346,
+								346
 							]
 						],
 						"settings":
@@ -1443,30 +1460,30 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 172.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "youtubetomp3/static/js/index.js",
+					"file": "youtubetomp3/static/css/base.css",
 					"settings":
 					{
-						"buffer_size": 904,
+						"buffer_size": 1963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								256,
-								256
+								693,
+								693
 							]
 						],
 						"settings":
@@ -1664,12 +1681,12 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 345.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
