@@ -84,7 +84,11 @@
     </div><!-- /.modal -->
 
     {% else %}
-        <p>Please login or sign up</p>
+      <div class="card">
+        <p>
+          Please <a href="{% url 'auth_login' %}">login</a> or <a href="{% url 'registration_register' %}">sign up</a>.
+        </p>
+      </div>
     {% endif %}
     
 {% endblock %}

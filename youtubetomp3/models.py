@@ -32,23 +32,28 @@ class Playlist(models.Model):
 
 class MediaManager(models.Manager):
     """MediaManager with checking on name"""
-    def create_media(self, playlist, link_to_play, link_to_load):
+    def create_media(self, playlist, name, link_to_play, link_to_load):
 
         if self.filter(playlist=playlist, 
+            name=name,
             link_to_play=link_to_play, 
             link_to_load=link_to_load).count() != 0:
         
             return CONST.DUBLICATE
         else:
-            return self.create(playlist=playlist, link_to_play=link_to_play, link_to_load=link_to_load)    
+            return self.create(playlist=playlist, 
+                name=name, 
+                link_to_play=link_to_play, 
+                link_to_load=link_to_load)    
         
 class Media(models.Model):
     """Media files in playlist. Contains link on media file"""
 
     class Meta:
-        ordering = ['link_to_play']
+        ordering = ['name']
 
     playlist = models.ForeignKey(Playlist)
+    name = models.CharField(max_length=50)
     link_to_play = models.CharField(max_length=50)
     link_to_load = models.CharField(max_length=50)
     objects = MediaManager()

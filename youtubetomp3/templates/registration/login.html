@@ -7,11 +7,6 @@
   <link href="{% static 'css/signin.css' %}" rel="stylesheet">
 {% endblock %}
 
-{% block sidebar %}
-  <ul class="nav navbar-nav">
-  </ul>
-{% endblock %}
-
 {% block content %}
 
   <div class="card">
@@ -25,7 +20,7 @@
         <input type="password" class="form-control" placeholder="Password" id="id_password" name="password">
 
         <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
-        <input type="hidden" name="next" value="{% url 'profile_detail' %}">
+        <input type="hidden" name="next" value="{% url 'youtubetomp3:index' %}">
 
       </form>
     </div>

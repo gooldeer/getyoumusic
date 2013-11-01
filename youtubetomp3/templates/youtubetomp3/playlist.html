@@ -44,26 +44,7 @@
 
           {% else %}
 
-            <tr>
-
-              <td>
-
-                <video width="320" heigth="240" preload="metadata" controls>
-                  <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_play mediatype='video/webm'  %}" type="video/webm"/>
-                  <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_load mediatype='video/mp4'  %}" type="video/mp4"/>
-                  Bad browser
-                </video>
-
-                <td>
-                    <p>{{ media.link_to_play }}</p>
-                    <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.link_to_play %}" method="GET">
-                        Remove
-                    </a>
-                </td>
-
-              </td>
-
-            </tr>
+            {% include "youtubetomp3/video.html" %}
 
           {% endif %}
 

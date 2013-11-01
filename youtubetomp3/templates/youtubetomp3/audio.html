@@ -37,7 +37,7 @@
     </td>
 
     <td>
-        <p>{{ media.link_to_play }}</p>
+        <p>{{ media.name }}</p>
         <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.link_to_play %}" method="GET">
             Remove
         </a>

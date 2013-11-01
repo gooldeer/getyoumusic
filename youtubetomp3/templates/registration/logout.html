@@ -1,9 +1,17 @@
-<<html>
-<head>
-	<title>Logged out</title>
-</head>
-<body>
-	Logged out
-	<input type="hidden" name="next_page" value="{{ next_page }}" />
-</body>
-</html>
+{% extends "youtubetomp3/base.html" %}
+
+{% block title %}
+    Logged out
+{% endblock title %}
+
+{% block content %}
+
+    <div class="card">
+        
+        You've been successfully logged out.
+
+        <a href="{% url 'youtubetomp3:index' %}">Move to welcome page.</a>
+        
+    </div>
+
+{% endblock content %}

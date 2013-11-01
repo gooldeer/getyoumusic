@@ -62,8 +62,12 @@ def convert(path, current_user, extension=None):
     playlist_field = create_default_playlist(current_user, is_audio)
 
     if filename_to_play != None:
+        medianame = os.path.basename(Utils.getName(filename_to_play))
+
         Media.objects.create_media(playlist=playlist_field, 
-            link_to_play=filename_to_play, link_to_load=filename_to_load)
+            name = medianame, 
+            link_to_play=filename_to_play, 
+            link_to_load=filename_to_load)
         
     return filename_to_play
 
