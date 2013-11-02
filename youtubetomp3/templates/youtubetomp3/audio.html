@@ -37,11 +37,11 @@
     </td>
 
     <td>
-        <p>{{ media.name }}</p>
+        <p id="name{{ media.id }}">{{ media.name }}</p>
         <a 
             data-toggle="modal"
             href="#changeNameModal"
-            onclick="changeName('{% url 'youtubetomp3:change_media' playlist.name media.id %}')">
+            onclick="changeMediaName('{% url 'youtubetomp3:change_media' playlist.name media.id %}')">
 
                 Change name
 

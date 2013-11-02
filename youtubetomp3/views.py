@@ -172,8 +172,11 @@ def change_media(request, playlistName, mediaId):
 
     for med in Media.objects.filter(link_to_play=media.link_to_play): 
         med.rename(medianame)
+        media = med
 
-    pair = { 'id': media.id, 'name': medianame }
+    pair = { 'id': media.id, 'name': media.name, 
+             'link_to_play': media.link_to_play, 
+             'link_to_load': media.link_to_load }
 
     return HttpResponse(json.dumps(pair), mimetype='application/json')
 

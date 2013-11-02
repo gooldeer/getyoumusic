@@ -30,19 +30,23 @@ function changeName(url) {
     modal.modal('show');
 }
 
-function getNameChangesFromServer(url) {
-    $.get(url)
+function changeMediaName(url) {
+    form = $("#changeNameForm");
+    modal = $("#changeNameModal");
 
-    .done(function(data) {
-
-        if (data) {
-            //TODO change media name
-        };
-    })
-
-    .fail(function() {
-        alert("Can't change name");
+    form.ajaxForm({
+        url: url,
+        dataType: 'json',
+        beforeSubmit: function () {
+            modal.modal('hide');
+        },
+        success: function (response) {
+            $("#name" + response.id).text(response.name);
+        }
     });
+
+    // form.attr('action', url);
+    modal.modal('show');
 }
 
 function getColorChagesFromServer(url) {

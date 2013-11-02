@@ -121,7 +121,7 @@
         </div>
         
         <form id="changeNameForm" role="form" method="post" 
-              action="" 
+              action="{% url 'youtubetomp3:poll_state' %}" 
               enctype="multipart/form-data">
 
             {% csrf_token %}
@@ -144,6 +144,7 @@
 
 {% block javascript %}
 
+  <script src="{% static 'js/jquery.form.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/playlist.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/audio.js' %}"></script>
 
