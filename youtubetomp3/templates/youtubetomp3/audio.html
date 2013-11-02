@@ -38,6 +38,14 @@
 
     <td>
         <p>{{ media.name }}</p>
+        <a 
+            data-toggle="modal"
+            href="#changeNameModal"
+            onclick="changeName('{% url 'youtubetomp3:change_media' playlist.name media.id %}')">
+
+                Change name
+
+        </a>
         <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.link_to_play %}" method="GET">
             Remove
         </a>

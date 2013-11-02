@@ -32,8 +32,22 @@ def uniquify(path, sep = ''):
             
     return os.path.basename(path)
 
+def rename(oldName, newName, user):
+
+    extension = getExtension(oldName)
+    oldPath = createPath(oldName, user)
+    newPath = createPath('', user) + newName + extension
+
+    if os.path.exists(oldPath):
+        os.rename(oldPath, newPath)
+
+    return createLink(os.path.basename(newPath), user)
+
 def getName(url):
     return os.path.splitext(url)[0]
+
+def getExtension(url):
+    return os.path.splitext(url)[1]
 
 def createPath(path, current_user):
     directory = settings.MEDIA_ROOT + current_user.username + '/'

@@ -140,6 +140,7 @@ def remove_media(request, playlistName, media):
 def change_playlist(request, playlistName, name=None, color=None):
     
     user = request.user
+    redirect = False
     playlist = user.playlist_set.get(name=playlistName, user=user)
 
     if name == None:
@@ -162,6 +163,20 @@ def change_playlist(request, playlistName, name=None, color=None):
     else:
         return HttpResponse(json.dumps(pair), mimetype='application/json')
 
+def change_media(request, playlistName, mediaId):
+
+    if 'playlist' in request.POST:
+        medianame = request.POST['playlist']
+
+    media = Media.objects.get(id=mediaId)
+
+    for med in Media.objects.filter(link_to_play=media.link_to_play): 
+        med.rename(medianame)
+
+    pair = { 'id': media.id, 'name': medianame }
+
+    return HttpResponse(json.dumps(pair), mimetype='application/json')
+
 def add_media_to_playlist(request, playlist_name, media):
     """ Adds media to given playlist """
     user = request.user
@@ -169,6 +184,8 @@ def add_media_to_playlist(request, playlist_name, media):
     media_field = Media.objects.filter(link_to_play=media)[0]
 
     Media.objects.create_media(playlist=playlist_to_add, 
-        link_to_play=media, link_to_load=media_field.link_to_load)
+        name=media_field.name,
+        link_to_play=media_field.link_to_play, 
+        link_to_load=media_field.link_to_load)
     return HttpResponse('Added')
 

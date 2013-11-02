@@ -61,6 +61,16 @@ class Media(models.Model):
     def __unicode__(self):
         return self.playlist.user.username + ": " + self.link_to_play
 
+    def rename(self, newName):
+        self.name = newName
+
+        self.link_to_play = Utils.rename(
+            os.path.basename(self.link_to_play), newName, self.playlist.user)
+        self.link_to_load = Utils.rename(
+            os.path.basename(self.link_to_load), newName, self.playlist.user)
+
+        self.save()
+
     def delete(self):
 
         if (self.playlist.name == CONST.DEFAULT_AUDIO_PLAYLIST 

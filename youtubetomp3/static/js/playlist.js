@@ -23,7 +23,11 @@ function changeColor(url) {
 }
 
 function changeName(url) {
-    window.setTimeout(getNameChangesFromServer(url), 1000);
+    form = $("#changeNameForm");
+    modal = $("#changeNameModal");
+
+    form.attr('action', url);
+    modal.modal('show');
 }
 
 function getNameChangesFromServer(url) {
@@ -32,7 +36,7 @@ function getNameChangesFromServer(url) {
     .done(function(data) {
 
         if (data) {
-            //TODO change playlist name
+            //TODO change media name
         };
     })
 
