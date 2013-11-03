@@ -94,12 +94,10 @@
         {% for playlist in user.playlist_set.all %}
 
           {% if playlist.is_audio %}
-          
-            <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
-              <div style="background-color: #{{ playlist.color }}">
-                <p>{{ playlist.name }}</p>
-              </div> 
-            </a>
+           
+            <div class="chooser-block" style="background-color: #{{ playlist.color }}">
+              <a class="chooser-link" id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">{{ playlist.name }}</a>
+            </div> 
 
           {% endif %}
 
@@ -113,11 +111,9 @@
 
           {% if not playlist.is_audio %}
 
-            <a id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">
-              <div style="background-color: #{{ playlist.color }}">
-                <p>{{ playlist.name }}</p>
-              </div> 
-            </a>
+            <div class="chooser-block" style="background-color: #{{ playlist.color }}">
+              <a class="chooser-link" id="add_media" href="" onclick="add_to_playlist('{{ playlist.name }}')">{{ playlist.name }}</a>
+            </div> 
 
           {% endif %}
 

@@ -59,10 +59,10 @@ function updateTime(){
         (Math.floor(activeSong.currentTime % 60) < 10 ? '0' : '') + Math.floor(activeSong.currentTime % 60);
     var currentMinutes = Math.floor(activeSong.currentTime / 60);
     //Sets the current song location compared to the song duration.
-    container.find("#songTime").html(currentMinutes + ":" + currentSeconds + ' / ' + 
+    container.find("#songTime").html(currentMinutes + ":" + currentSeconds/* + ' / ' + 
         Math.floor(activeSong.duration / 60) + ":" + 
         (Math.floor(activeSong.duration % 60) < 10 ? '0' : '') + 
-        Math.floor(activeSong.duration % 60));
+        Math.floor(activeSong.duration % 60)*/);
 
     //Fills out the slider with the appropriate position.
     var percentageOfSong = (activeSong.currentTime/activeSong.duration);

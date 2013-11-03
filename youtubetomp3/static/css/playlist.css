@@ -11,7 +11,23 @@
     max-height: 20px;
 }
 
+.edit-button {
+    max-height: 15px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
 .songs {
     margin-right: 5%;
     width:100%;
+}
+
+.modal-dialog {
+    max-width: 400px;
+}
+
+.input-group {
+    margin: auto;
+    padding-top: 10px;
+    display: block;
 }

@@ -27,6 +27,10 @@ html, body {
 
 /*Styles that not for a sticky footer*/
 
+body {
+  min-width: 700px;
+}
+
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -52,6 +56,7 @@ html, body {
     /*padding-top: 1em;*/
     margin-left: 10%;
     margin-right: 10%;
+    /*min-width: 500px;*/
 }
 
 .navbar-inverse {
@@ -95,12 +100,16 @@ html, body {
 
 .header-right-button {
     line-height:3em;
-    margin-top: -50px;
+    margin-top: 20px;
     float: right;
 }
 
 .header-right-button img {
   vertical-align: middle;
+}
+
+.in-one-line {
+  display: inline-table;
 }
 
 /*To fix bug with black non-transparent back fade*/
@@ -121,6 +130,14 @@ html, body {
 
   .stuff {
     margin-top: 90px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-wrapper {
+    width: 700px;
+    margin: 0 auto;
+    z-index: 999;
   }
 }
 /*Custom styles*/

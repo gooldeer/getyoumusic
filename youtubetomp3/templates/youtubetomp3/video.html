@@ -1,19 +1,49 @@
+{% load staticfiles %}
+
 <tr>
 
-  <td>
+  <td rowspan="2" style="width: 30%; vertical-align: bottom;">
 
-    <video width="320" heigth="240" preload="metadata" controls>
+    <video style="margin-bottom: 20px;" width="100%" preload="metadata" controls>
       <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_play mediatype='video/webm'  %}" type="video/webm"/>
       <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_load mediatype='video/mp4'  %}" type="video/mp4"/>
       Bad browser
     </video>
 
-    <td>
-        <p>{{ media.name }}</p>
-        <a href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.link_to_play %}" method="GET">
-            Remove
-        </a>
-    </td>
+  </td>
+
+  <td style="padding-left: 20px;">
+
+      <p id="name{{ media.id }}" class="in-one-line videoname">{{ media.name }}</p>
+      <a
+          title="Rename audio"
+          data-toggle="modal"
+          class="in-one-line"
+          href="#changeNameModal"
+          onclick="changeMediaName('{% url 'youtubetomp3:change_media' playlist.name media.id %}')">
+
+              <img class="edit-button" src="{% static 'img/edit.png' %}">
+
+      </a>
+
+      <a class="in-one-line" style="float: right;" title="Download" href="{{ media.link_to_load }}"><img src="{% static 'img/download.png' %}"></a>
+
+  </td>
+
+
+</tr>
+
+<tr>
+
+  <td style="vertical-align: bottom;">
+
+    <div style="margin-bottom: 40px;">
+      <a title="Delete" type="button" class="in-one-line close" data-dismiss="modal" aria-hidden="true" 
+      href="{% url 'youtubetomp3:remove_media' playlistName=playlist.name media=media.link_to_play %}" 
+      method="GET">
+                &times;
+      </a>
+    </div>
 
   </td>
 

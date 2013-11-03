@@ -5,7 +5,13 @@
 {% block style %}
   {% load staticfiles %}
   <link href="{% static 'css/playlist.css' %}" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/audio.css' %}"/>
+
+  {% if playlist.is_audio %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/audio.css' %}"/>
+  {% else %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/video.css' %}"/>
+  {% endif %}
+  
 {% endblock %}
 
 {% block sidebar %}
@@ -20,18 +26,20 @@
   <div class="card">
     <div class="container">
 
-      <h1 id="playlistName">{{ playlist.name }}</h1>
+      <h1 class="in-one-line" id="playlistName">{{ playlist.name }}</h1>
 
       <a 
+        title="Rename playlist"
+        class="in-one-line"
         data-toggle="modal"
         href="#changeNameModal"
         onclick="changeName('{% url 'youtubetomp3:change_playlist' playlist.name playlist.name playlist.color %}')">
 
-        Change name
+        <img class="edit-button" src="{% static 'img/edit.png' %}">
 
       </a>
 
-      <a class="header-right-button" rel="popover" data-original-title="Pick color" data-placement="left" href="#">
+      <a class="in-one-line header-right-button" rel="popover" data-original-title="Pick color" data-placement="left" href="#">
 
         {% with "img/"|add:playlist.color|add:".png" as image %}
         <img id="color" src="{% static image %}">

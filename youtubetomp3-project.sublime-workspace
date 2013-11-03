@@ -4,6 +4,122 @@
 		"selected_items":
 		[
 			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"verti",
+				"vertical-align"
+			],
+			[
+				"vide",
+				"videoname"
+			],
+			[
+				"vertical-ali",
+				"vertical-align:   (property)"
+			],
+			[
+				"max-",
+				"max-height"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"au",
+				"audioname"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"audio",
+				"audioitem"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"auto",
+				"auto  (value)"
+			],
+			[
+				"flo",
+				"float:   (property)"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"old",
+				"oldPath"
+			],
+			[
+				"li",
+				"link_to_play"
+			],
+			[
+				"link",
+				"link_to_play"
+			],
+			[
+				"change",
+				"changeName"
+			],
+			[
+				"fu",
+				"fun	Function"
+			],
+			[
+				"play",
+				"playlist"
+			],
+			[
+				"new",
+				"newPath"
+			],
+			[
+				"creat",
+				"createPath  (function)"
+			],
+			[
+				"pla",
+				"playlist"
+			],
+			[
+				"crea",
+				"createPath  (function)"
+			],
+			[
+				"medi",
+				"media"
+			],
+			[
+				"med",
+				"media"
+			],
+			[
 				"inc",
 				"include	include"
 			],
@@ -14,10 +130,6 @@
 			[
 				"max",
 				"max_length"
-			],
-			[
-				"sty",
-				"style"
 			],
 			[
 				"ex",
@@ -34,10 +146,6 @@
 			[
 				"nav",
 				"navbar"
-			],
-			[
-				"marg",
-				"margin-top"
 			],
 			[
 				"rel",
@@ -108,10 +216,6 @@
 				"playlist"
 			],
 			[
-				"change",
-				"change_playlist"
-			],
-			[
 				"can",
 				"change_playlist"
 			],
@@ -138,14 +242,6 @@
 			[
 				"Unice",
 				"UnicodeDecodeError	(builtin, class)"
-			],
-			[
-				"old",
-				"old_filename"
-			],
-			[
-				"new",
-				"new_filename"
 			],
 			[
 				"VIDE",
@@ -200,16 +296,8 @@
 				"filename_to_play"
 			],
 			[
-				"au",
-				"audioPlaylistsLabes"
-			],
-			[
 				"chi",
 				"child"
-			],
-			[
-				"dis",
-				"display:   (property)"
 			],
 			[
 				"style",
@@ -284,24 +372,12 @@
 				"div"
 			],
 			[
-				"link",
-				"link_to_load"
-			],
-			[
-				"medi",
-				"mediatype"
-			],
-			[
 				"link_to",
 				"link_to_play"
 			],
 			[
 				"media",
 				"media_field	(local, instance)"
-			],
-			[
-				"play",
-				"playlist_set"
 			],
 			[
 				"fi",
@@ -316,24 +392,12 @@
 				"link_to_load"
 			],
 			[
-				"li",
-				"link_to_play"
-			],
-			[
-				"crea",
-				"createPath"
-			],
-			[
 				"from",
 				"from_file"
 			],
 			[
 				"aja",
 				"ajaxForm"
-			],
-			[
-				"med",
-				"mediafile"
 			],
 			[
 				"playl",
@@ -358,10 +422,6 @@
 			[
 				"DI",
 				"div	Tag"
-			],
-			[
-				"vide",
-				"videoPopover"
 			],
 			[
 				"do",
@@ -440,10 +500,6 @@
 				"HttpResponse	(imported, instance)"
 			],
 			[
-				"pla",
-				"playlist	(local, instance)"
-			],
-			[
 				"wid",
 				"window"
 			],
@@ -458,62 +514,6 @@
 			[
 				"HttpRes",
 				"HttpResponse"
-			],
-			[
-				"border-rad",
-				"border-radius:   (property)"
-			],
-			[
-				"audi",
-				"audio/mp3"
-			],
-			[
-				"so",
-				"soundManager"
-			],
-			[
-				"th",
-				"this"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"Uti",
-				"Utils	(imported, module)"
-			],
-			[
-				"se",
-				"self"
-			],
-			[
-				"dir",
-				"directory"
-			],
-			[
-				"curr",
-				"current_user"
-			],
-			[
-				"nam",
-				"basename  (function)"
-			],
-			[
-				"Fil",
-				"File	(imported, instance)"
-			],
-			[
-				"ope",
-				"open	(builtin, class)"
-			],
-			[
-				"op",
-				"open"
-			],
-			[
-				"pat",
-				"path  (module)"
 			]
 		]
 	},
@@ -548,36 +548,40 @@
 	},
 	"file_history":
 	[
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/logout.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/base.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlist.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/audio.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/video.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/video.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/1st_page.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlists.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/index.css",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
+		"/C/Development/WebProjects/YouTubeToMp3/manage.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/models.py",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/logout.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/base.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/jobs.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/login.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/index.css",
-		"/C/Development/WebProjects/YouTubeToMp3/manage.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlists.css",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlist.css",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/FileDownloader.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/YoutubeDL.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/utils.py",
 		"/C/Users/Sergey.GOOLDEER-PC/AppData/Roaming/Sublime Text 2/Packages/WordHighlight/Word Highlight.sublime-settings",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/constants.py",
 		"/C/Development/WebProjects/YouTubeToMp3/mysite/settings.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/pafy.py",
 		"/C/apache/access.log",
 		"/C/apache/error.log",
@@ -587,13 +591,11 @@
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/ajax_loader1.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/spinner.css",
 		"/C/Development/WebProjects/YouTubeToMp3/media/admin/test.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist-colors-popover.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/admin.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/__init__.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/_init_.py",
 		"/C/Development/WebProjects/YouTubeToMp3/sqlite3.db",
-		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/1st_page.html",
 		"/C/Development/WebProjects/test-audio/test-audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/apache/apache_django_wsgi.conf",
 		"/C/Development/WebProjects/YouTubeToMp3/apache/.htaccess",
@@ -612,7 +614,6 @@
 		"/C/Server/apache/conf/extra/httpd-vhosts.conf",
 		"/C/server/apache/conf/httpd.conf",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/play.js",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/css/audio.css",
 		"/C/Development/WebProjects/YouTubeToMp3/psds/pngs/Playlist.png",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/__init__.py",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/2nd_page.html",
@@ -674,8 +675,7 @@
 		"/C/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/grid/index.html",
 		"/C/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/theme/index.html",
 		"/C/WebProjects/bootstrap-3.0.0/bootstrap-3.0.0/examples/carousel/index.html",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/static/css/signin.css"
+		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html"
 	],
 	"find":
 	{
@@ -693,6 +693,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";\"",
 			"inherit",
 			"height",
 			"extract_info",
