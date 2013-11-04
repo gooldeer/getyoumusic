@@ -151,7 +151,11 @@ def change_playlist(request, playlistName, name=None, color=None):
         redirect = True
         name = request.POST['playlist']
 
-    playlist.name = name
+    if playlistName != CONST.DEFAULT_VIDEO_PLAYLIST and playlistName != CONST.DEFAULT_AUDIO_PLAYLIST: 
+        playlist.name = name
+    else:
+        name = playlistName
+        
     playlist.color = color
     playlist.save()
 
@@ -174,7 +178,7 @@ def change_media(request, playlistName, mediaId):
         med.rename(medianame)
         media = med
 
-    pair = { 'id': media.id, 'name': media.name, 
+    pair = { 'id': mediaId, 'name': medianame, 
              'link_to_play': media.link_to_play, 
              'link_to_load': media.link_to_load }
 

@@ -20,6 +20,7 @@ function updateProgressInfo() {
                 $("#upload-progress-bar").attr('style', "width: " + progress + "%");
                 
                 $("#medialink").val(data);
+                $("#whenDownloadingComplete").show('slow');
                 $("#afterDownloading").show('slow');
             } 
     })
@@ -58,6 +59,7 @@ function updateConvertInfo(audio) {
 function beforeSubmitHandler(formData, jqForm, options) {
     window.setTimeout(updateProgressInfo, 1000);
     $("#progress-container").show('slow');
+    hideAllChildrens($("#afterDownloading"));
     return true;
 };
 
@@ -70,6 +72,11 @@ function beforeConvertHandler(formData, jqForm, options) {
 function successHandler(responseText, statusText, xhr, $form) {
 
     $("#progress-id").val(responseText);
+
+    $("#buttonConvertText").text("Convert");
+    $("#saveAsVideoContainer").show('slow');
+    $("#convertSpinner").hide('slow');
+    
     return true;
 };
 

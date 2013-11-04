@@ -11,6 +11,10 @@
     max-height: 20px;
 }
 
+#right-buttons > .in-one-line {
+    margin-right: 10px;
+}
+
 .edit-button {
     max-height: 15px;
     margin-left: 5px;
@@ -30,4 +34,8 @@
     margin: auto;
     padding-top: 10px;
     display: block;
+}
+
+.popover-content {
+  padding: 0px;
 }

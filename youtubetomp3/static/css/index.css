@@ -61,31 +61,6 @@
   padding: 0px;
 }
 
-.chooser-link { 
-  display: block; 
-  padding: 10px; 
-  /*width: 200px; 
-  height: 100px;*/ 
-}
- 
-.chooser-block a:link { 
-  color: #000; 
-  padding: 10px; 
-  margin: 0px;
-}
-
-.chooser-block a:visited { 
-  color: #000; 
-  padding: 10px; 
-  margin: 0px;
-}
-
-.chooser-block a:hover { 
-  text-decoration: none; 
-  background-color: #7b7b7b; 
-  color: #FFF; 
-}
-
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 

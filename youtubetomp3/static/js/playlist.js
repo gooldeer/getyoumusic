@@ -1,21 +1,38 @@
 $(document).ready(function() {
 
-    var popover = $("[rel=popover]");
+    var colorsPopover = $("#colorsPopover");
 
-    if (popover.length) {
+    if (colorsPopover.length) {
 
-        popover.popover({
+        colorsPopover.popover({
 
             html: true,
-            content: getPopoverWrapperHtml
+            content: getPopoverColorsWrapperHtml
+
+        });
+
+    }
+
+    var mediasPopover = $("#mediasPopover");
+
+    if (mediasPopover.length) {
+
+        mediasPopover.popover({
+
+            html: true,
+            content: getPopoverMediasWrapperHtml
 
         });
 
     }
 });
 
-function getPopoverWrapperHtml() {
-    return $('#popover_content_wrapper').html();
+function getPopoverColorsWrapperHtml() {
+    return $('#popover_colors_wrapper').html();
+}
+
+function getPopoverMediasWrapperHtml() {
+    return $('#popover_medias_wrapper').html();
 }
 
 function changeColor(url) {
@@ -65,4 +82,15 @@ function getColorChagesFromServer(url) {
         alert("Can't change color");
     });
 
+}
+
+function add_to_playlist(playlist, media) {
+    event.preventDefault();
+    var link = "/playlists/" + playlist + "/add/media=" + media + "/";
+
+    $.get(link)
+    
+    .done(function(data) {
+        // alert(data);
+    })
 }

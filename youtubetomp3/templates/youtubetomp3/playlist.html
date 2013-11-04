@@ -39,13 +39,27 @@
 
       </a>
 
-      <a class="in-one-line header-right-button" rel="popover" data-original-title="Pick color" data-placement="left" href="#">
+      <div id="right-buttons" class="in-one-line header-right-button">
 
-        {% with "img/"|add:playlist.color|add:".png" as image %}
-        <img id="color" src="{% static image %}">
-        {% endwith %}
+        <a id="mediasPopover"
+         class="in-one-line" 
+         rel="popover" data-original-title="Choose media" data-placement="left" href="#">
 
-      </a>
+          <img id="add" src="{% static 'img/add.png' %}">
+          
+        </a>
+
+        <a id="colorsPopover"
+         class="in-one-line" 
+         rel="popover" data-original-title="Pick color" data-placement="left" href="#">
+
+          {% with "img/"|add:playlist.color|add:".png" as image %}
+          <img id="color" src="{% static image %}">
+          {% endwith %}
+
+        </a>
+
+      </div>
 
       <hr>
 
@@ -71,7 +85,22 @@
     </div>
   </div>
 
-  <div id="popover_content_wrapper" style="display: none">
+  <div id="popover_medias_wrapper" style="display: none">
+
+    {% for media in playlist.get_default_playlist.media_set.all %}
+
+      <div class="chooser-block" style="background-color: #{{ playlist.color }}">
+        <a class="chooser-link" id="add_media" href="" 
+          onclick="add_to_playlist('{{ playlist.name }}', '{{ media.link_to_play }}')">
+            {{ media.name }}
+        </a>
+      </div>
+      
+    {% endfor %}
+
+  </div>
+
+  <div id="popover_colors_wrapper" style="display: none">
     <table border="0" style="width: 100%">
 
       <tr>

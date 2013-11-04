@@ -30,6 +30,16 @@ class Playlist(models.Model):
     def __unicode__(self):
         return self.user.username + ": " + self.name
 
+    def get_default_playlist(self):
+        """ Returns default playlist (video or audio) according to is_audio field """
+        if self.is_audio:
+            playlist_name = CONST.DEFAULT_AUDIO_PLAYLIST
+        else:
+            playlist_name = CONST.DEFAULT_VIDEO_PLAYLIST
+
+        return Playlist.objects.get(
+            user=self.user, name=playlist_name, is_audio=self.is_audio)
+
 class MediaManager(models.Manager):
     """MediaManager with checking on name"""
     def create_media(self, playlist, name, link_to_play, link_to_load):
