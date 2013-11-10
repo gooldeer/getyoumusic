@@ -26,6 +26,15 @@ import youtubetomp3.core.utils as Utils
 def index(request):
     return render(request, 'youtubetomp3/index.html')
 
+def contacts(request):
+    return render(request, 'youtubetomp3/footer/contacts.html')
+
+def support(request):
+    return render(request, 'youtubetomp3/footer/support.html')
+
+def about(request):
+    return render(request, 'youtubetomp3/footer/about.html')
+
 def poll_state(request):
     """ A view to report the progress to the user """
     if 'job' in request.GET:
