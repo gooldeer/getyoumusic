@@ -58,9 +58,8 @@
                     {% if user.is_active %}
 
                       <p class="navbar-text pull-right">Signed as <b>
-                                <a href="{% url 'profile_detail' %}" method="get" class="navbar-link">
                                   {{ user.username }}
-                                </a>
+                                
                               </b>. <a href="{% url 'auth_logout' %}" class="navbar-link">Logout</a>
                       </p>
                     
