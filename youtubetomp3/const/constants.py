@@ -34,4 +34,4 @@ class _Const(object):
         return 'videos'
     @constant
     def YOUTUBE_DL_PATH():
-        return '/webapps/gettubemusic/gettubemusic/youtubetomp3/libs/youtube-dl'
+        return '$HOME/webapps/gettubemusic/gettubemusic/youtubetomp3/libs/youtube-dl'
