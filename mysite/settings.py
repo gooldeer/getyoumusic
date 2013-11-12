@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:/Development/WebProjects/YouTubeToMp3/sqlite3.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/webapps/gettubemusic/gettubemusic/sqlite3.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'gooldeer',
         'PASSWORD': 'EH3j6Gc9',
@@ -58,7 +58,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = 'C:/Development/WebProjects/YouTubeToMp3/media/'
+MEDIA_ROOT = '/webapps/gettubemusic/gettubemusic/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
