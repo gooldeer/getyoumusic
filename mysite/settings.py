@@ -23,10 +23,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['127.0.0.1',
-                 'gagandeep.webfaction.com',
-                 'web432.webfaction.com',
-                 '75.126.113.172']
+ALLOWED_HOSTS = ['gagandeep.webfaction.com']
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
@@ -61,7 +58,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = '$HOME/webapps/gettubemusic/gettubemusic/media/'
+MEDIA_ROOT = 'home/gagandeep/webapps/gettubemusic/gettubemusic/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
