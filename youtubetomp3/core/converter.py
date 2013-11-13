@@ -16,16 +16,20 @@ class Converter(object):
         path = Utils.createPath(os.path.basename(path), self.user)
         filename = Utils.uniquify(Utils.getName(path) + '.' + ext)
 
-        video = AudioSegment.from_file(path)
+        print 'Path to convert: ' + path
+
+        #video = AudioSegment.from_file(path)
         path_to_convert = Utils.createPath(filename, self.user)
 
         if ext == 'ogg':
-            video.export(path_to_convert, format=ext, 
-                codec="libvorbis", parameters=["-aq", "50"])
+            call(["ffmpeg", "-i", path, "-f", ext, "-acodec", "libvorbis", "-aq", "50", path_to_convert])
+            #video.export(path_to_convert, format=ext, 
+             #   codec="libvorbis", parameters=["-aq", "50"])
         elif ext == 'mp4':
             call(["ffmpeg", "-i", path, "-vcodec", "libx264", "-preset", "ultrafast", "-b:v", "768k",  path_to_convert])
         else:
-            video.export(path_to_convert, format=ext)
+            call(["ffmpeg", "-i", path, "-f", ext, path_to_convert])
+            #video.export(path_to_convert, format=ext)
 
         return Utils.createLink(filename, self.user)
 
