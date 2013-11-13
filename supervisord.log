@@ -1,0 +1,81 @@
+2013-11-13 20:13:39,175 INFO RPC interface 'supervisor' initialized
+2013-11-13 20:13:39,176 INFO daemonizing the supervisord process
+2013-11-13 20:13:39,176 INFO supervisord started with pid 13461
+2013-11-13 20:13:40,178 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 20:13:41,179 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 20:13:43,182 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 20:13:46,185 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 20:13:46,185 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 20:39:25,838 WARN received SIGTERM indicating exit request
+2013-11-13 21:00:09,868 INFO RPC interface 'supervisor' initialized
+2013-11-13 21:00:09,869 INFO daemonizing the supervisord process
+2013-11-13 21:00:09,870 INFO supervisord started with pid 28083
+2013-11-13 21:00:10,871 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:00:11,873 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:00:13,875 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:00:16,879 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:00:16,879 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 21:27:17,395 INFO RPC interface 'supervisor' initialized
+2013-11-13 21:27:17,397 INFO daemonizing the supervisord process
+2013-11-13 21:27:17,397 INFO supervisord started with pid 3057
+2013-11-13 21:27:18,398 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:27:19,400 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:27:21,403 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:27:24,406 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:27:24,406 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 21:46:11,467 INFO RPC interface 'supervisor' initialized
+2013-11-13 21:46:11,468 INFO daemonizing the supervisord process
+2013-11-13 21:46:11,468 INFO supervisord started with pid 8983
+2013-11-13 21:46:12,470 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:46:13,471 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:46:15,474 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:46:18,478 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:46:18,478 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 21:49:18,374 INFO RPC interface 'supervisor' initialized
+2013-11-13 21:49:18,375 INFO daemonizing the supervisord process
+2013-11-13 21:49:18,375 INFO supervisord started with pid 10489
+2013-11-13 21:49:19,377 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:49:20,379 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:49:22,381 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:49:24,458 DEBG attempted to kill celeryd with sig SIGTERM but it wasn't running
+2013-11-13 21:49:24,458 DEBG attempted to kill celeryd with sig SIGTERM but it wasn't running
+2013-11-13 21:49:25,459 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 21:49:25,460 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 22:14:45,847 INFO RPC interface 'supervisor' initialized
+2013-11-13 22:14:45,849 INFO daemonizing the supervisord process
+2013-11-13 22:14:45,849 INFO supervisord started with pid 20766
+2013-11-13 22:14:46,851 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:14:47,852 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:14:49,855 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:14:52,859 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:14:52,859 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 22:26:45,700 INFO RPC interface 'supervisor' initialized
+2013-11-13 22:26:45,701 INFO daemonizing the supervisord process
+2013-11-13 22:26:45,701 INFO supervisord started with pid 25106
+2013-11-13 22:26:46,703 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:26:47,705 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:26:49,707 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:26:52,711 INFO spawnerr: can't find command '/home/gagandeep/webapps/gettubemusic/bin/python2.7'
+2013-11-13 22:26:52,711 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 22:34:38,476 WARN received SIGTERM indicating exit request
+2013-11-13 23:10:13,150 INFO RPC interface 'supervisor' initialized
+2013-11-13 23:10:13,151 INFO daemonizing the supervisord process
+2013-11-13 23:10:13,152 INFO supervisord started with pid 6925
+2013-11-13 23:10:14,153 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7' is a directory
+2013-11-13 23:10:15,154 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7' is a directory
+2013-11-13 23:10:17,156 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7' is a directory
+2013-11-13 23:10:20,160 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7' is a directory
+2013-11-13 23:10:20,160 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 23:19:08,138 INFO RPC interface 'supervisor' initialized
+2013-11-13 23:19:08,140 INFO daemonizing the supervisord process
+2013-11-13 23:19:08,140 INFO supervisord started with pid 8488
+2013-11-13 23:19:09,142 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7/' is a directory
+2013-11-13 23:19:10,143 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7/' is a directory
+2013-11-13 23:19:12,146 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7/' is a directory
+2013-11-13 23:19:15,149 INFO spawnerr: command at '/home/gagandeep/webapps/gettubemusic/lib/python2.7/' is a directory
+2013-11-13 23:19:15,149 INFO gave up: celeryd entered FATAL state, too many start retries too quickly
+2013-11-13 23:26:48,758 INFO RPC interface 'supervisor' initialized
+2013-11-13 23:26:48,759 INFO daemonizing the supervisord process
+2013-11-13 23:26:48,759 INFO supervisord started with pid 11305
+2013-11-13 23:26:49,762 INFO spawned: 'celeryd' with pid 11308
+2013-11-13 23:26:51,188 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
