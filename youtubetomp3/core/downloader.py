@@ -22,6 +22,7 @@ class Downloader():
             '.' + CONST.VIDEO_TO_PLAY_EXTENSION)
 
         myfilename = Utils.createPath(myfilename, self.user)
+        print "Path for downloading: " + myfilename
 
         ydl = youtube_dl.YoutubeDL({
             'outtmpl': myfilename,
