@@ -1,6 +1,6 @@
 import os, sys
 
-sys.path.append('$HOME/webapps/gettubemusic/gettubemusic')
+sys.path.append('/home/gagandeep/webapps/gettubemusic/gettubemusic')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 
 import django.core.handlers.wsgi
