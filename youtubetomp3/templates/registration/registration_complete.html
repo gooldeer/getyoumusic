@@ -1,8 +1,11 @@
-<<html>
-<head>
-	<title>Registration complete!</title>
-</head>
-<body>
-	Registration Complete!
-</body>
-</html>
+{% extends "youtubetomp3/base.html" %}
+
+{% block title %}Registration complete!{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="content">
+            Thanks for registration! Activation message was send to your E-mail addres.
+        </div>
+    </div>
+{% endblock content %}

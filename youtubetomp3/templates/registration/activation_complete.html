@@ -1,8 +1,13 @@
-<<html>
-<head>
-	<title>Activation complete</title>
-</head>
-<body>
-	Activation complete
-</body>
-</html>
+{% extends "youtubetomp3/base.html" %}
+
+{% block title %}
+    Activation complete!
+{% endblock title %}
+
+{% block content %}
+    <div class="card">
+        <div class="content">
+            Activation complete. Now you can log in.
+        </div>
+    </div>
+{% endblock content %}

@@ -1,8 +1,13 @@
-<<html>
-<head>
-	<title>Activation fails</title>
-</head>
-<body>
-	Activation {{ activation_key }} fails
-</body>
-</html>
+{% extends "youtubetomp3/base.html" %}
+
+{% block title %}
+    Fails!
+{% endblock title %}
+
+{% block content %}
+    <div class="card">
+        <div class="content">
+            Activation fails.
+        </div>
+    </div>
+{% endblock content %}

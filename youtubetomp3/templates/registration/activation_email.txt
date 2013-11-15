@@ -1,1 +1,5 @@
-Activation key: {{ activation_key }}  Site: {{ site }}
+Hello!
+
+Thank you for registration on our website {{ site }}.
+You will need to activate your account before using it. For this you will need to follow this link:
+{{ site }}/accounts/activate/{{ activation_key }}
