@@ -1,6 +1,6 @@
 # Django settings for mysite project.
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -180,3 +180,9 @@ LOGGING = {
         },
     }
 }
+
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'gettubemusicregistration'
+EMAIL_HOST_PASSWORD = 'ServerPassword'
+DEFAULT_FROM_EMAIL = 'registration@gagandeep.webfactional.com'
+SERVER_EMAIL = 'registration@gagandeep.webfactional.com'

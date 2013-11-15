@@ -79,3 +79,17 @@
 2013-11-13 23:26:48,759 INFO supervisord started with pid 11305
 2013-11-13 23:26:49,762 INFO spawned: 'celeryd' with pid 11308
 2013-11-13 23:26:51,188 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2013-11-14 23:24:13,121 INFO stopped: celeryd (exit status 0)
+2013-11-14 23:24:29,957 INFO spawned: 'celeryd' with pid 8812
+2013-11-14 23:24:31,395 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2013-11-14 23:31:55,817 WARN killing 'celeryd' (8812) with SIGKILL
+2013-11-14 23:31:55,819 INFO stopped: celeryd (terminated by SIGKILL)
+2013-11-14 23:33:08,322 INFO spawned: 'celeryd' with pid 10745
+2013-11-14 23:33:09,754 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2013-11-14 23:34:35,069 WARN killing 'celeryd' (10745) with SIGKILL
+2013-11-14 23:34:35,071 INFO stopped: celeryd (terminated by SIGKILL)
+2013-11-14 23:42:12,653 INFO RPC interface 'supervisor' initialized
+2013-11-14 23:42:12,654 INFO daemonizing the supervisord process
+2013-11-14 23:42:12,654 INFO supervisord started with pid 12945
+2013-11-14 23:42:13,657 INFO spawned: 'celeryd' with pid 12946
+2013-11-14 23:42:15,084 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

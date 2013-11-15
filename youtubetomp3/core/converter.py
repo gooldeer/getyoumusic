@@ -22,13 +22,13 @@ class Converter(object):
         path_to_convert = Utils.createPath(filename, self.user)
 
         if ext == 'ogg':
-            call(["ffmpeg", "-i", path, "-f", ext, "-acodec", "libvorbis", "-aq", "50", path_to_convert])
+            call(["ffmpeg", "-i", path, "-acodec", "libvorbis", "-aq", "50", path_to_convert])
             #video.export(path_to_convert, format=ext, 
              #   codec="libvorbis", parameters=["-aq", "50"])
         elif ext == 'mp4':
             call(["ffmpeg", "-i", path, "-vcodec", "libx264", "-preset", "ultrafast", "-b:v", "768k",  path_to_convert])
         else:
-            call(["ffmpeg", "-i", path, "-f", ext, path_to_convert])
+            call(["ffmpeg", "-i", path, path_to_convert])
             #video.export(path_to_convert, format=ext)
 
         return Utils.createLink(filename, self.user)

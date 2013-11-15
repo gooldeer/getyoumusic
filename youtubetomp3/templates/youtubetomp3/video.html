@@ -5,8 +5,8 @@
   <td rowspan="2" style="width: 30%; vertical-align: bottom;">
 
     <video style="margin-bottom: 20px;" width="100%" preload="metadata" controls>
-      <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_play mediatype='video/webm'  %}" type="video/webm"/>
-      <source src="{% url 'youtubetomp3:audio' playlistName=playlist.name media=media.link_to_load mediatype='video/mp4'  %}" type="video/mp4"/>
+      <source src="{{ media.link_to_play }}" type="video/webm"/>
+      <source src="{{ media.link_to_load }}" type="video/mp4"/>
       Bad browser
     </video>
 
