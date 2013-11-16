@@ -203,5 +203,7 @@ def add_media_to_playlist(request, playlist_name, media):
         name=media_field.name,
         link_to_play=media_field.link_to_play, 
         link_to_load=media_field.link_to_load)
-    return HttpResponse('Added')
+
+    return HttpResponseRedirect(
+        reverse('youtubetomp3:playlist', args=[playlist_name,]))
 

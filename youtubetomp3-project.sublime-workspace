@@ -519,14 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "youtubetomp3/core/converter.py",
-			"settings":
-			{
-				"buffer_size": 1199,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -556,6 +548,13 @@
 	},
 	"file_history":
 	[
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation_complete.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_complete.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation_email_subject.txt",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation_email.txt",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/downloader.py",
 		"/C/Development/WebProjects/YouTubeToMp3/mysite/settings.py",
@@ -565,7 +564,6 @@
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/const/constants.py",
 		"/C/Apache2/conf/httpd.conf",
 		"/C/Users/Sergey.GOOLDEER-PC/AppData/Local/Temp/Rar$EXa0.381/mod_xsendfile-0.12/docs/Readme.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/utils.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/FileDownloader.py",
 		"/C/Development/WebProjects/YouTubeToMp3/error_gettubemusic.log",
@@ -603,7 +601,6 @@
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/audio.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/logout.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/login.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/YoutubeDL.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/youtube_dl/utils.py",
@@ -678,12 +675,7 @@
 		"/C/Users/Sergey/Downloads/python-video-converter-master/python-video-converter-master/doc/index.rst",
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlists.css",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlists.html",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/static/css/bootstrap.css",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist-colors-popover.html",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/base.html",
-		"/C/WebProjects/audio/audio.html"
+		"/C/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css"
 	],
 	"find":
 	{
@@ -787,123 +779,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "youtubetomp3/core/converter.py",
-					"settings":
-					{
-						"buffer_size": 1199,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 15.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
