@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"con",
+				"contents  (function)"
+			],
+			[
+				"mov",
+				"movText"
+			],
+			[
+				"mo",
+				"moveText"
+			],
+			[
+				"fra",
+				"frame	Tag"
+			],
+			[
+				"fr",
+				"frameset	Tag"
+			],
+			[
+				"blo",
+				"block	block"
+			],
+			[
+				"pa",
+				"parent  (function)"
+			],
+			[
+				"pass",
+				"passwordRegex"
+			],
+			[
 				"conta",
 				"contacts"
 			],
@@ -170,10 +202,6 @@
 			[
 				"padd",
 				"padding-right"
-			],
-			[
-				"con",
-				"container"
 			],
 			[
 				"nav",
@@ -486,34 +514,6 @@
 			[
 				"class",
 				"class	(keyword, instance)"
-			],
-			[
-				"spli",
-				"split"
-			],
-			[
-				"sp",
-				"split  (function)"
-			],
-			[
-				"spl",
-				"splitext  (function)"
-			],
-			[
-				"ret",
-				"return	(keyword, instance)"
-			],
-			[
-				"core",
-				"core  (module)"
-			],
-			[
-				"im",
-				"import	(keyword, instance)"
-			],
-			[
-				"HttpR",
-				"HttpResponse	(imported, instance)"
 			]
 		]
 	},
@@ -548,13 +548,32 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/home work.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab3/frame_page.htm",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab3/lab3.htm",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab3/lab.js",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Page2.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Page1.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Page3.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Sitecard.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Head.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Headframe.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Frame.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/index.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/panel.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/navigation.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/sitecard.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/registration.html",
+		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/Dasha/Registration.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration.js",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
+		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/urls.py",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/playlist.js",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/core/converter.py",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation_complete.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation.html",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_form.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/registration_complete.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation_email_subject.txt",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/registration/activation_email.txt",
@@ -584,7 +603,6 @@
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/7 семестр/Грищенко/ppse/project/fifteen/index.html",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/7 семестр/Грищенко/ppse/project/fifteen/15.js",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/7 семестр/Грищенко/ppse/project/fifteen/style.css",
-		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/video.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/static/js/index.js",
@@ -635,8 +653,6 @@
 		"/C/Development/WebProjects/YouTubeToMp3/psds/pngs/Playlist.png",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3/libs/__init__.py",
 		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/2nd_page.html",
-		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/navigation.html",
-		"/C/Users/Sergey.GOOLDEER-PC/Dropbox/Учеба/5 семестр/Языки ПИС/lab1 (web-site)/registration.html",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3-project.sublime-project",
 		"/C/Development/WebProjects/YouTubeToMp3/youtubetomp3-project.sublime-workspace",
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/views.py",
@@ -659,23 +675,7 @@
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/audio.html",
 		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/playlist.html",
 		"/C/Users/Sergey.GOOLDEER-PC/AppData/Local/Temp/Rar$DIa0.832/example.py",
-		"/C/AndroidProjects/libs/ActionBarSherlock/JakeWharton-ActionBarSherlock-5a15d92/website/index.html",
-		"/C/Users/Sergey/Documents/Android/workspace/3DEnjine/src/com/custom_3DEnjine/ActivationChecker.java",
-		"/C/Dropbox/Учеба/7 семестр/Безопасность/Курсач Сблв с бомбой/grafika/попробуй это открыть.xml",
-		"/C/WebProjects/YouTubeToMp3/manage.py",
-		"/C/Python27/Lib/site-packages/converter/ffmpeg.py",
-		"/C/Dropbox/Учеба/7 семестр/Костин/Лабы/тодер.gps",
-		"/C/Users/Sergey/Downloads/python-video-converter-master/python-video-converter-master/doc/installing.rst",
-		"/C/Users/Sergey/Downloads/python-video-converter-master/python-video-converter-master/converter/ffmpeg.py",
-		"/C/Users/Sergey/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/C/Users/Sergey/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/C/Users/Sergey/Downloads/python-video-converter-master/python-video-converter-master/doc/tutorial.rst",
-		"/C/Users/Sergey/Downloads/python-video-converter-master/python-video-converter-master/doc/api.rst",
-		"/C/Users/Sergey/Downloads/python-video-converter-master/python-video-converter-master/doc/intro.rst",
-		"/C/Users/Sergey/Downloads/python-video-converter-master/python-video-converter-master/doc/index.rst",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/templates/youtubetomp3/index.html",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/static/css/playlists.css",
-		"/C/WebProjects/YouTubeToMp3/youtubetomp3/static/css/base.css"
+		"/C/AndroidProjects/libs/ActionBarSherlock/JakeWharton-ActionBarSherlock-5a15d92/website/index.html"
 	],
 	"find":
 	{
