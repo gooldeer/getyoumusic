@@ -93,3 +93,323 @@
 2013-11-14 23:42:12,654 INFO supervisord started with pid 12945
 2013-11-14 23:42:13,657 INFO spawned: 'celeryd' with pid 12946
 2013-11-14 23:42:15,084 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2013-11-29 01:25:57,087 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-ZNoFfb.log'
+2013-11-29 01:25:57,088 WARN Failed to clean up '/tmp/celeryd-stderr---supervisor-8bHlFi.log'
+2013-11-29 01:25:57,088 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-b4jq1w.log'
+2013-11-29 01:26:27,909 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-ZNoFfb.log'
+2013-11-29 01:26:27,909 WARN Failed to clean up '/tmp/celeryd-stderr---supervisor-8bHlFi.log'
+2013-11-29 01:26:27,909 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-b4jq1w.log'
+2013-11-29 01:26:30,973 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-ZNoFfb.log'
+2013-11-29 01:26:30,973 WARN Failed to clean up '/tmp/celeryd-stderr---supervisor-8bHlFi.log'
+2013-11-29 01:26:30,973 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-b4jq1w.log'
+2013-11-29 01:28:57,542 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-ZNoFfb.log'
+2013-11-29 01:28:57,542 WARN Failed to clean up '/tmp/celeryd-stderr---supervisor-8bHlFi.log'
+2013-11-29 01:28:57,542 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-b4jq1w.log'
+2013-11-29 01:28:57,564 INFO RPC interface 'supervisor' initialized
+2013-11-29 01:28:57,566 INFO daemonizing the supervisord process
+2013-11-29 01:28:57,566 INFO supervisord started with pid 3829
+2013-11-29 01:28:58,569 INFO spawned: 'celeryd' with pid 3836
+2013-11-29 01:28:58,825 DEBG 'celeryd' stdout output:
+/home/gagandeep/webapps/gettubemusic/lib/python2.7/celery-3.1.2-py2.7.egg/celery/utils/__init__.py:84: CPendingDeprecationWarning: 
+    The 'BROKER_VHOST' setting is scheduled for deprecation in     version 2.5 and removal in version v4.0.     Use the BROKER_URL setting instead
+
+  warnings.warn(w)
+
+
+2013-11-29 01:28:58,825 DEBG 'celeryd' stdout output:
+/home/gagandeep/webapps/gettubemusic/lib/python2.7/celery-3.1.2-py2.7.egg/celery/utils/__init__.py:84: CPendingDeprecationWarning: 
+    The 'BROKER_HOST' setting is scheduled for deprecation in     version 2.5 and removal in version v4.0.     Use the BROKER_URL setting instead
+
+  warnings.warn(w)
+
+/home/gagandeep/webapps/gettubemusic/lib/python2.7/celery-3.1.2-py2.7.egg/celery/utils/__init__.py:84: CPendingDeprecationWarning: 
+    The 'BROKER_USER' setting is scheduled for deprecation in     version 2.5 and removal in version v4.0.     Use the BROKER_URL setting instead
+
+  warnings.warn(w)
+
+
+2013-11-29 01:28:58,825 DEBG 'celeryd' stdout output:
+/home/gagandeep/webapps/gettubemusic/lib/python2.7/celery-3.1.2-py2.7.egg/celery/utils/__init__.py:84: CPendingDeprecationWarning: 
+    The 'BROKER_PASSWORD' setting is scheduled for deprecation in     version 2.5 and removal in version v4.0.     Use the BROKER_URL setting instead
+
+  warnings.warn(w)
+
+
+2013-11-29 01:28:58,825 DEBG 'celeryd' stdout output:
+/home/gagandeep/webapps/gettubemusic/lib/python2.7/celery-3.1.2-py2.7.egg/celery/utils/__init__.py:84: CPendingDeprecationWarning: 
+    The 'BROKER_PORT' setting is scheduled for deprecation in     version 2.5 and removal in version v4.0.     Use the BROKER_URL setting instead
+
+  warnings.warn(w)
+
+
+2013-11-29 01:28:59,078 DEBG 'celeryd' stdout output:
+/home/gagandeep/webapps/gettubemusic/lib/python2.7/celery-3.1.2-py2.7.egg/celery/apps/worker.py:182: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+
+2013-11-29 01:28:59,078 DEBG 'celeryd' stdout output:
+[2013-11-29 01:28:59,078: WARNING/MainProcess] /home/gagandeep/webapps/gettubemusic/lib/python2.7/celery-3.1.2-py2.7.egg/celery/apps/worker.py:182: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+
+2013-11-29 01:28:59,091 DEBG 'celeryd' stdout output:
+[2013-11-29 01:28:59,090: INFO/MainProcess] Connected to djkombu.transport.DatabaseTransport://admin@localhost:36784//home/gagandeep
+
+2013-11-29 01:28:59,111 DEBG 'celeryd' stdout output:
+[2013-11-29 01:28:59,111: INFO/MainProcess] mingle: searching for neighbors
+
+2013-11-29 01:29:00,113 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2013-11-29 01:29:04,135 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,135: INFO/MainProcess] mingle: all alone
+
+2013-11-29 01:29:04,157 DEBG 'celeryd' stdout output:
+/home/gagandeep/webapps/gettubemusic/lib/python2.7/django_celery-3.1.1-py2.7.egg/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+
+
+2013-11-29 01:29:04,157 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,157: WARNING/MainProcess] /home/gagandeep/webapps/gettubemusic/lib/python2.7/django_celery-3.1.1-py2.7.egg/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+
+
+2013-11-29 01:29:04,157 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,157: WARNING/MainProcess] celery@web432.webfaction.com ready.
+
+2013-11-29 01:29:04,164 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,164: INFO/MainProcess] Received task: jobs.download[fbcd7fe3-a31e-422e-8d15-3b4f74723b56]
+
+2013-11-29 01:29:04,166 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,166: WARNING/Worker-1] downloading...
+
+2013-11-29 01:29:04,166 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,166: WARNING/Worker-1] Path for downloading: /home/gagandeep/webapps/media/admin/track.webm
+
+2013-11-29 01:29:04,174 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,174: INFO/MainProcess] Received task: jobs.download[9c73b1e5-38a5-4153-9a2e-9441b414f90f]
+
+2013-11-29 01:29:04,187 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,187: WARNING/Worker-1] [youtube] Setting language
+
+2013-11-29 01:29:04,860 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:04,860: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Downloading video webpage
+
+2013-11-29 01:29:05,329 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:05,329: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Downloading video info webpage
+
+2013-11-29 01:29:05,644 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:05,643: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Extracting video information
+
+2013-11-29 01:29:05,999 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:05,999: WARNING/Worker-1] [download] Destination: /home/gagandeep/webapps/media/admin/track.webm
+
+2013-11-29 01:29:05,999 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:05,999: WARNING/Worker-1] [download]   0.1% of 1.04MiB at     ---b/s ETA --:--
+
+2013-11-29 01:29:06,020 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,019: WARNING/Worker-1] [download]   0.3% of 1.04MiB at 145.00KiB/s ETA 00:07
+
+2013-11-29 01:29:06,024 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,024: WARNING/Worker-1] [download]   0.7% of 1.04MiB at 278.44KiB/s ETA 00:03
+
+2013-11-29 01:29:06,033 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,033: WARNING/Worker-1] [download]   1.4% of 1.04MiB at 434.72KiB/s ETA 00:02
+
+2013-11-29 01:29:06,038 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,037: WARNING/Worker-1] [download]   2.9% of 1.04MiB at 801.80KiB/s ETA 00:01
+
+2013-11-29 01:29:06,070 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,069: WARNING/Worker-1] [download]   5.9% of 1.04MiB at 891.58KiB/s ETA 00:01
+
+2013-11-29 01:29:06,105 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,105: WARNING/Worker-1] [download]  12.0% of 1.04MiB at  1.17MiB/s ETA 00:00
+
+2013-11-29 01:29:06,146 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,146: WARNING/Worker-1] [download]  24.0% of 1.04MiB at  1.69MiB/s ETA 00:00
+
+2013-11-29 01:29:06,217 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,217: WARNING/Worker-1] [download]  48.2% of 1.04MiB at  2.29MiB/s ETA 00:00
+
+2013-11-29 01:29:06,281 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,281: WARNING/Worker-1] [download]  96.4% of 1.04MiB at  3.54MiB/s ETA 00:00
+
+2013-11-29 01:29:06,286 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,286: WARNING/Worker-1] [download] 100.0% of 1.04MiB at  3.61MiB/s ETA 00:00
+
+2013-11-29 01:29:06,290 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,290: WARNING/Worker-1] [download] 100% of 1.04MiB in 00:00
+
+2013-11-29 01:29:06,290 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,290: WARNING/Worker-1] /media/admin/track.webm downloaded
+
+2013-11-29 01:29:06,295 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,295: WARNING/Worker-1] downloading...
+
+2013-11-29 01:29:06,295 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,295: WARNING/Worker-1] Path for downloading: /home/gagandeep/webapps/media/admin/track0.webm
+
+2013-11-29 01:29:06,296 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,296: INFO/MainProcess] Task jobs.download[fbcd7fe3-a31e-422e-8d15-3b4f74723b56] succeeded in 2.12989916606s: /media/admin/track.webm
+
+2013-11-29 01:29:06,296 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,296: WARNING/Worker-1] [youtube] Setting language
+
+2013-11-29 01:29:06,305 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,305: INFO/MainProcess] Received task: jobs.download[19552caa-10ac-4ae2-9b2d-197603784279]
+
+2013-11-29 01:29:06,924 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:06,924: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Downloading video webpage
+
+2013-11-29 01:29:07,384 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,384: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Downloading video info webpage
+
+2013-11-29 01:29:07,647 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,647: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Extracting video information
+
+2013-11-29 01:29:07,801 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,801: WARNING/Worker-1] [download] Destination: /home/gagandeep/webapps/media/admin/track0.webm
+
+2013-11-29 01:29:07,802 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,801: WARNING/Worker-1] [download]   0.1% of 1.04MiB at     ---b/s ETA --:--
+
+2013-11-29 01:29:07,809 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,809: WARNING/Worker-1] [download]   0.3% of 1.04MiB at 373.50KiB/s ETA 00:02
+
+2013-11-29 01:29:07,814 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,814: WARNING/Worker-1] [download]   0.7% of 1.04MiB at 558.21KiB/s ETA 00:01
+
+2013-11-29 01:29:07,838 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,838: WARNING/Worker-1] [download]   1.4% of 1.04MiB at 403.05KiB/s ETA 00:02
+
+2013-11-29 01:29:07,843 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,843: WARNING/Worker-1] [download]   2.9% of 1.04MiB at 746.73KiB/s ETA 00:01
+
+2013-11-29 01:29:07,878 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,878: WARNING/Worker-1] [download]   5.9% of 1.04MiB at 818.17KiB/s ETA 00:01
+
+2013-11-29 01:29:07,921 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,920: WARNING/Worker-1] [download]  12.0% of 1.04MiB at  1.04MiB/s ETA 00:00
+
+2013-11-29 01:29:07,990 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:07,990: WARNING/Worker-1] [download]  24.0% of 1.04MiB at  1.32MiB/s ETA 00:00
+
+2013-11-29 01:29:08,034 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,034: WARNING/Worker-1] [download]  48.2% of 1.04MiB at  2.15MiB/s ETA 00:00
+
+2013-11-29 01:29:08,091 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,091: WARNING/Worker-1] [download]  96.4% of 1.04MiB at  3.45MiB/s ETA 00:00
+
+2013-11-29 01:29:08,096 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,096: WARNING/Worker-1] [download] 100.0% of 1.04MiB at  3.52MiB/s ETA 00:00
+
+2013-11-29 01:29:08,100 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,100: WARNING/Worker-1] [download] 100% of 1.04MiB in 00:00
+
+2013-11-29 01:29:08,100 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,100: WARNING/Worker-1] /media/admin/track0.webm downloaded
+
+2013-11-29 01:29:08,104 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,104: INFO/MainProcess] Task jobs.download[9c73b1e5-38a5-4153-9a2e-9441b414f90f] succeeded in 1.809169129s: /media/admin/track0.webm
+
+2013-11-29 01:29:08,105 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,105: WARNING/Worker-1] downloading...
+
+2013-11-29 01:29:08,105 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,105: WARNING/Worker-1] Path for downloading: /home/gagandeep/webapps/media/admin/track1.webm
+
+2013-11-29 01:29:08,106 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,106: WARNING/Worker-1] [youtube] Setting language
+
+2013-11-29 01:29:08,764 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:08,763: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Downloading video webpage
+
+2013-11-29 01:29:09,249 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,248: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Downloading video info webpage
+
+2013-11-29 01:29:09,529 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,529: WARNING/Worker-1] [youtube] ARxqpfjZQ0c: Extracting video information
+
+2013-11-29 01:29:09,687 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,685: WARNING/Worker-1] [download] Destination: /home/gagandeep/webapps/media/admin/track1.webm
+[2013-11-29 01:29:09,686: WARNING/Worker-1] [download]   0.1% of 1.04MiB at     ---b/s ETA --:--
+
+2013-11-29 01:29:09,694 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,694: WARNING/Worker-1] [download]   0.3% of 1.04MiB at 330.66KiB/s ETA 00:03
+
+2013-11-29 01:29:09,700 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,699: WARNING/Worker-1] [download]   0.7% of 1.04MiB at 491.13KiB/s ETA 00:02
+
+2013-11-29 01:29:09,724 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,723: WARNING/Worker-1] [download]   1.4% of 1.04MiB at 393.32KiB/s ETA 00:02
+
+2013-11-29 01:29:09,729 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,728: WARNING/Worker-1] [download]   2.9% of 1.04MiB at 717.58KiB/s ETA 00:01
+
+2013-11-29 01:29:09,764 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,764: WARNING/Worker-1] [download]   5.9% of 1.04MiB at 801.81KiB/s ETA 00:01
+
+2013-11-29 01:29:09,809 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,808: WARNING/Worker-1] [download]  12.0% of 1.04MiB at  1.01MiB/s ETA 00:00
+
+2013-11-29 01:29:09,849 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,849: WARNING/Worker-1] [download]  24.0% of 1.04MiB at  1.52MiB/s ETA 00:00
+
+2013-11-29 01:29:09,922 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,922: WARNING/Worker-1] [download]  48.2% of 1.04MiB at  2.11MiB/s ETA 00:00
+
+2013-11-29 01:29:09,984 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,983: WARNING/Worker-1] [download]  96.4% of 1.04MiB at  3.35MiB/s ETA 00:00
+
+2013-11-29 01:29:09,995 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,995: WARNING/Worker-1] [download] 100.0% of 1.04MiB at  3.34MiB/s ETA 00:00
+
+2013-11-29 01:29:09,999 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,999: WARNING/Worker-1] [download] 100% of 1.04MiB in 00:00
+
+2013-11-29 01:29:10,000 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:09,999: WARNING/Worker-1] /media/admin/track1.webm downloaded
+
+2013-11-29 01:29:10,004 DEBG 'celeryd' stdout output:
+[2013-11-29 01:29:10,004: INFO/MainProcess] Task jobs.download[19552caa-10ac-4ae2-9b2d-197603784279] succeeded in 1.89889425226s: /media/admin/track1.webm
+
+2013-11-29 01:32:35,492 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-ZNoFfb.log'
+2013-11-29 01:32:35,492 WARN Failed to clean up '/tmp/celeryd-stderr---supervisor-8bHlFi.log'
+2013-11-29 01:32:35,492 WARN Failed to clean up '/tmp/celeryd-stdout---supervisor-b4jq1w.log'
+2013-11-29 01:32:35,515 INFO RPC interface 'supervisor' initialized
+2013-11-29 01:32:35,516 INFO daemonizing the supervisord process
+2013-11-29 01:32:35,517 INFO supervisord started with pid 6440
+2013-11-29 01:32:36,519 INFO spawned: 'celeryd' with pid 6445
+2013-11-29 01:32:37,981 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
